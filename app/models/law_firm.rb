@@ -1,0 +1,2 @@
+class LawFirm < ApplicationRecord
+end
