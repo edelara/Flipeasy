@@ -10,17 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_30_130910) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_30_152322) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "companies", force: :cascade do |t|
+  create_table "documents", force: :cascade do |t|
     t.string "name"
-    t.string "founders"
-    t.string "address"
-    t.string "corporate_form"
+    t.string "status"
+    t.bigint "project_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_documents_on_project_id"
   end
 
   create_table "law_firms", force: :cascade do |t|
@@ -33,36 +33,36 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_30_130910) do
     t.string "name"
     t.date "start_at"
     t.date "end_at"
-    t.string "status"
+    t.string "progress"
+    t.string "company_name"
+    t.string "company_email"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "team_member_id", null: false
-    t.bigint "company_id", null: false
-    t.index ["company_id"], name: "index_projects_on_company_id"
-    t.index ["team_member_id"], name: "index_projects_on_team_member_id"
     t.index ["user_id"], name: "index_projects_on_user_id"
+  end
+
+  create_table "steps", force: :cascade do |t|
+    t.bigint "project_id", null: false
+    t.bigint "user_id", null: false
+    t.string "name"
+    t.date "deadline"
+    t.date "completed_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_steps_on_project_id"
+    t.index ["user_id"], name: "index_steps_on_user_id"
   end
 
   create_table "tasks", force: :cascade do |t|
     t.string "name"
-    t.string "description"
     t.string "status"
-    t.date "deadline"
-    t.date "completed_at"
-    t.bigint "project_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "team_member_id", null: false
-    t.index ["project_id"], name: "index_tasks_on_project_id"
-    t.index ["team_member_id"], name: "index_tasks_on_team_member_id"
-  end
-
-  create_table "team_members", force: :cascade do |t|
+    t.bigint "step_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_team_members_on_user_id"
+    t.index ["step_id"], name: "index_tasks_on_step_id"
+    t.index ["user_id"], name: "index_tasks_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -73,23 +73,20 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_30_130910) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "law_firm_id", null: false
     t.string "first_name"
     t.string "last_name"
     t.string "role"
-    t.bigint "company_id", null: false
-    t.bigint "law_firm_id", null: false
-    t.index ["company_id"], name: "index_users_on_company_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["law_firm_id"], name: "index_users_on_law_firm_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "projects", "companies"
-  add_foreign_key "projects", "team_members"
+  add_foreign_key "documents", "projects"
   add_foreign_key "projects", "users"
-  add_foreign_key "tasks", "projects"
-  add_foreign_key "tasks", "team_members"
-  add_foreign_key "team_members", "users"
-  add_foreign_key "users", "companies"
+  add_foreign_key "steps", "projects"
+  add_foreign_key "steps", "users"
+  add_foreign_key "tasks", "steps"
+  add_foreign_key "tasks", "users"
   add_foreign_key "users", "law_firms"
 end

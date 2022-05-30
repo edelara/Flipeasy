@@ -1,5 +1,5 @@
 class Project < ApplicationRecord
-  belongs_to :team_member
-  belongs_to :company
+  has_many :documents
+  has_many :steps
   belongs_to :user
 end
