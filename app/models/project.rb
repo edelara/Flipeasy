@@ -2,6 +2,7 @@ class Project < ApplicationRecord
   has_many :documents, dependent: :destroy
   has_many :steps, dependent: :destroy
   belongs_to :user
+  DURATION = [21, 30, 45]
 
   validates :name, presence: true, uniqueness: true
   validates :start_at, presence: true
@@ -22,4 +23,5 @@ class Project < ApplicationRecord
   def create_steps_and_tasks
     CreateStepsAndTasksForProject.new(self).call
   end
+  validates :duration, inclusion: { in: Project::DURATION }, presence: true
 end

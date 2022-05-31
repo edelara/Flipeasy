@@ -4,5 +4,6 @@ class Step < ApplicationRecord
   belongs_to :project
 
   validates :name, presence: true, uniqueness: true
+  validates :name, uniqueness: true
   validates :deadline, presence: true
 end
