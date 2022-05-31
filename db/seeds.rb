@@ -62,7 +62,7 @@ user_four = User.new(
 user_four.law_firm = law_firm
 user_four.save!
 
-user_five = User.create!(
+user_five = User.new(
   email: "thomas@legalab.fr",
   first_name: "Thomas",
   last_name: "Epic",
