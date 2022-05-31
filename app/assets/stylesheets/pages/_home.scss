@@ -20,6 +20,13 @@
   background: -webkit-linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
   background: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
   height: 500px;
+  position: relative;
+}
+
+.banner-right img {
+  position:absolute;
+  top: 150px;
+  left:-120px;
 }
 
 .services {
