@@ -64,6 +64,7 @@ user_four.save!
 
 user_five = User.new(
   email: "thomas@legalab.fr",
+  password: "123456",
   first_name: "Thomas",
   last_name: "Epic",
   role: "Legal Geek",
