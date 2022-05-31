@@ -1,8 +1,8 @@
 class Step < ApplicationRecord
-  has_many :tasks
-  belongs_to :user
+  has_many :tasks, dependent: :destroy
+  belongs_to :user, optional: true
   belongs_to :project
 
-  validates :name, presence: true
+  validates :name, presence: true, uniqueness: true
   validates :deadline, presence: true
 end
