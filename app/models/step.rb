@@ -3,6 +3,6 @@ class Step < ApplicationRecord
   belongs_to :user
   belongs_to :project
 
-  validates :name, presence: true
+  validates :name, uniqueness: true
   validates :deadline, presence: true
 end
