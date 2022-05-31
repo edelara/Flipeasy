@@ -9,3 +9,5 @@ application.register("hello", HelloController)
 
 import SearchProjectsController from "./search_projects_controller.js"
 application.register("search-projects", SearchProjectsController)
+import NavbarController from "./navbar_controller.js"
+application.register("navbar", NavbarController)

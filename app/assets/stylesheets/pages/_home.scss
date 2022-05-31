@@ -1,17 +1,16 @@
 .container.home {
-  margin: 10px 0px;
+  // margin: 10px 0px;
   max-width : 100%;
   padding: 0;
 }
 
 .banner-left {
-  height: 500px;
   background-color: white;
-
+  height: 100vh;
 }
 
 .banner-left-text {
-  margin: 70px 40px;
+  margin: 200px 60px;
   width: 600px;
 }
 
@@ -19,30 +18,32 @@
   background: #7F7FD5;
   background: -webkit-linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
   background: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
-  height: 500px;
   position: relative;
+  height: 100vh;
 }
 
 .banner-right img {
   position:absolute;
-  top: 150px;
+  border-radius: 3px;
+  bottom: 100px;
   left:-120px;
+  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.07);
 }
 
 .services {
   padding: 100px 0;
-  width: 1300px;
+  // width: 1300px;
   margin: 0 auto;
 }
 
 .about-us {
-  padding: 100px 0;
+  padding: 100px 100px;
   background-color: white;
 }
 
 .about-us-text {
-  width: 900px;
   margin: 0 auto;
+  padding: 0px 100px;
 }
 
 .services-cards {
