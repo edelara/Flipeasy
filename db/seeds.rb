@@ -71,8 +71,8 @@ user_five = User.new(
   photo: "thomas.png"
 )
 
-user_five.law_firm = law_firm
-user_five.save!
+# user_five.law_firm = law_firm
+# user_five.save!
 
 project_one = Project.new(
   name: "FlipLydia",
