@@ -10,7 +10,7 @@
 }
 
 .banner-left-text {
-  margin: 70px 40px;
+  margin: 200px 60px;
   width: 600px;
 }
 
@@ -24,7 +24,8 @@
 
 .banner-right img {
   position:absolute;
-  bottom: 190px;
+  border-radius: 3px;
+  bottom: 100px;
   left:-120px;
   box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.07);
 }
@@ -36,13 +37,13 @@
 }
 
 .about-us {
-  padding: 100px 0;
+  padding: 100px 100px;
   background-color: white;
 }
 
 .about-us-text {
-  // width: 900px;
   margin: 0 auto;
+  padding: 0px 100px;
 }
 
 .services-cards {
