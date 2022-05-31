@@ -62,13 +62,14 @@ user_four = User.new(
 user_four.law_firm = law_firm
 user_four.save!
 
-# user_five = User.new(
-#   email: "thomas@legalab.fr",
-#   first_name: "Thomas",
-#   last_name: "Epic",
-#   role: "Legal Geek",
-#   photo: "thomas.png"
-# )
+user_five = User.new(
+  email: "thomas@legalab.fr",
+  password: "123456",
+  first_name: "Thomas",
+  last_name: "Epic",
+  role: "Legal Geek",
+  photo: "thomas.png"
+)
 
 # user_five.law_firm = law_firm
 # user_five.save!
