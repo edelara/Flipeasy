@@ -143,4 +143,4 @@ project_six = Project.new(
 )
 
 project_six.user = user_four
-project_sic.save!
+project_six.save!
