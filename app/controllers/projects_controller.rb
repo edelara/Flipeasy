@@ -1,6 +1,10 @@
 class ProjectsController < ApplicationController
   def index
-    @projects = policy_scope(Project)
+    if params[:query].present?
+      @projects = policy_scope(Project).where("name ILIKE ?", "%#{params[:query]}%")
+    else
+      @projects = policy_scope(Project)
+    end
   end
 
   def new

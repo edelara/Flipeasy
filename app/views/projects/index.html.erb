@@ -2,14 +2,16 @@
   <div class="app-header">
     <div class="app-header-left">
       <span class="app-icon"></span>
-      <p class="app-name">Portfolio</p>
-      <div class="search-wrapper">
-        <input class="search-input" type="text" placeholder="Search">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-search" viewBox="0 0 24 24">
-          <defs></defs>
-          <circle cx="11" cy="11" r="8"></circle>
-          <path d="M21 21l-4.35-4.35"></path>
-        </svg>
+      <p class="app-name">Flipeasy</p>
+      <div>
+
+        <%= form_tag projects_path, method: :get do %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "search-wrapper",
+            placeholder: "  Search"
+          %>
+        <% end %>
       </div>
     </div>
     <div class="app-header-right">
@@ -19,11 +21,10 @@
           <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
         </svg>
       </button>
-      <button class="add-btn" title="Add New Project">
-        <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
-          <line x1="12" y1="5" x2="12" y2="19" />
-          <line x1="5" y1="12" x2="19" y2="12" /></svg>
-      </button>
+      <%= link_to(new_project_path, class: 'add-btn') do %>
+          <i class="fa-solid fa-plus"></i>
+      <% end %>
+
       <button class="profile-btn">
         <img src="https://assets.codepen.io/3306515/IMG_2025.jpg" />
         <span>Name of user</span>
@@ -97,49 +98,8 @@
           </button>
         </div>
       </div>
-      <div class="project-boxes jsGridView">
-        <% @projects.each do |project| %>
-          <div class="project-box-wrapper">
-            <div class="project-box" style="background-color: #fee4cb;">
-              <div class="project-box-header">
-                <span><%= project.start_at.strftime('%B %d, %Y') %></span>
-                <div class="more-wrapper">
-                  <button class="project-btn-more">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical">
-                      <circle cx="12" cy="12" r="1" />
-                      <circle cx="12" cy="5" r="1" />
-                      <circle cx="12" cy="19" r="1" /></svg>
-                  </button>
-            </div>
-          </div>
-          <div class="project-box-content-header">
-            <p class="box-content-header"><%= project.name %></p>
-            <p class="box-content-subheader">Step Name</p>
-          </div>
-          <div class="box-progress-wrapper">
-            <p class="box-progress-header">Progress</p>
-            <div class="box-progress-bar">
-              <span class="box-progress" style="width: 60%; background-color: #ff942e"></span>
-            </div>
-            <p class="box-progress-percentage">60%</p>
-          </div>
-          <div class="project-box-footer">
-            <div class="participants">
-              <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80" alt="participant">
-              <img src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fG1hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60" alt="participant">
-              <button class="add-participant" style="color: #ff942e;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
-                  <path d="M12 5v14M5 12h14" />
-                </svg>
-              </button>
-            </div>
-            <div class="days-left" style="color: #ff942e;">
-              <%= (project.start_at..project.end_at).count %> days left
-            </div>
-          </div>
-        </div>
-      </div>
-    <% end %>
+
+    <%= render "shared/list" %>
 
   </div>
 </div>
