@@ -45,7 +45,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_31_151608) do
 
   create_table "steps", force: :cascade do |t|
     t.bigint "project_id", null: false
-    t.bigint "user_id", null: false
+    t.bigint "user_id"
     t.string "name"
     t.date "deadline"
     t.date "completed_at"
@@ -59,7 +59,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_31_151608) do
     t.string "name"
     t.string "status", default: "Not started"
     t.bigint "step_id", null: false
-    t.bigint "user_id", null: false
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["step_id"], name: "index_tasks_on_step_id"
