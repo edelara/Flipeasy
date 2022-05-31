@@ -25,7 +25,7 @@ class CreateStepsAndTasksForProject
     STEPS_AND_TASKS.each do |step, infos|
       step = Step.create!(name: step, project: @project, deadline: @project.end_at - infos[:deadline].days)
       infos[:tasks].each do |task_name|
-        Task.create!(name: task_name, step: step, status: 'Not started')
+        Task.create!(name: task_name, step: step)
       end
     end
   end
