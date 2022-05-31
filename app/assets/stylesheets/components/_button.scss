@@ -1,0 +1,18 @@
+.btn-black {
+  color: white;
+  display: inline-block;
+  padding: 8px 10px;
+  border-radius: 2px;
+  background: black;
+  transition: 0.3s ease;
+  margin-top: 40px;
+  font-size:18px;
+  letter-spacing: 1.5px;
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+  text-decoration: none;
+  border-bottom: 4px solid #8CCDE5;
+    &:hover {
+      color: #8CCDE5;
+    }
+}
