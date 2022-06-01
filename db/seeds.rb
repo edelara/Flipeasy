@@ -78,7 +78,7 @@ project_one = Project.new(
   name: "FlipLydia",
   start_at: "Tue, 21 June 2022",
   end_at: "Tue, 26 July 2022",
-  progress: "not started",
+  progress: 0,
   company_name: "Lydi",
   company_email: "cyril@lydi.com",
   duration: 30
@@ -91,7 +91,7 @@ project_two = Project.new(
   name: "FlipDocto",
   start_at: "Tues, 03 May 2022",
   end_at: "Tues, 07 June 2022",
-  progress: "completed",
+  progress: 0,
   company_name: "Doctorib",
   company_email: "stan@doctorib.com",
   duration: 30
@@ -104,7 +104,7 @@ project_three = Project.new(
   name: "FlipQonto",
   start_at: "Tue, 14 June 2022",
   end_at: "Tue, 19 July 2022",
-  progress: "not started",
+  progress: 0,
   company_name: "Qonco",
   company_email: "alex@qonco.com",
   duration: 30
@@ -117,7 +117,7 @@ project_four = Project.new(
   name: "FlipBack",
   start_at: "Fri, 20 May 2022",
   end_at: "Fri, 1 July 2022",
-  progress: "in progress",
+  progress: 0,
   company_name: "RackMarket",
   company_email: "thib@rackmarket",
   duration: 30
@@ -130,7 +130,7 @@ project_five = Project.new(
   name: "FlipVoodoo",
   start_at: "Fri, 27 May 2022",
   end_at: "Fri, 1 July 2022",
-  progress: "in progress",
+  progress: 0,
   company_name: "Voohoo",
   company_email: "alex.yaz@vohoo.com",
   duration: 30
@@ -143,7 +143,7 @@ project_six = Project.new(
   name: "FlipContent",
   start_at: "Wed, 18 May 2022",
   end_at: "Fri, 17 June 2022",
-  progress: "delayed",
+  progress: 100,
   company_name: "ContentCirle",
   company_email: "jon.cherzy@cc.com",
   duration: 30
