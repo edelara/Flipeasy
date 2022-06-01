@@ -70,5 +70,3 @@ class CreateStepsAndTasksForProject
     end
   end
 end
-
-CreateStepsAndTasksForProject.new(project).call
