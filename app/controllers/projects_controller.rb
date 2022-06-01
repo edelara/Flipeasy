@@ -51,5 +51,4 @@ class ProjectsController < ApplicationController
       :company_email
     )
   end
-
 end
