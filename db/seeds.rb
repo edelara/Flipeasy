@@ -71,8 +71,8 @@ user_five = User.new(
   photo: "thomas.png"
 )
 
-# user_five.law_firm = law_firm
-# user_five.save!
+user_five.law_firm = law_firm
+user_five.save!
 
 project_one = Project.new(
   name: "FlipLydia",
@@ -80,7 +80,8 @@ project_one = Project.new(
   end_at: "Tue, 26 July 2022",
   progress: "not started",
   company_name: "Lydi",
-  company_email: "cyril@lydi.com"
+  company_email: "cyril@lydi.com",
+  duration: 30
 )
 
 project_one.user = user_three
@@ -92,7 +93,8 @@ project_two = Project.new(
   end_at: "Tues, 07 June 2022",
   progress: "completed",
   company_name: "Doctorib",
-  company_email: "stan@doctorib.com"
+  company_email: "stan@doctorib.com",
+  duration: 30
 )
 
 project_two.user = user_three
@@ -104,7 +106,8 @@ project_three = Project.new(
   end_at: "Tue, 19 July 2022",
   progress: "not started",
   company_name: "Qonco",
-  company_email: "alex@qonco.com"
+  company_email: "alex@qonco.com",
+  duration: 30
 )
 
 project_three.user = user_three
@@ -116,7 +119,8 @@ project_four = Project.new(
   end_at: "Fri, 1 July 2022",
   progress: "in progress",
   company_name: "RackMarket",
-  company_email: "thib@rackmarket"
+  company_email: "thib@rackmarket",
+  duration: 30
 )
 
 project_four.user = user_four
@@ -128,7 +132,8 @@ project_five = Project.new(
   end_at: "Fri, 1 July 2022",
   progress: "in progress",
   company_name: "Voohoo",
-  company_email: "alex.yaz@vohoo.com"
+  company_email: "alex.yaz@vohoo.com",
+  duration: 30
 )
 
 project_five.user = user_four
@@ -140,7 +145,8 @@ project_six = Project.new(
   end_at: "Fri, 17 June 2022",
   progress: "delayed",
   company_name: "ContentCirle",
-  company_email: "jon.cherzy@cc.com"
+  company_email: "jon.cherzy@cc.com",
+  duration: 30
 )
 
 project_six.user = user_four

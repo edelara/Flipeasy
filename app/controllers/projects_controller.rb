@@ -48,7 +48,8 @@ class ProjectsController < ApplicationController
       :end_at,
       :progress,
       :company_name,
-      :company_email
+      :company_email,
+      :duration
     )
   end
 end
