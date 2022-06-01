@@ -1,0 +1,31 @@
+.project-show {
+  display: grid;
+  grid-template-columns: 35% 65%;
+  grid-template-rows: 10% 15% 25% 50%;
+  height: 94vh;
+  padding: 1rem;
+  > div{
+    border: 1px solid red
+  }
+}
+
+.project-show__header {
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 1;
+}
+.project-show__steps {
+  grid-column: 1 / span 2;
+  grid-row: 2 / span 1;
+}
+.project-show__selected-step {
+  grid-column: 1 / span 1;
+  grid-row: 3 / span 2;
+}
+.project-show__company-info {
+  grid-column: 2 / span 1;
+  grid-row: 3 / span 1;
+}
+.project-show__documents {
+  grid-column: 2 / span 1;
+  grid-row: 4 / span 1;
+}
