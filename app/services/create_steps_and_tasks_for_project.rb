@@ -28,7 +28,8 @@ class CreateStepsAndTasksForProject
     },
 
     "Obtain EIN and open U.S. Bank Account" => {
-      deadline: 15
+      deadline: 15,
+      tasks: []
     },
 
     "Issuance & Exchange of Shares" => {
@@ -70,4 +71,4 @@ class CreateStepsAndTasksForProject
   end
 end
 
-CreateStepsAndTasksForProject.new(project).call
+# CreateStepsAndTasksForProject.new(project).call
