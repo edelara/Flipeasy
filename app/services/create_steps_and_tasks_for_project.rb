@@ -25,25 +25,26 @@ class CreateStepsAndTasksForProject
       tasks: [
         "Draft Incorporation Documents",
         "File Certificate of Incorporation"
-        ]
+      ]
     },
 
     "Obtain EIN and open U.S. Bank Account" => {
       deadline: 15,
+      tasks: []
     },
 
     "Issuance & Exchange of Shares" => {
       deadline: 10,
       tasks: [
         "Draft Flip Documents"
-        ]
+      ]
     },
 
     "Flip Closing" => {
       deadline: 05,
       tasks: [
         "Invite signatories to sign"
-        ]
+      ]
     },
 
     "Post-Flip Closing" => {
@@ -53,7 +54,7 @@ class CreateStepsAndTasksForProject
         "File Contribution Agreement",
         "Update Shareholders Registers & Accounts",
         "Schedule Reminder for Delaware Tax Compliance"
-        ]
+      ]
     }
   }
 
@@ -70,3 +71,5 @@ class CreateStepsAndTasksForProject
     end
   end
 end
+
+# CreateStepsAndTasksForProject.new(project).call

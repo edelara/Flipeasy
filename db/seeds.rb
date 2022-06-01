@@ -107,7 +107,7 @@ project_three = Project.new(
   progress: "not started",
   company_name: "Qonco",
   company_email: "alex@qonco.com",
-  duration: 21
+  duration: 30
 )
 
 project_three.user = user_three
@@ -120,7 +120,7 @@ project_four = Project.new(
   progress: "in progress",
   company_name: "RackMarket",
   company_email: "thib@rackmarket",
-  duration: 21
+  duration: 30
 )
 
 project_four.user = user_four
@@ -133,7 +133,7 @@ project_five = Project.new(
   progress: "in progress",
   company_name: "Voohoo",
   company_email: "alex.yaz@vohoo.com",
-  duration: 21
+  duration: 30
 )
 
 project_five.user = user_four
@@ -146,7 +146,7 @@ project_six = Project.new(
   progress: "delayed",
   company_name: "ContentCirle",
   company_email: "jon.cherzy@cc.com",
-  duration: 45
+  duration: 30
 )
 
 project_six.user = user_four

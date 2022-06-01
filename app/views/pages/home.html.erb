@@ -1,24 +1,19 @@
+<%= render "shared/navbar" %>
+
 <div class="container home">
-
   <div class="banner">
-
-    <div class="row">
-
-      <div class="banner-left col-7">
-
+    <div class="row mx-0">
+      <div class="banner-left col-7 px-0">
         <div class="banner-left-text">
-          <h1>Improve the relationship with your client as you flip companies.</h1>
-          <a href="#" class="btn-black">Get started</a>
+          <h1>Improve the relationship with your client doing flips.</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas eius incidunt explicabo optio error.</p>
+          <%= link_to "Get started", projects_path, class: "btn-black" %>
         </div>
-
       </div>
-
-      <div class="banner-right col-5">
+      <div class="banner-right col-5 px-0">
         <img src="../assets/home-pic" alt="">
       </div>
-
     </div>
-
   </div>
 
   <div class="services text-center">
@@ -48,13 +43,15 @@
 
   </div>
 
-  <div class="about-us text-center">
-
+  <div class="about-us text-center d-flex">
+    <div class="about-us-image">
+      <img src="../assets/about-us-2" alt="">
+    </div>
     <div class="about-us-text">
       <h1>About us</h1>
       <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid non placeat quam consequuntur voluptate eveniet cum eligendi eius tempore maiores nisi illum culpa, consectetur laboriosam? Quia qui obcaecati fugit alias?</p>
-
     </div>
   </div>
 
 </div>
+<%= render "shared/footer" %>
