@@ -1,0 +1,24 @@
+<%= render "shared/navbar_projects" %>
+
+<div class = "container mt-3" style = "width: 500px">
+  <div class="form-inputs">
+    <%= simple_form_for(@project) do |f| %>
+    <%= f.input :name %>
+      <div class="d-flex justify-content-between">
+        <%= f.input :company_name %>
+        <%= f.input :company_email %>
+      </div>
+      <div>
+        <%= f.input :duration %>
+      </div>
+      <div>
+        <%= f.input :start_at %>
+      </div>
+  </div>
+
+  <div class="form-actions d-flex justify-content-between">
+    <%= f.submit class: 'btn-black'  %>
+    <%= link_to 'Back to Projects', projects_path, class: 'btn-black' %>
+  </div>
+  <% end %>
+</div>

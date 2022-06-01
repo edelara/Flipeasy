@@ -1,0 +1,29 @@
+<div class="app-header">
+<div class="app-header-left">
+  <%= link_to("/", class: "d-flex text-decoration-none") do %>
+    <img src="../assets/logo-violet.png" alt="" class="app-logo">
+    <h1 class="app-name">Flipeasy</h1>
+  <% end %>
+  <div>
+    <% if current_page?(controller: 'projects', action: 'index') %>
+      <%= form_tag projects_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "search-wrapper",
+          placeholder: "  Search"
+        %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+<div class="app-header-right">
+<ul class="navbar-nav me-auto">
+  <li class="nav-item dropdown">
+    <%= image_tag(current_user.photo, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false) %>
+    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+      <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+    </div>
+  </li>
+</ul>
+</div>
+</div>
