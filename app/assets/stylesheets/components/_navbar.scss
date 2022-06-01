@@ -25,7 +25,13 @@
 
 .navbar-brand > h1 {
   font-weight: 100;
-  margin: 0px 40px;
+  margin: 0;
+}
+
+.navbar-brand > img {
+  margin-left: 40px;
+  margin-right: 10px;
+  margin-bottom: 7px;
 }
 
 .navbar-left {

@@ -1,8 +1,11 @@
 <div class="app-container">
   <div class="app-header">
     <div class="app-header-left">
-      <span class="app-icon"></span>
-      <p class="app-name">Flipeasy</p>
+      <%# <span class="app-icon"></span> %>
+      <%= link_to("/", class: "d-flex text-decoration-none") do %>
+        <img src="../assets/logo-violet.png" alt="" class="app-logo">
+        <h1 class="app-name">Flipeasy</h1>
+      <% end %>
       <div>
 
         <%= form_tag projects_path, method: :get do %>
