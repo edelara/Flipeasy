@@ -89,8 +89,8 @@ project_one.save!
 
 project_two = Project.new(
   name: "FlipDocto",
-  start_at: "Tues, 03 May 2022",
-  end_at: "Tues, 07 June 2022",
+  start_at: "Tue, 03 May 2022",
+  end_at: "Tue, 07 June 2022",
   progress: "completed",
   company_name: "Doctorib",
   company_email: "stan@doctorib.com",
