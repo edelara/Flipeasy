@@ -5,13 +5,14 @@
     <h1 class="app-name">Flipeasy</h1>
   <% end %>
   <div>
-
-    <%= form_tag projects_path, method: :get do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "search-wrapper",
-        placeholder: "  Search"
-      %>
+    <% if current_page?(controller: 'projects', action: 'index') %>
+      <%= form_tag projects_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "search-wrapper",
+          placeholder: "  Search"
+        %>
+      <% end %>
     <% end %>
   </div>
 </div>
