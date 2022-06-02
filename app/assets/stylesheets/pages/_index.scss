@@ -279,7 +279,7 @@ button, a {
   flex: 2;
   background-color: var(--projects-section);
   border-radius: 4px;
-  padding: 32px 32px 0 32px;
+  padding: 32px;
   overflow: hidden;
   height: 100%;
   display: flex;
@@ -586,6 +586,14 @@ ox-content-header {
 .project-box {
   border-radius: 4px;
   padding: 16px;
+  color: var(--main-color);
+  // background-color: #B2CBE9;
+  box-shadow: 0px 4px 16px rgba(0,0,0,.1);
+
+  &:hover {
+    opacity: 0.9;
+    transition: .2s;
+  }
 
   &-header {
     display: flex;
@@ -633,13 +641,14 @@ ox-content-header {
   font-size: 16px;
   line-height: 24px;
   font-weight: 700;
-  opacity: .7;
+  // opacity: .7;
 }
 
 .box-content-subheader {
   font-size: 14px;
   line-height: 24px;
   opacity: .7;
+  color: rgb(41, 41, 41);
 }
 
 .box-progress {
@@ -654,6 +663,7 @@ ox-content-header {
     overflow: hidden;
     background-color: rgb(255, 255, 255);
     margin: 8px 0;
+    border: 1px solid rgb(200, 200, 200);
   }
 
   &-header {
@@ -828,9 +838,9 @@ ox-content-header {
     width: 100%;
   }
 
-  .projects-section {
-    padding: 24px 16px 0 16px;
-  }
+  // .projects-section {
+  //   padding: 24px 16px 0 16px;
+  // }
 
   .profile-btn img {
     width: 24px;
