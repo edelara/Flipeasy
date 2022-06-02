@@ -586,6 +586,14 @@ ox-content-header {
 .project-box {
   border-radius: 4px;
   padding: 16px;
+  color: black;
+  background-color: #B2CBE9;
+  box-shadow: 0px, 4px, 16px rgba(0,0,0,0.7);
+
+  &:hover {
+    opacity: 0.9;
+    transition: .2s;
+  }
 
   &-header {
     display: flex;
@@ -640,6 +648,7 @@ ox-content-header {
   font-size: 14px;
   line-height: 24px;
   opacity: .7;
+  color: rgb(41, 41, 41);
 }
 
 .box-progress {
