@@ -22,7 +22,7 @@ class Project < ApplicationRecord
   def set_end_at
     return unless end_at.blank?
 
-    self.end_at = start_at + 60.days
+    self.end_at = start_at + project.duration.days
   end
 
   def create_steps_and_tasks
