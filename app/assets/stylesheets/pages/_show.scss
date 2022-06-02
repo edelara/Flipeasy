@@ -63,6 +63,10 @@
   text-align: center;
   }
 
+  .project-cards-steps.completed {
+    opacity: 0.4;
+  }
+
   .project-cards-steps:hover {
     opacity: 1;
     background-color: #fafcff;
@@ -76,7 +80,6 @@
     z-index: 6;
     opacity: 0.9;
   }
-
 
   .project-cards-steps > .fa-solid:hover {
     opacity: 0.4;

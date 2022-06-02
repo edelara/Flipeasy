@@ -8,6 +8,12 @@ class Step < ApplicationRecord
 
   after_save :update_project_progress
 
+  def completed?
+    # TO DO => ajouter la logique pour mettre à jour la colonne completed_at lorsque
+    # la dernière task du step est complétée
+    completed_at.present?
+  end
+
   private
 
   def update_project_progress
