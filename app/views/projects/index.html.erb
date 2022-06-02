@@ -35,6 +35,17 @@
               <rect x="14" y="14" width="7" height="7" />
               <rect x="3" y="14" width="7" height="7" /></svg>
           </button>
+          <div class="dropdown">
+            <a class="btn btn-white dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+              Filter by user
+            </a>
+            <div class="dropdown-menu p-3" aria-labelledby="dropdownMenuLink">
+              <p>Filter projects by user</p>
+              <% User.all.each do |user| %>
+                <%= image_tag(user.photo, class: "avatar") %>
+              <% end %>
+            </div>
+          </div>
         </div>
       </div>
 
