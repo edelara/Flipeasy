@@ -2,6 +2,7 @@ class CreateStepsAndTasksForProject
   STEPS_AND_TASKS = {
     "Create Project" => {
       deadline: 29,
+      icon: "fa-solid fa-hands-holding-circle",
       tasks: [
         "Invite founder to join Flipeasy",
         "Review questionnaire",
@@ -12,6 +13,7 @@ class CreateStepsAndTasksForProject
 
     "Getting Ready" => {
       deadline: 27,
+      icon: "fa-solid fa-circle-play",
       tasks: [
         "Draft flip Pro-forma model",
         "Determine the valuation of the company",
@@ -21,6 +23,7 @@ class CreateStepsAndTasksForProject
 
     "Establish the U.S Corporation" => {
       deadline: 20,
+      icon: "fa-solid fa-building",
       tasks: [
         "Draft Incorporation Documents",
         "File Certificate of Incorporation"
@@ -29,11 +32,13 @@ class CreateStepsAndTasksForProject
 
     "Obtain EIN and open U.S. Bank Account" => {
       deadline: 15,
+      icon: "fa-solid fa-piggy-bank",
       tasks: []
     },
 
     "Issuance & Exchange of Shares" => {
       deadline: 10,
+      icon: "fa-solid fa-burger"
       tasks: [
         "Draft Flip Documents"
       ]
@@ -41,6 +46,7 @@ class CreateStepsAndTasksForProject
 
     "Flip Closing" => {
       deadline: 05,
+      icon: "fa-solid fa-shuttle-space"
       tasks: [
         "Invite signatories to sign"
       ]
@@ -48,6 +54,7 @@ class CreateStepsAndTasksForProject
 
     "Post-Flip Closing" => {
       deadline: 03,
+      icon: "fa-solid fa-paper-plane"
       tasks: [
         "File 83(b) election",
         "File Contribution Agreement",
@@ -70,5 +77,3 @@ class CreateStepsAndTasksForProject
     end
   end
 end
-
-# CreateStepsAndTasksForProject.new(project).call
