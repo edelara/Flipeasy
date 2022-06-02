@@ -30,7 +30,7 @@
           </button>
         </div>
         <div class="days-left">
-          <%= (project.start_at..project.end_at).count %> days left
+          <%= (project.end_at - Date.today).to_i %> days left
         </div>
       </div>
     </div>
