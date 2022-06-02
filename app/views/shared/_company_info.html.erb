@@ -14,7 +14,9 @@
         </p>
       </div>
         <!-- button send an email-->
-      <button type="button" class="btn btn-secondary btn-sm">Send an email</button>
+      <%= mail_to @project.company_email do %>
+        <button type="button" class="btn btn-secondary btn-sm">Send an email</button>
+      <% end %>
     </div>
     <div class="d-flex justify-content-around">
       <!-- tag-->
