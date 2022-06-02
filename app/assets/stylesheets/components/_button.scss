@@ -16,3 +16,25 @@
       color: #8CCDE5;
     }
 }
+
+.btn-white {
+  color: black;
+  margin-top: 0px !important;
+  margin-left: 10px;
+  font-size: 14px !important;
+  display: inline-block;
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: white;
+  border: 1px solid black;
+  transition: 0.3s ease;
+  margin-top: 40px;
+  font-size:18px;
+  letter-spacing: 1.5px;
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+  text-decoration: none;
+    &:hover {
+      opacity: 0.7;
+    }
+}
