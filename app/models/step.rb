@@ -5,4 +5,15 @@ class Step < ApplicationRecord
 
   validates :name, presence: true
   validates :deadline, presence: true
+
+  after_save :update_project_progress
+
+  private
+
+  def update_project_progress
+    unless self.completed_at.nil?
+      completed_step_counter = project.steps.where.not(completed_at: nil).count
+      project.update(progress: completed_step_counter.fdiv(project.steps.count) * 100)
+    end
+  end
 end
