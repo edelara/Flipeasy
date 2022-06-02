@@ -21,7 +21,7 @@ class CreateStepsAndTasksForProject
       ]
     },
 
-    "Establish the U.S Corporation" => {
+    "U.S Corporation" => {
       deadline: 20,
       icon: "fa-solid fa-building",
       tasks: [
@@ -30,31 +30,31 @@ class CreateStepsAndTasksForProject
       ]
     },
 
-    "Obtain EIN and open U.S. Bank Account" => {
+    "EIN and U.S. Bank Account" => {
       deadline: 15,
       icon: "fa-solid fa-piggy-bank",
       tasks: []
     },
 
-    "Issuance & Exchange of Shares" => {
+    "Flip" => {
       deadline: 10,
-      icon: "fa-solid fa-burger"
+      icon: "fa-solid fa-burger",
       tasks: [
         "Draft Flip Documents"
       ]
     },
 
-    "Flip Closing" => {
+    "Closing" => {
       deadline: 05,
-      icon: "fa-solid fa-shuttle-space"
+      icon: "fa-solid fa-shuttle-space",
       tasks: [
         "Invite signatories to sign"
       ]
     },
 
-    "Post-Flip Closing" => {
+    "Post-Closing" => {
       deadline: 03,
-      icon: "fa-solid fa-paper-plane"
+      icon: "fa-solid fa-paper-plane",
       tasks: [
         "File 83(b) election",
         "File Contribution Agreement",
