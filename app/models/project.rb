@@ -8,9 +8,14 @@ class Project < ApplicationRecord
   validates :start_at, presence: true
   validates :company_name, presence: true
   validates :company_email, presence: true
+  validates :duration, inclusion: { in: Project::DURATION }, presence: true
 
   after_validation :set_end_at
   after_create :create_steps_and_tasks
+
+  def current_step_name
+    steps.find_by(completed_at: nil).name
+  end
 
   private
 
@@ -23,5 +28,4 @@ class Project < ApplicationRecord
   def create_steps_and_tasks
     CreateStepsAndTasksForProject.new(self).call
   end
-  validates :duration, inclusion: { in: Project::DURATION }, presence: true
 end

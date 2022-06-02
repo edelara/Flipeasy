@@ -2,23 +2,15 @@
   <% @projects.each do |project| %>
   <%= link_to project_path(project), class:"text-decoration-none" do %>
       <div class="project-box-wrapper">
-      <% if project.progress == "completed" %>
-        <div class="project-box" style="background-color: #AED1AC">
+        <div class="project-box">
           <div class="project-box-header">
             <span><%= project.start_at.strftime('%B %d, %Y') %></span>
             <div class="more-wrapper">
         </div>
-      <% else %>
-        <div class="project-box" style="background-color: #B2CBE9">
-          <div class="project-box-header">
-            <span><%= project.start_at.strftime('%B %d, %Y') %></span>
-            <div class="more-wrapper">
-        </div>
-      <% end %>
       </div>
       <div class="project-box-content-header">
         <p class="box-content-header"><%= project.name %></p>
-        <p class="box-content-subheader">Step Name</p>
+        <p class="box-content-subheader"><%= project.current_step_name %></p>
       </div>
       <div class="box-progress-wrapper">
         <p class="box-progress-header">Progress</p>
