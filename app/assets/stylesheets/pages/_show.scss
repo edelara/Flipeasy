@@ -30,7 +30,6 @@
   grid-column: 2 / span 1;
   grid-row: 3 / span 1;
   margin-bottom: 10px;
-  background: #FFFFFF;
   border-radius: 4px;
   padding: 16px;
 }
@@ -83,4 +82,12 @@
 
   .project-cards-steps > .fa-solid:hover {
     opacity: 0.4;
+  }
+
+  .box-image {
+    overflow: hidden;
+    img {
+      height: 165px;
+      object-fit: cover;
+    }
   }
