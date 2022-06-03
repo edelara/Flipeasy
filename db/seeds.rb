@@ -6,9 +6,18 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+require 'open-uri'
+
 Project.destroy_all
 User.destroy_all
 LawFirm.destroy_all
+
+# Avatar users
+elena = URI.open("https://res.cloudinary.com/dsc1uchot/image/upload/v1654246240/elena_xrnowd.jpg")
+camille = URI.open("https://res.cloudinary.com/dsc1uchot/image/upload/v1654246209/camille_ebyitl.jpg")
+rena = URI.open("https://res.cloudinary.com/dsc1uchot/image/upload/v1654246307/rena_b5oti8.jpg")
+lydia = URI.open("https://res.cloudinary.com/dsc1uchot/image/upload/v1654246277/lydia_bro8dn.jpg")
+thomas = URI.open("https://res.cloudinary.com/dsc1uchot/image/upload/v1654246331/thomas_xphezy.jpg")
 
 law_firm = LawFirm.create!(
   name: "Legalab"
@@ -20,8 +29,8 @@ user_one = User.new(
   first_name: "Elena",
   last_name: "Fabulous",
   role: "Wonder Paralegal",
-  photo: "elena.png"
 )
+user_one.photo.attach(io: elena, filename: "elena")
 
 user_one.law_firm = law_firm
 user_one.save!
@@ -32,8 +41,8 @@ user_two = User.new(
   first_name: "Camille",
   last_name: "Magical",
   role: "Wonder Paralegal",
-  photo: "camille.png"
 )
+user_two.photo.attach(io: camille, filename: "camille")
 
 user_two.law_firm = law_firm
 user_two.save!
@@ -44,8 +53,8 @@ user_three = User.new(
   first_name: "Lydia",
   last_name: "Marvellous",
   role: "Legal Ninja",
-  photo: "lydia.png"
 )
+user_three.photo.attach(io: lydia, filename: "lydia")
 
 user_three.law_firm = law_firm
 user_three.save!
@@ -56,8 +65,8 @@ user_four = User.new(
   first_name: "Rena",
   last_name: "Fantastic",
   role: "Legal Ninja",
-  photo: "rena.png"
 )
+user_four.photo.attach(io: rena, filename: "rena")
 
 user_four.law_firm = law_firm
 user_four.save!
@@ -68,8 +77,8 @@ user_five = User.new(
   first_name: "Thomas",
   last_name: "Epic",
   role: "Legal Geek",
-  photo: "thomas.png"
 )
+user_five.photo.attach(io: thomas, filename: "thomas")
 
 user_five.law_firm = law_firm
 user_five.save!
