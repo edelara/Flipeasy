@@ -2,6 +2,8 @@ class ProjectsController < ApplicationController
   def index
     if params[:query].present?
       @projects = policy_scope(Project).where("name ILIKE ?", "%#{params[:query]}%")
+    elsif params[:filter].present?
+      @projects = policy_scope(Project).where(user: params[:filter])
     else
       @projects = policy_scope(Project)
     end
