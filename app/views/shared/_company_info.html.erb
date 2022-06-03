@@ -3,8 +3,8 @@
   <!-- project box-->
   <div class="project-box-content-header text-start">
     <div class="d-flex justify-content-between">
-      <div class="box-image w-25">
-        <img src="https://source.unsplash.com/random" alt="">
+      <div class="box-image img-fluid">
+        <img src="https://uploads-ssl.webflow.com/5e971a58a23dbe446a5a9b57/609e4d43c142b334577a8207_Pitch-Deck-Title-Slide-Airbnb2.jpeg" alt="">
       </div>
       <div class="box-info ps-4 w-75">
         <div class="box-info-top">
@@ -13,27 +13,27 @@
           </h2>
           <div class="d-flex align-items-center">
             <i class="fa-solid fa-pen px-2" data-bs-toggle="modal" data-bs-target="#noteModalLong"></i>
-            <p class="box-content-subheader">Company description</p>
+            <p class="box-content-subheader">Company Description</p>
           </div>
           <div class="d-flex align-items-center">
             <i class="fa-solid fa-eye px-2" data-bs-toggle="modal" data-bs-target="#exampleModalLong"></i>
-            <p class="box-content-subheader">See the document</p>
+            <p class="box-content-subheader">Customer Form</p>
           </div>
           <div class="d-flex align-items-center">
             <%= mail_to @project.company_email, class: "text-decoration-none px-2 text-dark" do %>
               <i class="fa-solid fa-envelope"></i>
             <% end %>
-            <p class="box-content-subheader">Send an email</p>
+            <p class="box-content-subheader">Send E-mail</p>
           </div>
         </div>
         <div class="box-info-bottom mt-4">
           <div class="d-flex justify-content-around">
             <!-- tag-->
             <span class="badge badge-beige">two founders</span>
-            <span class="badge badge-purple">Secondary</span>
-            <span class="badge badge-gold">Success</span>
-            <span class="badge badge-lime-green">Danger</span>
-            <span class="badge badge-pink">Warning</span>
+            <span class="badge badge-purple">equity partnership</span>
+            <span class="badge badge-gold">travel tech</span>
+            <span class="badge badge-lime-green">french company</span>
+            <span class="badge badge-pink">Flipping to Delaware</span>
           </div>
         </div>
       </div>
@@ -46,10 +46,10 @@
   <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Client Form</h5>
+          <h5 class="modal-title" id="exampleModalLongTitle">Customer Form</h5>
         </div>
         <div class="modal-body">
-          ...
+          <embed src="" type="" height="400">
         </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
