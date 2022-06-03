@@ -35,6 +35,8 @@
   margin-bottom: 10px;
   border-radius: 4px;
   padding: 16px;
+  background-color: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
 }
 .project-show__documents {
   grid-column: 2 / span 1;
@@ -100,4 +102,16 @@
       font-weight: bolder;
       color: var(--main-color);
       padding: 7px;
+  }
+
+  .fa-envelope:hover {
+    color: #009B9F;
+  }
+
+  .fa-pen:hover {
+    color: #009B9F;
+  }
+
+  .fa-eye:hover {
+    color: #009B9F;
   }
