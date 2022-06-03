@@ -87,10 +87,10 @@ project_one = Project.new(
   name: "FlipLydia",
   start_at: "Tue, 21 June 2022",
   end_at: "Tue, 26 July 2022",
-  progress: 0,
+  progress: 50,
   company_name: "Lydi",
   company_email: "cyril@lydi.com",
-  duration: 30
+  duration: 21
 )
 
 project_one.user = user_three
@@ -100,7 +100,7 @@ project_two = Project.new(
   name: "FlipDocto",
   start_at: "Tues, 03 May 2022",
   end_at: "Tues, 07 June 2022",
-  progress: 0,
+  progress: 20,
   company_name: "Doctorib",
   company_email: "stan@doctorib.com",
   duration: 30
@@ -116,7 +116,7 @@ project_three = Project.new(
   progress: 0,
   company_name: "Qonco",
   company_email: "alex@qonco.com",
-  duration: 30
+  duration: 45
 )
 
 project_three.user = user_three
@@ -126,10 +126,10 @@ project_four = Project.new(
   name: "FlipBack",
   start_at: "Fri, 20 May 2022",
   end_at: "Fri, 1 July 2022",
-  progress: 0,
+  progress: 11,
   company_name: "RackMarket",
   company_email: "thib@rackmarket",
-  duration: 30
+  duration: 21
 )
 
 project_four.user = user_four
@@ -139,7 +139,7 @@ project_five = Project.new(
   name: "FlipVoodoo",
   start_at: "Fri, 27 May 2022",
   end_at: "Fri, 1 July 2022",
-  progress: 0,
+  progress: 20,
   company_name: "Voohoo",
   company_email: "alex.yaz@vohoo.com",
   duration: 30
@@ -155,7 +155,7 @@ project_six = Project.new(
   progress: 100,
   company_name: "ContentCirle",
   company_email: "jon.cherzy@cc.com",
-  duration: 30
+  duration: 45
 )
 
 project_six.user = user_four
