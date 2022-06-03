@@ -10,6 +10,7 @@ export default class extends Controller {
         group: {name: "hello", pull: false, put: true},
         sort: false,
         ghostClass: "ghost",
+
         onAdd: function (event) {
           step.querySelectorAll('img').forEach(person => {
             if (person != event.item) person.remove();
