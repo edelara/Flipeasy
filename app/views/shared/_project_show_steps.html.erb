@@ -1,21 +1,10 @@
 <div class="project-show__steps">
   <div class = "container-step d-flex justify-content-around">
     <% @project.steps.each do |step| %>
-      <div class="project-cards-steps <%= "completed" if step.completed? %>">
+      <div class="project-cards-steps"> <%= "completed" if step.completed? %>
         <i class="<%= CreateStepsAndTasksForProject::STEPS_AND_TASKS[step.name][:icon] %>"></i>
         <p><%= step.name %></p>
       </div>
     <% end %>
   </div>
 </div>
-
-<%# <div class="project-show__steps">
-  <div class = "container-step d-flex justify-content-around">
-    <% @project.steps.each do |step| %>
-      <%# <div class="project-cards-steps nav-link active <%= "completed" if step.completed? %>" id="<%= step.name %>" data-bs-toggle="tab" data-bs-target="#step.name" role="tab" aria-controls="#step.name" aria-selected="true">
-        <%# <i class="<%= CreateStepsAndTasksForProject::STEPS_AND_TASKS[step.name][:icon] %>"></i>
-        <%# <p><%= step.name</p> %>
-      <%# </div> %>
-    <%# <% end %>
-  <%# </div> %>
-<%# </div> %> 
