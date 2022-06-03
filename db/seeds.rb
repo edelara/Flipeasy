@@ -132,7 +132,7 @@ project_four = Project.new(
   duration: 21
 )
 
-project_four.user = user_four
+project_four.user = user_three
 project_four.save!
 
 project_five = Project.new(
