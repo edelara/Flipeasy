@@ -23,8 +23,12 @@
 }
 
 .team-drop {
-  width: 120px;
+  width: 55px;
+  height: 55px;
+  max-width: 55px;
+  max-height: 55px;
   text-align: center;
+  overflow: hidden;
 }
 
 .projects-section-header > span {

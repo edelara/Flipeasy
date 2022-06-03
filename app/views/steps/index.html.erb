@@ -7,15 +7,17 @@
         <span>Assigned Lawyer</span>
       </div>
       <div class = "messages" >
-      <% @project.steps.each do |step| %>
-        <div class="message-box d-flex justify-content-between" data-drag-target="step" data-step-id="<%= step.id %>">
+      <% @project.steps.order(:id).each do |step| %>
+        <div class="message-box d-flex justify-content-between" >
           <div><%= step.name %></div>
-          <div class="team-drop">
-            <% if step.user.nil? %>
-              <%= image_tag("https://res.cloudinary.com/dsc1uchot/image/upload/v1654248567/avatar-300x300_qr58cy.jpg", class: "avatar bigpic") %>
-            <% else %>
-              <%= image_tag(step.user.photo, class: "avatar bigpic") %>
-            <% end %>
+          <div class="team-drop" data-drag-target="step" data-step-id="<%= step.id %>">
+            <div class="test">
+              <% if step.user && step.user.photo.attached? %>
+                  <%= cl_image_tag(step.user.photo.key, class: "avatar bigpic", height: 100, width: 100,  :crop=>"fill") %>
+              <% else %>
+                  <%= image_tag("https://res.cloudinary.com/dsc1uchot/image/upload/v1654248567/avatar-300x300_qr58cy.jpg", class: "avatar bigpic") %>
+              <% end %>
+            </div>
           </div>
         </div>
         <% end %>
@@ -26,10 +28,12 @@
         <p>Team Members</p>
       </div>
       <div class = "messages">
-        <div class="message-box teams" data-drag-target="people">
+        <div class="message-box teams">
           <% @users.each do |user| %>
-            <div class="team-member" data-user-id="<%= user.id %>"  >
-              <%= image_tag(user.photo, class: "avatar bigpic") %>
+            <div class="team-member"  >
+              <div class="test" data-drag-target="people", data-user-id="<%= user.id %>">
+                <%= cl_image_tag(user.photo.key, class: "avatar bigpic", height: 100, width: 100,  :crop=>"fill", draggable: false) %>
+              </div>
               <p><%= user.first_name %></p>
             </div>
           <% end %>
