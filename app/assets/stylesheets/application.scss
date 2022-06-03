@@ -12,3 +12,13 @@
 @import "pages/index";
 @import "pages/show";
 @import "pages/show_steps";
+
+///////////////// Global /////////////////
+a {
+  color: black;
+  text-decoration: none;
+  &:hover {
+    color: black;
+    text-decoration: none;
+  }
+}

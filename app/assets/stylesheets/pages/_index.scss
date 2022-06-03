@@ -539,7 +539,7 @@ button, a {
       top: 16px;
     }
 
-ox-content-header {
+    .box-content-header {
       order: 1;
       max-width: 120px;
     }
@@ -588,7 +588,7 @@ ox-content-header {
   border-radius: 4px;
   padding: 16px;
   color: var(--main-color);
-  // background-color: #B2CBE9;
+  // background-color: #b2d7d8;
   box-shadow: 0px 4px 16px rgba(0,0,0,.1);
 
   &:hover {
@@ -731,7 +731,7 @@ ox-content-header {
 }
 
 .days-left {
-  background-color: #201C24;
+  background-color: #007C7F;
   font-size: 12px;
   border-radius: 20px;
   flex-shrink: 0;
@@ -926,4 +926,21 @@ ox-content-header {
 
 .dropdown-menu {
   width: 300px;
+}
+
+.reset-link {
+  display: block;
+  color: #8288D9;
+  font-size: 12px;
+  margin-top: 14px;
+  text-decoration: none;
+}
+
+.project-box > a {
+  color: black;
+}
+
+.add-user {
+  color: rgb(80, 80, 80);
+  padding-left: 5px;
 }
