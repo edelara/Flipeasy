@@ -1,0 +1,39 @@
+<%= render "shared/navbar_projects" %>
+<div class = "app-content" data-controller="drag" >
+  <%= render "shared/sidebar" %>
+  <div class = "messages-section index">
+      <div class = "projects-section-header">
+        <p>Steps</p>
+        <span>Assigned Lawyer</span>
+      </div>
+      <div class = "messages" >
+      <% @project.steps.each do |step| %>
+        <div class="message-box d-flex justify-content-between" data-drag-target="step" data-step-id="<%= step.id %>">
+          <div><%= step.name %></div>
+          <div class="team-drop">
+            <% if step.user.nil? %>
+              <%= image_tag("https://res.cloudinary.com/dsc1uchot/image/upload/v1654248567/avatar-300x300_qr58cy.jpg", class: "avatar bigpic") %>
+            <% else %>
+              <%= image_tag(step.user.photo, class: "avatar bigpic") %>
+            <% end %>
+          </div>
+        </div>
+        <% end %>
+      </div>
+  </div>
+  <div class = "messages-section index">
+      <div class = "projects-section-header">
+        <p>Team Members</p>
+      </div>
+      <div class = "messages">
+        <div class="message-box teams" data-drag-target="people">
+          <% @users.each do |user| %>
+            <div class="team-member" data-user-id="<%= user.id %>"  >
+              <%= image_tag(user.photo, class: "avatar bigpic") %>
+              <p><%= user.first_name %></p>
+            </div>
+          <% end %>
+        </div>
+      </div>
+  </div>
+</div>
