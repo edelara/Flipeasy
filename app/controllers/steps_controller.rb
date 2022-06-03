@@ -10,9 +10,9 @@ class StepsController < ApplicationController
     # puts params[:user_id]
     authorize @step
     @step.user_id = params[:user_id]
+    # binding.pry
     @step.save
     render json: @step.to_json
-    # binding.pry
   end
 
   private
