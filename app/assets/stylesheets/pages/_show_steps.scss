@@ -1,0 +1,47 @@
+.team-member {
+  padding: 30px;
+  text-align: center;
+}
+
+.teams {
+  display: grid;
+  grid-template-columns: repeat(2, 2fr);
+  &:hover {
+    background-color: var(--projects-section);
+    border-top-color: var(--message-box-border) !important;
+  }
+}
+
+.bigpic {
+  width: 50px !important;
+  height: 50px !important;
+  margin-bottom: 5px;
+}
+
+.index {
+  height: 85vh;
+}
+
+.team-drop {
+  width: 55px;
+  height: 55px;
+  max-width: 55px;
+  max-height: 55px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.projects-section-header > span {
+  font-size: 15px;
+  font-style: italic;
+}
+
+.ghost {
+  opacity: .5;
+  background: #F4F6FD;
+}
+
+.drag {
+  color: red;
+  background-color: aqua;
+}

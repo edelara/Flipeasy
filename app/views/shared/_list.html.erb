@@ -1,39 +1,36 @@
 <div class="project-boxes jsGridView">
   <% @projects.each do |project| %>
-  <%= link_to project_path(project), class:"text-decoration-none" do %>
-      <div class="project-box-wrapper">
-        <div class="project-box">
-          <div class="project-box-header">
-            <span><%= project.start_at.strftime('%B %d, %Y') %></span>
-            <div class="more-wrapper">
+    <%= link_to project_path(project) do %>
+        <div class="project-box-wrapper">
+          <div class="project-box">
+            <div class="project-box-header">
+              <span><%= project.start_at.strftime('%B %d, %Y') %></span>
+            </div>
+            <div class="project-box-content-header">
+              <p class="box-content-header"><%= project.name %></p>
+              <p class="box-content-subheader"><%= project.current_step_name %></p>
+            </div>
+            <div class="box-progress-wrapper">
+              <p class="box-progress-header">Progress</p>
+              <div class="box-progress-bar">
+                <span class="box-progress" style="width: <%= project.progress %>%; background-color: #8288D9"></span>
+              </div>
+              <p class="box-progress-percentage"><%= project.progress %>%</p>
+            </div>
+            <div class="project-box-footer">
+              <%= link_to(project_steps_path(project)) do %>
+                <div class="participants">
+                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80" alt="participant">
+                    <img src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fG1hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60" alt="participant">
+                    <i class="fa-solid fa-plus add-user"></i>
+                </div>
+              <% end %>
+              <div class="days-left">
+                <%= (project.end_at - Date.today).to_i %> days left
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="project-box-content-header">
-        <p class="box-content-header"><%= project.name %></p>
-        <p class="box-content-subheader"><%= project.current_step_name %></p>
-      </div>
-      <div class="box-progress-wrapper">
-        <p class="box-progress-header">Progress</p>
-        <div class="box-progress-bar">
-          <span class="box-progress" style="width: <%= project.progress %>%; background-color: #009B9F"></span>
-        </div>
-        <p class="box-progress-percentage"><%= project.progress %>%</p>
-      </div>
-      <div class="project-box-footer">
-        <div class="participants">
-          <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80" alt="participant">
-          <img src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fG1hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60" alt="participant">
-          <button class="add-participant" style="color: #201C24;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
-              <path d="M12 5v14M5 12h14" />
-            </svg>
-          </button>
-        </div>
-        <div class="days-left">
-          <%= (project.end_at - Date.today).to_i %> days left
-        </div>
-      </div>
-    </div>
+    <% end %>
   <% end %>
 </div>
-<% end %>

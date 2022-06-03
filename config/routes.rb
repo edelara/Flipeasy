@@ -3,15 +3,14 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   resources :projects do
-    resources :steps, only: [:new, :create]
+    resources :steps, only: [:index, :new, :create]
     resources :documents, only: [:create]
   end
 
-  resources :steps, only: [:show] do
+  resources :steps, only: [:show, :update] do
     resources :tasks, only: [:create]
   end
 
-  resources :steps, only: [:edit, :update, :destroy]
   resources :documents, only: [:destroy]
   resources :tasks, only: [:destroy]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

@@ -6,7 +6,7 @@
   height: 94vh;
   padding: 1rem;
   > div{
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
     border-radius: 4px;
   }
 }
@@ -14,13 +14,16 @@
 .project-show__header {
   grid-column: 1 / span 2;
   grid-row: 1 / span 1;
+  font-size: 20px;
+  font-weight: bolder;
+  padding-left: 7px;
 }
 .project-show__steps {
   grid-column: 1 / span 2;
   grid-row: 2 / span 1;
   margin-bottom: 10px;
 }
-.project-show__selected-step {
+.project-show__manage-tasks {
   grid-column: 1 / span 1;
   grid-row: 3 / span 2;
   margin-bottom: 10px;
@@ -90,4 +93,11 @@
       height: 165px;
       object-fit: cover;
     }
+  }
+  .name-project-show {
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: bolder;
+      color: var(--main-color);
+      padding: 7px;
   }

@@ -2,125 +2,131 @@
   <%= render "shared/navbar_projects" %>
   <div class="app-content">
     <%= render "shared/sidebar" %>
-    <div class="projects-section">
-      <div class="projects-section-header">
-        <p>My Flip Projects</p>
-        <p class="time"><%= Time.now.strftime('%B %d, %Y') %></p>
-      </div>
-      <div class="projects-section-line">
-        <div class="projects-status">
-          <div class="item-status">
-            <span class="status-number"><%= Project.where(progress: "in progress").count %></span>
-            <span class="status-type">In Progress</span>
+    <div class="d-flex">
+      <div class="projects-section">
+
+        <div class="projects-section-header">
+          <p>My Flip Projects</p>
+          <p class="time"><%= Time.now.strftime('%B %d, %Y') %></p>
+        </div>
+
+        <div class="projects-section-line">
+          <div class="projects-status">
+            <div class="item-status">
+              <span class="status-number"><%= Project.where(progress: "in progress").count %></span>
+              <span class="status-type">In Progress</span>
+            </div>
+            <div class="item-status">
+              <span class="status-number"><%= Project.count %></span>
+              <span class="status-type">Total Projects</span>
+            </div>
           </div>
-          <div class="item-status">
-            <span class="status-number"><%= Project.count %></span>
-            <span class="status-type">Total Projects</span>
+          <div class="view-actions">
+            <button class="view-btn list-view" title="List View">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-list">
+                <line x1="8" y1="6" x2="21" y2="6" />
+                <line x1="8" y1="12" x2="21" y2="12" />
+                <line x1="8" y1="18" x2="21" y2="18" />
+                <line x1="3" y1="6" x2="3.01" y2="6" />
+                <line x1="3" y1="12" x2="3.01" y2="12" />
+                <line x1="3" y1="18" x2="3.01" y2="18" /></svg>
+            </button>
+            <button class="view-btn grid-view active" title="Grid View">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-grid">
+                <rect x="3" y="3" width="7" height="7" />
+                <rect x="14" y="3" width="7" height="7" />
+                <rect x="14" y="14" width="7" height="7" />
+                <rect x="3" y="14" width="7" height="7" /></svg>
+            </button>
+            <div class="dropdown">
+              <a class="btn btn-white dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                Filter by user
+              </a>
+              <div class="dropdown-menu p-3" aria-labelledby="dropdownMenuLink">
+                <p>Filter projects by user</p>
+                <% User.all.each do |user| %>
+                  <%= link_to projects_path(filter: user) do %>
+                    <%= image_tag(user.photo, class: "avatar") %>
+                  <% end %>
+                <% end %>
+                <p><%= link_to "Reset filter", projects_path, class: "reset-link" %></p>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="view-actions">
-          <button class="view-btn list-view" title="List View">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-list">
-              <line x1="8" y1="6" x2="21" y2="6" />
-              <line x1="8" y1="12" x2="21" y2="12" />
-              <line x1="8" y1="18" x2="21" y2="18" />
-              <line x1="3" y1="6" x2="3.01" y2="6" />
-              <line x1="3" y1="12" x2="3.01" y2="12" />
-              <line x1="3" y1="18" x2="3.01" y2="18" /></svg>
-          </button>
-          <button class="view-btn grid-view active" title="Grid View">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-grid">
-              <rect x="3" y="3" width="7" height="7" />
-              <rect x="14" y="3" width="7" height="7" />
-              <rect x="14" y="14" width="7" height="7" />
-              <rect x="3" y="14" width="7" height="7" /></svg>
-          </button>
-          <div class="dropdown">
-            <a class="btn btn-white dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-              Filter by user
-            </a>
-            <div class="dropdown-menu p-3" aria-labelledby="dropdownMenuLink">
-              <p>Filter projects by user</p>
-              <% User.all.each do |user| %>
-                <%= image_tag(user.photo, class: "avatar") %>
-              <% end %>
+
+        <%= render "shared/list" %>
+
+      </div>
+      <div class="messages-section">
+        <button class="messages-close">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x-circle">
+            <circle cx="12" cy="12" r="10" />
+            <line x1="15" y1="9" x2="9" y2="15" />
+            <line x1="9" y1="9" x2="15" y2="15" /></svg>
+        </button>
+        <div class="projects-section-header">
+          <p>Notifications</p>
+        </div>
+        <div class="messages">
+          <div class="message-box">
+            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80" alt="profile image">
+            <div class="message-content">
+              <div class="message-header">
+                <div class="name">Project X</div>
+              </div>
+              <p class="message-line">
+                The validation has been sent to the client.
+              </p>
+              <p class="message-line time">
+                Dec, 12
+              </p>
+            </div>
+          </div>
+          <div class="message-box">
+            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80" alt="profile image">
+            <div class="message-content">
+              <div class="message-header">
+                <div class="name">Project Y</div>
+              </div>
+              <p class="message-line">
+                Project Y has completed its flip.
+              </p>
+              <p class="message-line time">
+                Dec, 12
+              </p>
+            </div>
+          </div>
+          <div class="message-box">
+            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80" alt="profile image">
+            <div class="message-content">
+              <div class="message-header">
+                <div class="name">Project X</div>
+              </div>
+              <p class="message-line">
+                The validation has been sent to the client.
+              </p>
+              <p class="message-line time">
+                Dec, 12
+              </p>
+            </div>
+          </div>
+          <div class="message-box">
+            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80" alt="profile image">
+            <div class="message-content">
+              <div class="message-header">
+                <div class="name">Project X</div>
+              </div>
+              <p class="message-line">
+                The validation has been sent to the client.
+              </p>
+              <p class="message-line time">
+                Dec, 12
+              </p>
             </div>
           </div>
         </div>
       </div>
-
-    <%= render "shared/list" %>
-
-  </div>
-</div>
-<div class="messages-section">
-  <button class="messages-close">
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x-circle">
-      <circle cx="12" cy="12" r="10" />
-      <line x1="15" y1="9" x2="9" y2="15" />
-      <line x1="9" y1="9" x2="15" y2="15" /></svg>
-  </button>
-  <div class="projects-section-header">
-    <p>Notifications</p>
-  </div>
-  <div class="messages">
-    <div class="message-box">
-      <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80" alt="profile image">
-      <div class="message-content">
-        <div class="message-header">
-          <div class="name">Project X</div>
-        </div>
-        <p class="message-line">
-          The validation has been sent to the client.
-        </p>
-        <p class="message-line time">
-          Dec, 12
-        </p>
-      </div>
-    </div>
-    <div class="message-box">
-      <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80" alt="profile image">
-      <div class="message-content">
-        <div class="message-header">
-          <div class="name">Project Y</div>
-        </div>
-        <p class="message-line">
-          Project Y has completed its flip.
-        </p>
-        <p class="message-line time">
-          Dec, 12
-        </p>
-      </div>
-    </div>
-    <div class="message-box">
-      <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80" alt="profile image">
-      <div class="message-content">
-        <div class="message-header">
-          <div class="name">Project X</div>
-        </div>
-        <p class="message-line">
-          The validation has been sent to the client.
-        </p>
-        <p class="message-line time">
-          Dec, 12
-        </p>
-      </div>
-    </div>
-    <div class="message-box">
-      <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80" alt="profile image">
-      <div class="message-content">
-        <div class="message-header">
-          <div class="name">Project X</div>
-        </div>
-        <p class="message-line">
-          The validation has been sent to the client.
-        </p>
-        <p class="message-line time">
-          Dec, 12
-        </p>
-      </div>
     </div>
   </div>
-</div>
-</div>
 </div>
