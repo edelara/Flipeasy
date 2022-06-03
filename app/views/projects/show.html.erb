@@ -1,23 +1,18 @@
-<%= render "shared/navbar_projects" %>
- <!-- content header-->
-<div class="app-content">
-  <%= render "shared/sidebar" %>
-  <div class="project-show">
-    <div class="project-show__header">
-      <%# <%= render "" %>
-    </div>
-    <div class="project-show__steps">
-      <%= render "shared/project_show_steps" %>
-    </div>
-    <div class="project-show__selected-step">
-      <%# <%= render "" %>
-    </div>
+<!-- navbar-->
+  <%= render "shared/navbar_projects" %>
 
-    <!-- company info -->
-      <%= render "shared/company_info" %>
-
-    <div class="project-show__documents">
-      <%# <%= render "" %>
-    </div>
+  <div class="app-content">
+    <%= render "shared/sidebar" %>
+      <div class="project-show">
+        <!-- header -->
+          <%= render "shared/project_show_header" %>
+        <!-- steps cards -->
+          <%= render "shared/project_show_steps" %>
+        <!-- tasks manager -->
+          <%= render "shared/project_show_manage_tasks" %>
+        <!-- company info -->
+          <%= render "shared/company_info" %>
+        <!-- documents manager -->
+          <%= render "shared/project_show_documents" %>
+      </div>
   </div>
-</div>
