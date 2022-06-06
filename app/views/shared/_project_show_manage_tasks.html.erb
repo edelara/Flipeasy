@@ -10,7 +10,9 @@
           <% end %>
               <div>
               <% step.tasks.each do |task| %>
-                <p> <%= task.name %></p>
+                <p data-action="click->doc-highlight#setActive" data-documents="<%= CreateStepsAndTasksForProject::STEPS_AND_TASKS[task.step.name][:documents].to_json %>">
+                  <%= task.name %>
+                </p>
 
               <% end %>
 
