@@ -8,7 +8,8 @@ class CreateStepsAndTasksForProject
         "Review questionnaire",
         "Create a team and assign steps",
         "Schedule kick-off call with the founder"
-      ]
+      ],
+      documents: []
     },
 
     "Getting Ready" => {
@@ -18,7 +19,8 @@ class CreateStepsAndTasksForProject
         "Draft flip Pro-forma model",
         "Determine the valuation of the company",
         "Consult tax team"
-      ]
+      ],
+      documents: []
     },
 
     "U.S Corporation" => {
@@ -27,13 +29,22 @@ class CreateStepsAndTasksForProject
       tasks: [
         "Draft Incorporation Documents",
         "File Certificate of Incorporation"
+      ],
+      documents: [
+        "Certificate of Incorporation",
+        "Bylaws",
+        "Action of Incorporator",
+        "Initial Board Consent",
+        "Stockholders Consent",
+        "Indemnification Agreements"
       ]
     },
 
     "EIN and U.S. Bank Account" => {
       deadline: 15,
       icon: "fa-solid fa-piggy-bank",
-      tasks: []
+      tasks: [],
+      documents: []
     },
 
     "Flip" => {
@@ -41,6 +52,13 @@ class CreateStepsAndTasksForProject
       icon: "fa-solid fa-burger",
       tasks: [
         "Draft Flip Documents"
+      ],
+      documents: [
+        "Board Consent",
+        "Contribution Agreement",
+        "Share Transfer Form",
+        "Shareholders Individual Account",
+        "Securities Exchange Agreement"
       ]
     },
 
@@ -49,7 +67,8 @@ class CreateStepsAndTasksForProject
       icon: "fa-solid fa-shuttle-space",
       tasks: [
         "Invite signatories to sign"
-      ]
+      ],
+      documents: []
     },
 
     "Post-Closing" => {
@@ -60,7 +79,8 @@ class CreateStepsAndTasksForProject
         "File Contribution Agreement",
         "Update Shareholders Registers & Accounts",
         "Schedule Reminder for Delaware Tax Compliance"
-      ]
+      ],
+      documents: []
     }
   }
 

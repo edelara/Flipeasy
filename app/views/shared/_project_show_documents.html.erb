@@ -1,3 +1,19 @@
-<div class="project-show__documents">
+<div class="project-show__documents tab-content" id="nav-tabContent">
   <div class="name-project-show">Your Files Manager</div>
+      <% @project.steps.each_with_index do |step, index| %>
+          <% if index == 0 %>
+              <div class="tab-pane fade show active" id="nav-<%= step.name.split.last%>" role="tabpanel" aria-labelledby="nav-<%= step.name.split.last%>-tab">
+
+          <% else %>
+              <div class="tab-pane fade" id="nav-<%= step.name.split.last%>" role="tabpanel" aria-labelledby="nav-<%= step.name.split.last%>-tab">
+
+          <% end %>
+              <div>
+              <% @project.documents.each do |document| %>
+                <p> <%= document.name %></p>
+              <% end %>
+
+              </div>
+              </div>
+        <% end %>
 </div>
