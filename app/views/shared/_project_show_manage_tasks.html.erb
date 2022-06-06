@@ -1,74 +1,20 @@
-<div class="project-show__manage-tasks">
+<div class="project-show__manage-tasks tab-content" id="nav-tabContent">
     <div class="name-project-show">Your Tasks Manager</div>
-    <%# <div class = "container-tasks">
-      <% @project.tasks.each do |task| %>
-        <%# <div class="<%= CreateStepsAndTasksForProject::STEPS_AND_TASKS[:tasks]"></div> %>
-        <%# <p><%= task.name %>
-      <%# </div>
-    <% end %>
-    <%# </div> %>
+      <% @project.steps.each_with_index do |step, index| %>
+          <% if index == 0 %>
+              <div class="tab-pane fade show active" id="nav-<%= step.name.split.last%>" role="tabpanel" aria-labelledby="nav-<%= step.name.split.last%>-tab">
 
-<%# <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">...</div> %>
+          <% else %>
+              <div class="tab-pane fade" id="nav-<%= step.name.split.last%>" role="tabpanel" aria-labelledby="nav-<%= step.name.split.last%>-tab">
 
-</div>
-<div class="project-show__manage-tasks">
-    <div class="name-project-show">Your Tasks Manager</div>
-    <%# <div class = "container-tasks">
-      <% @project.tasks.each do |task| %>
-        <%# <div class="<%= CreateStepsAndTasksForProject::STEPS_AND_TASKS[:tasks]"></div> %>
-        <%# <p><%= task.name %>
-      <%# </div>
-    <% end %>
-    <%# </div> %>
-</div>
+          <% end %>
+              <div>
+              <% step.tasks.each do |task| %>
+                <p> <%= task.name %></p>
 
-<div class="project-show__manage-tasks">
-    <div class="name-project-show">Your Tasks Manager</div>
-    <%# <div class = "container-tasks">
-      <% @project.tasks.each do |task| %>
-        <%# <div class="<%= CreateStepsAndTasksForProject::STEPS_AND_TASKS[:tasks]"></div> %>
-        <%# <p><%= task.name %>
-      <%# </div>
-    <% end %>
-    <%# </div> %>
-</div>
-<div class="project-show__manage-tasks">
-    <div class="name-project-show">Your Tasks Manager</div>
-    <%# <div class = "container-tasks">
-      <% @project.tasks.each do |task| %>
-        <%# <div class="<%= CreateStepsAndTasksForProject::STEPS_AND_TASKS[:tasks]"></div> %>
-        <%# <p><%= task.name %>
-      <%# </div>
-    <% end %>
-    <%# </div> %>
-</div>
-<div class="project-show__manage-tasks">
-    <div class="name-project-show">Your Tasks Manager</div>
-    <%# <div class = "container-tasks">
-      <% @project.tasks.each do |task| %>
-        <%# <div class="<%= CreateStepsAndTasksForProject::STEPS_AND_TASKS[:tasks]"></div> %>
-        <%# <p><%= task.name %>
-      <%# </div>
-    <% end %>
-    <%# </div> %>
-</div>
-<div class="project-show__manage-tasks">
-    <div class="name-project-show">Your Tasks Manager</div>
-    <%# <div class = "container-tasks">
-      <% @project.tasks.each do |task| %>
-        <%# <div class="<%= CreateStepsAndTasksForProject::STEPS_AND_TASKS[:tasks]"></div> %>
-        <%# <p><%= task.name %>
-      <%# </div>
-    <% end %>
-    <%# </div> %>
-</div>
-<div class="project-show__manage-tasks">
-    <div class="name-project-show">Your Tasks Manager</div>
-    <%# <div class = "container-tasks">
-      <% @project.tasks.each do |task| %>
-        <%# <div class="<%= CreateStepsAndTasksForProject::STEPS_AND_TASKS[:tasks]"></div> %>
-        <%# <p><%= task.name %>
-      <%# </div>
-    <% end %>
-    <%# </div> %>
+              <% end %>
+
+              </div>
+              </div>
+        <% end %>
 </div>
