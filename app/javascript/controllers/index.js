@@ -4,14 +4,17 @@
 
 import { application } from "./application"
 
-import DocHighlightController from "./doc_highlight_controller.js"
-application.register("doc-highlight", DocHighlightController)
-
 import NightController from "./night_controller.js"
 application.register("night", NightController)
 
 import DragController from "./drag_controller.js"
 application.register("drag", DragController)
+
+import EditTasksController from "./edit_tasks_controller.js"
+application.register("edit-tasks", EditTasksController)
+
+import DocHighlightController from "./doc_highlight_controller.js"
+application.register("doc-highlight", DocHighlightController)
 
 import FlatpickrController from "./flatpickr_controller.js"
 application.register("flatpickr", FlatpickrController)

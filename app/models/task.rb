@@ -4,5 +4,9 @@ class Task < ApplicationRecord
   STATUS = ["Not started", "In Progress", "Completed"]
 
   validates :status, inclusion: { in: Task::STATUS }, presence: true
-  validates :name, presence: true
+  validates :status, presence: true
+
+  def task_completed?
+    status == "Completed"
+  end
 end

@@ -8,9 +8,14 @@ class Step < ApplicationRecord
 
   after_save :update_project_progress
 
+  def complete!
+    # step = @project.steps.find_by(completed_at: nil)
+    # tasks_counter = step.tasks.count
+    # completed_tasks_counter = step.tasks.where(status: "Completed").count
+    update(completed_at: Date.today)
+  end
+
   def completed?
-    # TO DO => ajouter la logique pour mettre à jour la colonne completed_at lorsque
-    # la dernière task du step est complétée
     completed_at.present?
   end
 

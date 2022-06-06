@@ -3,19 +3,21 @@
       <% @project.steps.each_with_index do |step, index| %>
           <% if index == 0 %>
               <div class="tab-pane fade show active" id="nav-<%= step.name.split.last%>" role="tabpanel" aria-labelledby="nav-<%= step.name.split.last%>-tab">
-
           <% else %>
               <div class="tab-pane fade" id="nav-<%= step.name.split.last%>" role="tabpanel" aria-labelledby="nav-<%= step.name.split.last%>-tab">
-
           <% end %>
-              <div>
+              <div data-controller="edit-tasks">
               <% step.tasks.each do |task| %>
+              <div class="d-flex">
+
+                  <%= simple_form_for task, html: { data: { edit_tasks_target: "form", action: "change->edit-tasks#update"} } do |f| %>
+                  <%= f.input :done, label: false, as: :boolean, input_html: { data: { edit_tasks_target: "task" }} %>
+                  <% end %>
                 <p data-action="click->doc-highlight#setActive" data-documents="<%= CreateStepsAndTasksForProject::STEPS_AND_TASKS[task.step.name][:documents].to_json %>">
                   <%= task.name %>
                 </p>
-
+              </div>
               <% end %>
-
               </div>
               </div>
         <% end %>
