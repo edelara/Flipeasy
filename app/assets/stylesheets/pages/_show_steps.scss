@@ -1,3 +1,4 @@
+
 .team-member {
   padding: 30px;
   text-align: center;
@@ -22,7 +23,11 @@
 }
 
 .index {
-  height: 85vh;
+  height: 70vh;
+  .dark & {
+    background-color:  var(--link-color-active-bg);
+    color: white;
+  }
 }
 
 .team-drop {
@@ -39,6 +44,12 @@
 //   width: 150px;
 
 // }
+.projects-section-header {
+  .dark & {
+    // opacity: 0;
+  }
+}
+
 
 .projects-section-header > span {
   font-size: 15px;

@@ -54,13 +54,9 @@
 //   margin: 0;
 // }
 
-// body {
-//   font-family: 'DM Sans', sans-serif;
-//   overflow: hidden;
-//   display: flex;
-//   justify-content: center;
-//   background-color: var(--app-container);
-// }
+body {
+  background-color: var(--app-container);
+}
 
 
 button, a {
@@ -165,7 +161,10 @@ button, a {
   box-shadow: 0 2px 6px 0 rgba(136,148,171,.2),0 24px 20px -24px rgba(71,82,107,.1);
   overflow: hidden;
 
-  .dark & { box-shadow: none; }
+  .dark & {
+    background-color:  white;
+    box-shadow: none;
+  }
 }
 
 .search-input {
@@ -529,8 +528,12 @@ button, a {
       border-radius: 10px;
       position: relative;
       > * {
-        margin-right: 24px;
+        margin-right: 10px;
       }
+    }
+    .project-box > a {
+      flex-grow: 1;
+      margin-right: 90px;
     }
 
     .more-wrapper {
@@ -553,6 +556,9 @@ button, a {
       padding-top: 0;
       flex-direction: column;
       justify-content: flex-start;
+      align-items: flex-end;
+      padding-top: 20px
+
     }
 
     .project-box-footer:after {
@@ -590,6 +596,10 @@ button, a {
   color: var(--main-color);
   // background-color: #b2d7d8;
   box-shadow: 0px 4px 16px rgba(0,0,0,.1);
+
+  .dark & {
+    background-color:  var(--link-color-active-bg);
+  }
 
   &:hover {
     opacity: 0.9;
@@ -643,6 +653,10 @@ button, a {
   line-height: 24px;
   font-weight: 700;
   // opacity: .7;
+
+  .dark & {
+    color:  white;
+  }
 }
 
 .box-content-subheader {
@@ -650,6 +664,9 @@ button, a {
   line-height: 24px;
   opacity: .7;
   color: rgb(41, 41, 41);
+  .dark & {
+    color:  white;
+  }
 }
 
 .box-progress {
@@ -672,6 +689,11 @@ button, a {
     font-weight: 700;
     line-height: 16px;
     margin: 0;
+
+    .dark & {
+      color:  white;
+    }
+
   }
 
   &-percentage {
@@ -680,6 +702,9 @@ button, a {
     font-size: 14px;
     font-weight: 700;
     line-height: 16px;
+    .dark & {
+      color:  white;
+    }
   }
 }
 
@@ -919,6 +944,7 @@ button, a {
   margin: 0px 40px 0px 0px;
   text-decoration: none;
   line-height: 40px;
+  margin-left: 10px;
 }
 
 .app-logo {
@@ -930,6 +956,15 @@ button, a {
 
 .dropdown-menu {
   width: 300px;
+  .dark & {
+    background-color:  var(--projects-section);
+  }
+}
+
+.dropdown-menu a, .dropdown-menu p {
+  .dark & {
+    color:  white;
+  }
 }
 
 .reset-link {
@@ -947,4 +982,7 @@ button, a {
 .add-user {
   color: rgb(80, 80, 80);
   padding-left: 5px;
+  .dark & {
+    color:  white;
+  }
 }

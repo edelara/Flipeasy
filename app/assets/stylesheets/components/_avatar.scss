@@ -3,6 +3,10 @@
   border-radius: 50%;
   height: 40px;
   object-fit: cover;
+  .dark & {
+    background-color:  white;
+  }
+
 }
 
 // .avatar-large {
