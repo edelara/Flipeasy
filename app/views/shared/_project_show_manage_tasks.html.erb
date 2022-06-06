@@ -1,20 +1,28 @@
-<div class="project-show__manage-tasks tab-content" id="nav-tabContent">
-    <div class="name-project-show">Your Tasks Manager</div>
-      <% @project.steps.each_with_index do |step, index| %>
-          <% if index == 0 %>
-              <div class="tab-pane fade show active" id="nav-<%= step.name.split.last%>" role="tabpanel" aria-labelledby="nav-<%= step.name.split.last%>-tab">
-
-          <% else %>
-              <div class="tab-pane fade" id="nav-<%= step.name.split.last%>" role="tabpanel" aria-labelledby="nav-<%= step.name.split.last%>-tab">
-
-          <% end %>
-              <div>
-              <% step.tasks.each do |task| %>
-                <p> <%= task.name %></p>
-
-              <% end %>
-
-              </div>
-              </div>
+<div class="project-show__manage-tasks tab-content" id="nav-tabContent" data-controller="edit-tasks">
+  <div class="name-project-show">Your Tasks Manager</div>
+    <% @project.steps.each_with_index do |step, index| %>
+        <% if index == 0 %>
+            <div class="tab-pane fade show active" id="nav-<%= step.name.split.last%>" role="tabpanel" aria-labelledby="nav-<%= step.name.split.last%>-tab">
+        <% else %>
+            <div class="tab-pane fade" id="nav-<%= step.name.split.last%>" role="tabpanel" aria-labelledby="nav-<%= step.name.split.last%>-tab">
         <% end %>
+        <div class="tasks-list" >
+          <% step.tasks.each do |task| %>
+            <div class="tasks-form d-flex">
+              <%= simple_form_for task,
+                html: {
+                  class: "",
+                  data: {
+                    edit_tasks_target: "form",
+                    action: "change->edit-tasks#update"
+                  }
+                } do |f| %>
+                <%= f.input :status, label:false,  as: :boolean %>
+              <% end %>
+              <p> <%= task.name %></p>
+            </div>
+          <% end %>
+        </div>
+  </div>
+    <% end %>
 </div>
