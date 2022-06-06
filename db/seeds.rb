@@ -84,12 +84,12 @@ user_five.law_firm = law_firm
 user_five.save!
 
 project_one = Project.new(
-  name: "FlipLydia",
+  name: "FlipRitmo",
   start_at: "Tue, 21 June 2022",
   end_at: "Tue, 26 July 2022",
   progress: 50,
-  company_name: "Lydi",
-  company_email: "cyril@lydi.com",
+  company_name: "Ritmo",
+  company_email: "cyril@ritmo.com",
   duration: 21
 )
 
@@ -97,12 +97,12 @@ project_one.user = user_three
 project_one.save!
 
 project_two = Project.new(
-  name: "FlipDocto",
+  name: "FlipCohabs",
   start_at: "Tues, 03 May 2022",
   end_at: "Tues, 07 June 2022",
   progress: 20,
-  company_name: "Doctorib",
-  company_email: "stan@doctorib.com",
+  company_name: "Cohabs",
+  company_email: "malik@ritmo.com",
   duration: 30
 )
 
@@ -110,12 +110,12 @@ project_two.user = user_three
 project_two.save!
 
 project_three = Project.new(
-  name: "FlipQonto",
+  name: "FlipMatera",
   start_at: "Tue, 14 June 2022",
   end_at: "Tue, 19 July 2022",
   progress: 0,
-  company_name: "Qonco",
-  company_email: "alex@qonco.com",
+  company_name: "Matera",
+  company_email: "victor@matera.com",
   duration: 45
 )
 
@@ -123,12 +123,12 @@ project_three.user = user_three
 project_three.save!
 
 project_four = Project.new(
-  name: "FlipBack",
+  name: "FlipGrowBox",
   start_at: "Fri, 20 May 2022",
   end_at: "Fri, 1 July 2022",
   progress: 11,
-  company_name: "RackMarket",
-  company_email: "thib@rackmarket",
+  company_name: "Grow Box",
+  company_email: "jb@growbox.fr",
   duration: 21
 )
 
@@ -136,12 +136,12 @@ project_four.user = user_three
 project_four.save!
 
 project_five = Project.new(
-  name: "FlipVoodoo",
+  name: "FlipTribu",
   start_at: "Fri, 27 May 2022",
   end_at: "Fri, 1 July 2022",
   progress: 20,
-  company_name: "Voohoo",
-  company_email: "alex.yaz@vohoo.com",
+  company_name: "Tribu",
+  company_email: "mylene@tribu.com",
   duration: 30
 )
 
@@ -149,12 +149,12 @@ project_five.user = user_four
 project_five.save!
 
 project_six = Project.new(
-  name: "FlipContent",
+  name: "FlipSmarty",
   start_at: "Wed, 18 May 2022",
   end_at: "Fri, 17 June 2022",
   progress: 100,
-  company_name: "ContentCirle",
-  company_email: "jon.cherzy@cc.com",
+  company_name: "Smarty",
+  company_email: "patrick@smarty.com",
   duration: 45
 )
 

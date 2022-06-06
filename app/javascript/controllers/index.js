@@ -4,14 +4,20 @@
 
 import { application } from "./application"
 
-import HelloController from "./hello_controller.js"
-application.register("hello", HelloController)
+import DocHighlightController from "./doc_highlight_controller.js"
+application.register("doc-highlight", DocHighlightController)
 
 import NightController from "./night_controller.js"
 application.register("night", NightController)
 
 import DragController from "./drag_controller.js"
 application.register("drag", DragController)
+
+import FlatpickrController from "./flatpickr_controller.js"
+application.register("flatpickr", FlatpickrController)
+
+import HelloController from "./hello_controller.js"
+application.register("hello", HelloController)
 
 import NavbarController from "./navbar_controller.js"
 application.register("navbar", NavbarController)

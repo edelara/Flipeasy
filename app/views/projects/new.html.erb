@@ -1,23 +1,23 @@
 <%= render "shared/navbar_projects" %>
-<div class = "app-content" data-controller="drag" >
-  <%= render "shared/sidebar" %>
+<div class="app-content">
   <div class = "container mt-3 new-form" style = "width: 500px">
-    <%= simple_form_for(@project) do |f| %>
+    <%= simple_form_for @project do |f| %>
       <div class="form-inputs">
         <%= f.input :name %>
         <div class="d-flex justify-content-between">
           <%= f.input :company_name %>
           <%= f.input :company_email %>
         </div>
-        <div>
-          <%= f.input :duration, collection: ["21 days", "30 days", "45 days"] %>
+        <div class="form-actions d-flex justify-content-between align-items-end">
+          <%= f.submit 'Next Step', class: 'btn-black '  %>
+          <%= link_to 'Back to Projects', projects_path, class: 'simple-link' %>
         </div>
         <div>
-          <%= f.input :start_at %>
+          <%= f.input :start_at, as: :string, input_html: {data: { controller: 'flatpickr' }} %>
         </div>
       </div>
       <div class="form-actions d-flex justify-content-between align-items-end">
-        <%= f.submit 'Next Step', class: 'btn-black '  %>
+        <%= f.submit class: 'btn-black'  %>
         <%= link_to 'Back to Projects', projects_path, class: 'simple-link' %>
       </div>
     <% end %>
