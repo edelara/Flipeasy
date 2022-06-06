@@ -1,4 +1,4 @@
-<div class="project-show__manage-tasks tab-content" id="nav-tabContent" data-controller="edit-tasks">
+<div class="project-show__manage-tasks tab-content" id="nav-tabContent" >
   <div class="name-project-show">Your Tasks Manager</div>
     <% @project.steps.each_with_index do |step, index| %>
         <% if index == 0 %>
@@ -6,23 +6,18 @@
         <% else %>
             <div class="tab-pane fade" id="nav-<%= step.name.split.last%>" role="tabpanel" aria-labelledby="nav-<%= step.name.split.last%>-tab">
         <% end %>
-        <div class="tasks-list" >
+
+        <div class="tasks-list" data-controller="edit-tasks">
           <% step.tasks.each do |task| %>
             <div class="tasks-form d-flex">
-              <%= simple_form_for task,
-                html: {
-                  class: "",
-                  data: {
-                    edit_tasks_target: "form",
-                    action: "change->edit-tasks#update"
-                  }
-                } do |f| %>
-                <%= f.input :status, label:false,  as: :boolean %>
+              <%= simple_form_for task, html: { data: { edit_tasks_target: "form", action: "change->edit-tasks#update"} } do |f| %>
+                <%= f.input :done, label: false, as: :boolean, input_html: { data: { edit_tasks_target: "task" }} %>
               <% end %>
               <p> <%= task.name %></p>
             </div>
           <% end %>
         </div>
-  </div>
+
+      </div>
     <% end %>
 </div>

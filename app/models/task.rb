@@ -5,4 +5,8 @@ class Task < ApplicationRecord
 
   validates :status, inclusion: { in: Task::STATUS }, presence: true
   validates :status, presence: true
+
+  def task_completed?
+    status == "Completed"
+  end
 end
