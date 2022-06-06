@@ -7,6 +7,9 @@ Rails.application.routes.draw do
     resources :documents, only: [:create]
   end
 
+  resource :calendar, only: [:show]
+
+
   resources :steps, only: [:show, :update] do
     resources :tasks, only: [:create]
   end

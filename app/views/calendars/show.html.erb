@@ -1,0 +1,15 @@
+<%= render "shared/navbar_projects" %>
+<div class = "app-content" data-controller="drag" >
+  <%= render "shared/sidebar" %>
+  <div class="calendar">
+  <%= month_calendar(events: @projects, attribute: :start_at, end_attribute: :end_at) do |date, projects| %>
+    <%= date %>
+
+    <% projects.each do |project| %>
+      <div class="project-cal">
+        <p><%= project.name %></p>
+      </div>
+    <% end %>
+  <% end %>
+
+</div>

@@ -1,7 +1,19 @@
+
 .team-member {
   padding: 30px;
   text-align: center;
 }
+
+.team-member > p {
+  margin-bottom: 0px;
+}
+
+.team-member > span {
+  font-style: italic;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
 
 .teams {
   display: grid;
@@ -22,7 +34,12 @@
 }
 
 .index {
-  height: 85vh;
+  height: 70vh;
+  width: 100px !important;
+  .dark & {
+    background-color:  var(--link-color-active-bg);
+    color: white;
+  }
 }
 
 .team-drop {
@@ -39,6 +56,12 @@
 //   width: 150px;
 
 // }
+.projects-section-header {
+  .dark & {
+    // opacity: 0;
+  }
+}
+
 
 .projects-section-header > span {
   font-size: 15px;

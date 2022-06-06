@@ -37,9 +37,11 @@
                 <%= cl_image_tag(user.photo.key, class: "avatar bigpic", height: 100, width: 100,  :crop=>"fill", draggable: false) %>
               </div>
               <p><%= user.first_name %></p>
+              <span class="font-weight-light font-italic"><%= user.role %></span>
             </div>
           <% end %>
         </div>
       </div>
   </div>
 </div>
+<%= link_to 'Submit', projects_path(@project), class: 'btn-black mb-5' %>
