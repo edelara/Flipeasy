@@ -5,7 +5,7 @@
 
 .teams {
   display: grid;
-  grid-template-columns: repeat(2, 2fr);
+  grid-template-columns: repeat(3, 2fr);
   &:hover {
     background-color: var(--projects-section);
     border-top-color: var(--message-box-border) !important;
@@ -16,6 +16,9 @@
   width: 50px !important;
   height: 50px !important;
   margin-bottom: 5px;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .index {
@@ -30,6 +33,12 @@
   text-align: center;
   overflow: hidden;
 }
+
+// .drop-area {
+//   background-color: #F4F6FD;
+//   width: 150px;
+
+// }
 
 .projects-section-header > span {
   font-size: 15px;

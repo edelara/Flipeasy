@@ -1,54 +1,84 @@
 <!-- company info -->
-
 <div class="project-show__company-info">
   <!-- project box-->
-  <div class="project-box-content-header">
-    <!-- content header-->
-    <div class="d-flex align-items-center justify-content-between p-3">
-      <div class="text-start">
-        <h2 class="box-content-header">
-          <%= @project.name %>
-        </h2>
-        <p class="box-content-subheader">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </p>
-      </div>
-        <!-- button send an email-->
-      <%= mail_to @project.company_email do %>
-        <button type="button" class="btn btn-secondary btn-sm">Send an email</button>
-      <% end %>
-    </div>
-    <div class="d-flex justify-content-around">
-      <!-- tag-->
-      <span class="badge badge-beige">two founders</span>
-      <span class="badge badge-purple">Secondary</span>
-      <span class="badge badge-gold">Success</span>
-      <span class="badge badge-lime-green">Danger</span>
-      <span class="badge badge-pink">Warning</span>
-    </div>
-    <!-- See the document company -->
-    <div class="d-flex flex-row-reverse align-items-center mt-3">
-      <i class="fa-solid fa-eye p-2" data-bs-toggle="modal" data-bs-target="#exampleModalLong"></i>
-      <p class="box-content-subheader">See the document</p>
-      <!-- Modal -->
-    </div>
-      <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLongTitle">Client Form</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              ...
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            </div>
+  <div class="project-box-content-header text-start">
+    <div class="d-flex justify-content-between">
+<!-- <div class="box-image">-->
+<!--  <img src="https://uploads-ssl.webflow.com/5e971a58a23dbe446a5a9b57/609e4d43c142b334577a8207_Pitch-Deck-Title-Slide-Airbnb2.jpeg" alt=""> -->
+<!-- </div> -->
+      <div class="box-info ps-4 w-75">
+        <div class="box-info-top">
+          <h2 class="box-content-header">
+            <%= @project.company_name %>
+          </h2>
+          <div class="d-flex align-items-center">
+            <i class="fa-solid fa-pen px-2" data-bs-toggle="modal" data-bs-target="#noteModalLong"></i>
+            <p class="box-content-subheader">Company Description</p>
+          </div>
+          <div class="d-flex align-items-center">
+            <i class="fa-solid fa-eye px-2" data-bs-toggle="modal" data-bs-target="#exampleModalLong"></i>
+            <p class="box-content-subheader">Customer Form</p>
+          </div>
+          <div class="d-flex align-items-center">
+            <%= mail_to @project.company_email, class: "text-decoration-none px-2 text-dark" do %>
+              <i class="fa-solid fa-envelope"></i>
+            <% end %>
+            <p class="box-content-subheader">Send E-mail</p>
+          </div>
+        </div>
+        <div class="box-info-bottom mt-4">
+          <div class="d-flex justify-content-around">
+            <!-- tag-->
+            <span class="badge badge-beige">two founders</span>
+            <span class="badge badge-purple">equity partnership</span>
+            <span class="badge badge-gold">travel tech</span>
+            <span class="badge badge-lime-green">french company</span>
+            <span class="badge badge-pink">Flipping to Delaware</span>
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL See the document company -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Customer Form</h5>
+        </div>
+        <div class="modal-body">
+          <embed src="" type="" height="400">
+        </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+ <!-- MODAL Company Note -->
+<div class="modal fade" id="noteModalLong" tabindex="-1" role="dialog" aria-labelledby="noteModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="noteModalLongTitle">Company description</h5>
+      </div>
+      <div class="modal-body">
+        Lorem ipsum dolor sit amet.
+        Sed dignissimos deserunt eos nostrum fugit ea modi ratione.
+        Ut ipsum exercitationem eum quia quidem eum excepturi iure et
+        temporibus veniam ab eveniet iusto et blanditiis provident cum odit repellendus.
+        Sit enim non tempora amet ea totam voluptas. Non quidem porro ea beatae quod
+        est voluptatibus similique quo odio mollitia eum facilis consequatur ex minus
+        placeat ut facilis obcaecati. Id dolores culpa eos praesentium voluptatum in ipsa
+        vero eum voluptatum molestiae rem quia similique qui dolore odio? Aut animi eveniet
+        hic fuga porro id numquam facere ut expedita commodi sed vitae libero.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
   </div>
 </div>

@@ -10,13 +10,15 @@
       <% @project.steps.order(:id).each do |step| %>
         <div class="message-box d-flex justify-content-between" >
           <div><%= step.name %></div>
-          <div class="team-drop" data-drag-target="step" data-step-id="<%= step.id %>">
-            <div class="test">
-              <% if step.user && step.user.photo.attached? %>
-                  <%= cl_image_tag(step.user.photo.key, class: "avatar bigpic", height: 100, width: 100,  :crop=>"fill") %>
-              <% else %>
-                  <%= image_tag("https://res.cloudinary.com/dsc1uchot/image/upload/v1654248567/avatar-300x300_qr58cy.jpg", class: "avatar bigpic") %>
-              <% end %>
+          <div class="drop-area">
+            <div class="team-drop" data-drag-target="step" data-step-id="<%= step.id %>">
+              <div class="test">
+                <% if step.user && step.user.photo.attached? %>
+                    <%= cl_image_tag step.user.photo.key, class: "avatar bigpic", height: 100, width: 100,  :crop=>"fill" %>
+                <% else %>
+                    <%= image_tag("https://res.cloudinary.com/dsc1uchot/image/upload/v1654248567/avatar-300x300_qr58cy.jpg", class: "avatar bigpic") %>
+                <% end %>
+              </div>
             </div>
           </div>
         </div>

@@ -685,7 +685,7 @@ button, a {
 
 .project-box-footer {
   display: flex;
-  justify-content: space-between;
+  justify-content: start;
   padding-top: 16px;
   position: relative;
 
@@ -698,6 +698,10 @@ button, a {
     left: -16px;
     height: 1px;
   }
+}
+
+.testing {
+  flex-grow: 1;
 }
 
 .participants {
