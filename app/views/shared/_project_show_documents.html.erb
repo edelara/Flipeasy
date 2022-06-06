@@ -1,3 +1,6 @@
 <div class="project-show__documents">
-  <div class="name-project-show">Your Files Manager</div>
+  <% @project.documents.each do |document| %>
+    <p data-doc-highlight-target="doc" data-doc-name="<%= document.name %>"> <%= document.name %></p>
+  <% end %>
+  <%= link_to "Show all", "", data: {action: "click->doc-highlight#showAll"}%>
 </div>
