@@ -1,7 +1,7 @@
 .project-show {
   display: grid;
   flex-grow: 1;
-  grid-template-columns: 35% 65%;
+  grid-template-columns: 50% 50%;
   grid-template-rows: 10% 15% 25% 50%;
   height: 94vh;
   padding: 1rem;
@@ -59,12 +59,22 @@
   transform: translate3d(0, 0, 0);
   align-items: center;
   display: inline-flex;
-  margin: 3px;
+  margin: 10px 20px 20px 20px;
+  margin-right: 20px;
+
   transition: transform .1s ease-out;
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
   position: relative;
   justify-content: center;
   text-align: center;
+  }
+
+  .project-cards-steps p {
+    color:black;
+  }
+
+  .project-cards-steps:hover p {
+    color: #009B9F;
   }
 
   .project-cards-steps.completed {
