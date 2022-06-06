@@ -94,6 +94,9 @@ class CreateStepsAndTasksForProject
       infos[:tasks].each do |task_name|
         Task.create!(name: task_name, step: step)
       end
+      infos[:documents].each do |doc|
+        Document.create!(name: doc, project: @project)
+      end
     end
   end
 end

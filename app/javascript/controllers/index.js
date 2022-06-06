@@ -4,17 +4,17 @@
 
 import { application } from "./application"
 
-import HelloController from "./hello_controller.js"
-application.register("hello", HelloController)
+import DocHighlightController from "./doc_highlight_controller.js"
+application.register("doc-highlight", DocHighlightController)
 
 import DragController from "./drag_controller.js"
 application.register("drag", DragController)
 
+import FlatpickrController from "./flatpickr_controller.js"
+application.register("flatpickr", FlatpickrController)
+
+import HelloController from "./hello_controller.js"
+application.register("hello", HelloController)
+
 import NavbarController from "./navbar_controller.js"
 application.register("navbar", NavbarController)
-
-// import SearchProjectsController from "./search_projects_controller.js"
-// application.register("search-projects", SearchProjectsController)
-
-import TasksOfStepsController from "./tasks_of_steps_controller.js"
-application.register("tasks-of-steps", TasksOfStepsController)
