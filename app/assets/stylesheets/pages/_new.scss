@@ -1,0 +1,11 @@
+#new_project {
+  .dark & {
+    background-color:  var(--link-color-active-bg);
+  }
+}
+
+.form-label {
+  .dark & {
+    color:  white;
+  }
+}

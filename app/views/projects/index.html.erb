@@ -3,7 +3,7 @@
   <div class="app-content">
     <%= render "shared/sidebar" %>
     <div class="d-flex w-100">
-      <div class="projects-section">
+      <div class="projects-section" data-controller="projects">
 
         <div class="projects-section-header">
           <p>My Flip Projects</p>
@@ -22,7 +22,7 @@
             </div>
           </div>
           <div class="view-actions">
-            <button class="view-btn list-view" title="List View">
+            <button class="view-btn list-view"  data-action="click->projects#list" data-projects-target="listbutton" title="List View">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-list">
                 <line x1="8" y1="6" x2="21" y2="6" />
                 <line x1="8" y1="12" x2="21" y2="12" />
@@ -31,7 +31,7 @@
                 <line x1="3" y1="12" x2="3.01" y2="12" />
                 <line x1="3" y1="18" x2="3.01" y2="18" /></svg>
             </button>
-            <button class="view-btn grid-view active" title="Grid View">
+            <button class="view-btn grid-view active" data-action="click->projects#grid" data-projects-target="gridbutton" title="Grid View">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-grid">
                 <rect x="3" y="3" width="7" height="7" />
                 <rect x="14" y="3" width="7" height="7" />
@@ -66,7 +66,7 @@
             <line x1="9" y1="9" x2="15" y2="15" /></svg>
         </button>
         <div class="projects-section-header">
-          <p>Notifications</p>
+          <p>Action Items</p>
         </div>
         <div class="messages">
           <div class="message-box">

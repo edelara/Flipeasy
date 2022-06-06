@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import NightController from "./night_controller.js"
+application.register("night", NightController)
+
 import DragController from "./drag_controller.js"
 application.register("drag", DragController)
 
@@ -21,3 +24,9 @@ application.register("hello", HelloController)
 
 import NavbarController from "./navbar_controller.js"
 application.register("navbar", NavbarController)
+
+import TasksOfStepsController from "./tasks_of_steps_controller.js"
+application.register("tasks-of-steps", TasksOfStepsController)
+
+import ProjectsController from "./projects_controller.js"
+application.register("projects", ProjectsController)
