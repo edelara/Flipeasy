@@ -16,4 +16,8 @@ class ProjectPolicy < ApplicationPolicy
   def destroy?
     record.user == user
   end
+
+  def calendar?
+    true
+  end
 end
