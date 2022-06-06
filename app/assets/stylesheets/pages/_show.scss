@@ -6,10 +6,11 @@
   height: 94vh;
   padding: 1rem;
   > div{
-    box-shadow: 0 0 15px rgba(0,0,0,0.1);
     border-radius: 4px;
+    background-color: white;
   }
 }
+
 
 .project-show__header {
   grid-column: 1 / span 2;
@@ -35,8 +36,6 @@
   margin-bottom: 10px;
   border-radius: 4px;
   padding: 16px;
-  background-color: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.1);
 }
 .project-show__documents {
   grid-column: 2 / span 1;
