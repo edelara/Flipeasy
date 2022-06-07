@@ -19,6 +19,11 @@ class Project < ApplicationRecord
     steps.find_by(completed_at: nil).name
   end
 
+  def complete!
+    update(end_at: Date.today) if steps.where(:completed_at.nil?).count.zero?
+    puts "Project completed !"
+  end
+
   private
 
   def set_end_at

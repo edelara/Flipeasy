@@ -31,5 +31,3 @@ export default class extends Controller {
     this.statusTarget.innerHTML = "No Draft"
   }
 }
-}
-}

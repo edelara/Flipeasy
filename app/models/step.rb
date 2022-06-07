@@ -9,16 +9,11 @@ class Step < ApplicationRecord
   after_save :update_project_progress
 
   def complete!
-    # step = @project.steps.find_by(completed_at: nil)
-    # tasks_counter = step.tasks.count
-    # completed_tasks_counter = step.tasks.where(status: "Completed").count
     update(completed_at: Date.today)
+    project.complete!
   end
 
   def not_complete!
-    # step = @project.steps.find_by(completed_at: nil)
-    # tasks_counter = step.tasks.count
-    # completed_tasks_counter = step.tasks.where(status: "Completed").count
     update(completed_at: nil)
   end
 
