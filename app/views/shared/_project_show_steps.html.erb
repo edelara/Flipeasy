@@ -5,7 +5,7 @@
 
         <% @project.steps.order(:id).each_with_index do |step, index| %>
           <% if index == 0 %>
-            <div class="project-cards-steps nav-link active <%= "completed" if step.completed? %>" id="nav-<%= step.name.split.last%>-tab" data-bs-toggle="tab" data-bs-target="#nav-<%= step.name.split.last%>" role="tab" aria-controls="nav-<%= step.name.split.last%>" aria-selected="true">
+            <div class="project-cards-steps nav-link <%= "completed" if step.completed? %> active " id="nav-<%= step.name.split.last%>-tab" data-bs-toggle="tab" data-bs-target="#nav-<%= step.name.split.last%>" role="tab" aria-controls="nav-<%= step.name.split.last%>" aria-selected="true">
           <% else %>
             <div class="project-cards-steps nav-link <%= "completed" if step.completed? %>" id="nav-<%= step.name.split.last%>-tab" data-bs-toggle="tab" data-bs-target="#nav-<%= step.name.split.last%>" role="tab" aria-controls="nav-<%= step.name.split.first%>" aria-selected="true">
           <% end %>
