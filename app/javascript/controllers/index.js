@@ -10,8 +10,8 @@ application.register("doc-highlight", DocHighlightController)
 import DocumentController from "./document_controller.js"
 application.register("document", DocumentController)
 
-import DocHighlightController from "./doc_highlight_controller.js"
-application.register("doc-highlight", DocHighlightController)
+// import DocHighlightController from "./doc_highlight_controller.js"
+// application.register("doc-highlight", DocHighlightController)
 
 import DragController from "./drag_controller.js"
 application.register("drag", DragController)
