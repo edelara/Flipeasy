@@ -43,7 +43,9 @@ class CreateStepsAndTasksForProject
     "EIN and U.S. Bank Account" => {
       deadline: 15,
       icon: "fa-solid fa-piggy-bank",
-      tasks: [],
+      tasks: [
+        "Create bank account"
+      ],
       documents: []
     },
 

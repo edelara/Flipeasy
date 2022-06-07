@@ -2,9 +2,9 @@ import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
   static targets = ["form", "task"]
+  static values = { step: String }
 
   connect() {
-    console.log("Hello ça marche!")
     this.csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute("content")
   }
 
@@ -12,6 +12,7 @@ export default class extends Controller {
     // event.preventDefault()
     const url = event.currentTarget.action
     const input = event.currentTarget
+    let checked_inputs_count = 0
     fetch(url, {
       method: "PATCH",
       headers: { "Accept": "text/plain", "X-CSRF-Token": this.csrfToken },
@@ -21,6 +22,28 @@ export default class extends Controller {
       .then((data) => {
         input.nextElementSibling.classList.toggle('disabled');
         input.outerHTML = data
+        const tasks = this.taskTargets;
+        // 1. checker si toutes les tasks sont completed
+        tasks.forEach((input) => {
+          if (input.checked === false) {
+            console.log('un input de checké')
+            checked_inputs_count += 1
+          }
+        })
+
+        if (checked_inputs_count === 0) {
+          // 2.a si oui, trouver la step et ajouter la classe completed
+          const nav_tab = document.getElementById(`nav-${this.taskTarget.getAttribute("data-edit-tasks-step-value")}-tab`);
+          nav_tab.classList.add('completed')
+        } else {
+          const nav_tab = document.getElementById(`nav-${this.taskTarget.getAttribute("data-edit-tasks-step-value")}-tab`);
+          nav_tab.classList.remove('completed')
+        }
       })
+
   }
 }
+
+
+
+        // const inputs = document.querySelectorAll('tasks-checkbox')
