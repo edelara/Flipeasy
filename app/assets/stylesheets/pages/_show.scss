@@ -11,7 +11,9 @@
   }
 }
 
-
+.container-step {
+  position: relative;
+}
 .project-show__header {
   grid-column: 1 / span 2;
   grid-row: 1 / span 1;
@@ -37,17 +39,33 @@
   border-radius: 4px;
   // padding: 16px;
 }
+
+// documents-show
 .project-show__documents {
   grid-column: 2 / span 1;
   grid-row: 4 / span 1;
   margin-bottom: 10px;
   overflow: scroll;
+  padding: 0px 16px 16px 16px;
 }
 
-.container-step {
-  position: relative;
+.doc-list > .fa-eye {
+  padding: 4px 0px 0px 162px;
 }
 
+.doc-list > .fa-comment-medical{
+  padding: 4px 122px 0px 0px;
+}
+
+.doc-list > .fa-comment-medical:hover{
+color: #2E8A8C;
+}
+
+.quick-facts-docs {
+  color:grey;
+}
+
+// Project-cards
 .project-cards-steps {
   border: 1px solid;
   border-color: #e6e9ef;
@@ -69,59 +87,73 @@
   text-align: center;
   }
 
-  .project-cards-steps p {
-    color:black;
-  }
+.project-cards-steps p {
+  color:black;
+}
 
-  .project-cards-steps:hover p {
-    color: #2E8A8C;
-  }
+.project-cards-steps:hover p {
+  color: #2E8A8C;
+}
 
-  .project-cards-steps.completed {
-    opacity: 0.4;
-  }
+.project-cards-steps.completed {
+  opacity: 0.4;
+}
 
-  .project-cards-steps:hover {
-    opacity: 1;
-    background-color: #fafcff;
-  }
+.project-cards-steps:hover {
+  opacity: 1;
+  background-color: #fafcff;
+}
 
-  .project-cards-steps > .fa-solid {
-    font-size: 30px;
-    color: #2E8A8C;
-    position: absolute;
-    top: -20px;
-    z-index: 6;
-    opacity: 0.9;
-  }
+.project-cards-steps > .fa-solid {
+  font-size: 30px;
+  color: #2E8A8C;
+  position: absolute;
+  top: -20px;
+  z-index: 6;
+  opacity: 0.9;
+}
 
-  .project-cards-steps > .fa-solid:hover {
-    opacity: 0.4;
-  }
+.project-cards-steps > .fa-solid:hover {
+  opacity: 0.4;
+}
 
-  .box-image {
-    overflow: hidden;
-    img {
-      height: 165px;
-      object-fit: cover;
-    }
+.box-image {
+  overflow: hidden;
+  img {
+    height: 165px;
+    object-fit: cover;
   }
-  .name-project-show {
-      font-size: 16px;
-      line-height: 24px;
-      font-weight: bolder;
-      color: var(--main-color);
-      padding: 7px;
-  }
+}
+.name-project-show {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: bolder;
+    color: var(--main-color);
+    padding: 7px;
+}
 
-  .fa-envelope:hover {
-    color: #2E8A8C;
-  }
+.fa-envelope:hover {
+  color: #2E8A8C;
+}
 
-  .fa-pen:hover {
-    color: #2E8A8C;
-  }
+.fa-pen:hover {
+  color: #2E8A8C;
+}
 
-  .fa-eye:hover {
-    color: #2E8A8C;
-  }
+.fa-eye:hover {
+  color: #2E8A8C;
+}
+
+.disabled {
+  color: #aaacb1;
+  font-weight: 100;
+}
+
+.form-check-input.is-valid:checked {
+  background-color: var(--link-color-active-bg);
+  border-color: var(--link-color-active-bg);
+}
+
+.tasks-checkbox {
+  cursor: pointer;
+}

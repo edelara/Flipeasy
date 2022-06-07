@@ -9,6 +9,11 @@ Rails.application.routes.draw do
 
   resource :calendar, only: [:show]
 
+  resources :documents do
+    member do
+      patch :done
+    end
+  end
 
   resources :steps, only: [:show, :update] do
     resources :tasks, only: [:create]
