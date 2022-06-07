@@ -19,10 +19,12 @@ rena = URI.open("https://res.cloudinary.com/dsc1uchot/image/upload/v1654246307/r
 lydia = URI.open("https://res.cloudinary.com/dsc1uchot/image/upload/v1654246277/lydia_bro8dn.jpg")
 thomas = URI.open("https://res.cloudinary.com/dsc1uchot/image/upload/v1654246331/thomas_xphezy.jpg")
 
+# Law firm
 law_firm = LawFirm.create!(
   name: "Legalab"
 )
 
+# users
 user_one = User.new(
   email: "elena@legalab.fr",
   password: "123456",
@@ -83,15 +85,25 @@ user_five.photo.attach(io: thomas, filename: "thomas")
 user_five.law_firm = law_firm
 user_five.save!
 
+# Company logo
+matera = URI.open("https://res.cloudinary.com/dsc1uchot/image/upload/v1654615593/matera_ye6tjn.png")
+skello = URI.open("https://res.cloudinary.com/dsc1uchot/image/upload/v1654615613/skello_pupdsp.png")
+grow_box = URI.open("https://res.cloudinary.com/dsc1uchot/image/upload/v1654615581/akagreen_yjott5.jpg")
+
+
+# Projects
 project_one = Project.new(
-  name: "FlipRitmo",
+  name: "FlipSkello",
   start_at: "Tue, 21 June 2022",
   end_at: "Tue, 26 July 2022",
   progress: 50,
-  company_name: "Ritmo",
-  company_email: "cyril@ritmo.com",
+  company_name: "Skello",
+  company_email: "cyril@skello.com",
+  company_landing_page: "https://www.skello.io/?utm_medium=cpc&utm_source=g&utm_campaign=1652578690&gclid=CjwKCAjw7vuUBhBUEiwAEdu2pCSTiqY2ml2BUTMlk7hZGZqdOHpHx8Tx4neqggVKXzaNv1TY40B7CRoCnZcQAvD_BwE",
   duration: 21
 )
+
+project_one.photo.attach(io: skello, filename: "skello")
 
 project_one.user = user_three
 project_one.save!
@@ -102,7 +114,7 @@ project_two = Project.new(
   end_at: "Tues, 07 June 2022",
   progress: 20,
   company_name: "Cohabs",
-  company_email: "malik@ritmo.com",
+  company_email: "malik@cohabs.com",
   duration: 30
 )
 
@@ -116,7 +128,8 @@ project_three = Project.new(
   progress: 0,
   company_name: "Matera",
   company_email: "victor@matera.com",
-  duration: 45
+  duration: 45,
+  company_landing_page: "https://matera.eu/fr",
 )
 
 project_three.user = user_three
@@ -129,6 +142,7 @@ project_four = Project.new(
   progress: 11,
   company_name: "Grow Box",
   company_email: "jb@growbox.fr",
+  company_landing_page: "https://www.aka.green/",
   duration: 21
 )
 

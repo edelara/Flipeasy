@@ -34,5 +34,11 @@ application.register("navbar", NavbarController)
 import NightController from "./night_controller.js"
 application.register("night", NightController)
 
+import NotificationBoxController from "./notification_box_controller.js"
+application.register("notification-box", NotificationBoxController)
+
+import NotificationSubscriptionController from "./notification_subscription_controller.js"
+application.register("notification-subscription", NotificationSubscriptionController)
+
 import ProjectsController from "./projects_controller.js"
 application.register("projects", ProjectsController)
