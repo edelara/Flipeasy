@@ -13,14 +13,8 @@ class TasksController < ApplicationController
       format.html { redirect_to project_path }
       format.text { render partial: "shared/tasks_checkbox", locals: {task: @task}, formats: [:html] }
     end
+    @task.step.complete! if @task.step.tasks.where(done: false).count.zero?
   end
-
-  # def completed
-  #   ###
-  #   @task.update
-  #   @step = Step.find(params[:task_id])
-  #   @step.completed if @task == @step.tasks.last
-  # end
 
   private
 

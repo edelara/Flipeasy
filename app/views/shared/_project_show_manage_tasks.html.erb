@@ -8,17 +8,16 @@
           <% end %>
               <div data-controller="edit-tasks">
               <% step.tasks.each do |task| %>
-              <div class="d-flex">
+                <div class="d-flex">
 
-                  <%= simple_form_for task, html: { data: { edit_tasks_target: "form", action: "change->edit-tasks#update"} } do |f| %>
-                  <%= f.input :done, label: false, as: :boolean, input_html: { data: { edit_tasks_target: "task" }} %>
-                  <% end %>
-                <p data-action="click->doc-highlight#setActive" data-documents="<%= CreateStepsAndTasksForProject::STEPS_AND_TASKS[task.step.name][:documents].to_json %>">
-                  <%= task.name %>
-                </p>
-              </div>
+                  <%= render 'shared/tasks_checkbox', task: task %>
+
+                  <p class="<%= "disabled" if task.done? %>" data-action="click->doc-highlight#setActive" data-documents="<%= CreateStepsAndTasksForProject::STEPS_AND_TASKS[task.step.name][:documents].to_json %>">
+                    <%= task.name %>
+                  </p>
+                </div>
               <% end %>
               </div>
-              </div>
+            </div>
         <% end %>
 </div>

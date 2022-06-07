@@ -25,8 +25,8 @@ application.register("hello", HelloController)
 import NavbarController from "./navbar_controller.js"
 application.register("navbar", NavbarController)
 
-import TasksOfStepsController from "./tasks_of_steps_controller.js"
-application.register("tasks-of-steps", TasksOfStepsController)
+// import TasksOfStepsController from "./tasks_of_steps_controller.js"
+// application.register("tasks-of-steps", TasksOfStepsController)
 
 import ProjectsController from "./projects_controller.js"
 application.register("projects", ProjectsController)

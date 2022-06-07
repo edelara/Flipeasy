@@ -19,7 +19,12 @@ export default class extends Controller {
     })
       .then(response => response.text())
       .then((data) => {
+        input.nextElementSibling.classList.toggle('disabled');
         input.outerHTML = data
       })
+
+    //////////// style ////////////
+    // if this.taskTarget.
+    //   this.taskTarget.classList.remove('active')
   }
 }
