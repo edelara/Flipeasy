@@ -8,6 +8,9 @@
           <%= f.input :company_name %>
           <%= f.input :company_email %>
         </div>
+        <div>
+          <%= f.input :company_landing_page %>
+        </div>
         <div class="form-actions d-flex justify-content-between align-items-end">
           <%= f.submit 'Next Step', class: 'btn-black '  %>
           <%= link_to 'Back to Projects', projects_path, class: 'simple-link' %>

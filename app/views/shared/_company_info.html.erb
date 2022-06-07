@@ -8,7 +8,7 @@
     <div class="w-75 d-flex flex-column ps-3"> <!-- div Project name &co 2 -->
       <div class="pb-2">
         <h2 class="box-content-header">
-          <%= @project.company_name %>
+          <%= link_to @project.company_name, @project.company_landing_page%>
         </h2>
         <div class="d-flex align-items-center justify-content-start">
           <div class="d-flex align-items-center justify-content-center pe-4">
