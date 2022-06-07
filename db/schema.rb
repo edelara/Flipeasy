@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_07_100247) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_07_114229) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -55,6 +55,18 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_07_100247) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "notifications", force: :cascade do |t|
+    t.string "title"
+    t.string "message"
+    t.boolean "read", default: false
+    t.bigint "task_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["task_id"], name: "index_notifications_on_task_id"
+    t.index ["user_id"], name: "index_notifications_on_user_id"
   end
 
   create_table "projects", force: :cascade do |t|
@@ -117,6 +129,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_07_100247) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "documents", "projects"
+  add_foreign_key "notifications", "tasks"
+  add_foreign_key "notifications", "users"
   add_foreign_key "projects", "users"
   add_foreign_key "steps", "projects"
   add_foreign_key "steps", "users"
