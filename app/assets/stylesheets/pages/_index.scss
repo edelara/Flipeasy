@@ -503,9 +503,16 @@ button, a {
   color: var(--secondary-color);
   opacity: .7;
 
-  &.time {
+  &.review {
     text-align: right;
     margin-bottom: 0;
+    text-decoration: underline;
+  }
+
+  &.review > a {
+    .dark & {
+      color:  white;
+    }
   }
 }
 

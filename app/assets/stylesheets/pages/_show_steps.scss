@@ -35,7 +35,7 @@
 
 .index {
   height: 70vh;
-  width: 100px !important;
+  width: 600px;
   .dark & {
     background-color:  var(--link-color-active-bg);
     color: white;
@@ -76,4 +76,10 @@
 .drag {
   color: red;
   background-color: aqua;
+}
+
+.btn-team {
+  left: 50%;
+  position: absolute;
+  margin-top: 15px;
 }

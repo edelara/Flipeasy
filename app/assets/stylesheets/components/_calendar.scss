@@ -3,3 +3,25 @@
   margin-left: 100px;
   margin-right: 100px;
 }
+
+.simple-calendar {
+  table {
+    min-height: 80vh;
+  }
+  .today {
+    background-color: #FAF3DD;
+  }
+}
+
+.meeting {
+  color: white;
+  padding: 0px 4px;
+  border-radius: 4px;
+  background: #1E1C2E;
+  transition: background 0.3s ease;
+}
+
+.meeting:hover {
+  background: #1BCB7F;
+  color: white;
+}

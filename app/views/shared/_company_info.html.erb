@@ -1,41 +1,54 @@
 <!-- company info -->
-<div class="project-show__company-info">
-  <!-- project box-->
-    <h2 class="box-content-header pb-3">
-      <%= @project.company_name %>
-    </h2>
-    <div class="d-flex align-items-center">
-      <p class="box-content-subheader"><i class="fa-solid fa-pen px-2" data-bs-toggle="modal" data-bs-target="#noteModalLong"></i>hello</p>
+<div class="project-show__company-info px-3 pt-3">
+  <div class="d-flex w-100 flex-wrap"> <!-- div flex box  -->
+    <div class="w-25">  <!-- div photos 1 -->
+      <%= image_tag "elena.png", style:"width: 100%; height: 150px; object-fit: cover;" %>
     </div>
-    <div class="d-flex align-items-center">
-      <i class="fa-solid fa-eye px-2" data-bs-toggle="modal" data-bs-target="#exampleModalLong"></i>
-      <p class="box-content-subheader">Customer Form</p>
+
+    <div class="w-75 d-flex flex-column ps-3"> <!-- div Project name &co 2 -->
+      <div class="pb-2">
+        <h2 class="box-content-header">
+          <%= link_to @project.company_name, @project.company_landing_page%>
+        </h2>
+        <div class="d-flex align-items-center justify-content-start">
+          <div class="d-flex align-items-center justify-content-center pe-4">
+            <p class="box-content-subheader mb-0"><i class="fa-solid fa-pen px-2" data-bs-toggle="modal" data-bs-target="#noteModalLong"></i>hello</p>
+          </div>
+          <div class="d-flex align-items-center justify-content-center pe-4">
+            <i class="fa-solid fa-eye px-2" data-bs-toggle="modal" data-bs-target="#exampleModalLong"></i>
+            <p class="box-content-subheader mb-0">Customer Form</p>
+          </div>
+          <div class="d-flex align-items-center justify-content-center">
+            <%= mail_to @project.company_email, class: "text-decoration-none px-2 text-dark" do %>
+              <i class="fa-solid fa-envelope"></i>
+            <% end %>
+            <p class="box-content-subheader mb-0">Send E-mail</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="box-info-bottom d-flex flex-wrap justify-content-start w-100 pt-3">
+        <span class="badge mb-2 me-2 badge-beige">two founders</span>
+        <span class="badge mb-2 me-2 badge-purple">equity partnership</span>
+        <span class="badge mb-2 me-2 badge-gold">travel tech</span>
+        <span class="badge mb-2 me-2 badge-lime-green">french company</span>
+        <span class="badge mb-2 me-2 badge-pink">Flipping to Delaware</span>
+      </div>
     </div>
-    <div class="d-flex align-items-center">
-      <%= mail_to @project.company_email, class: "text-decoration-none px-2 text-dark" do %>
-        <i class="fa-solid fa-envelope"></i>
-      <% end %>
-      <p class="box-content-subheader">Send E-mail</p>
-    </div>
-    <div class="box-info-bottom d-flex justify-content-around">
-      <span class="badge badge-beige">two founders</span>
-      <span class="badge badge-purple">equity partnership</span>
-      <span class="badge badge-gold">travel tech</span>
-      <span class="badge badge-lime-green">french company</span>
-      <span class="badge badge-pink">Flipping to Delaware</span>
-    </div>
+
+  </div>
 </div>
 <!-- MODAL See the document company -->
 <!-- MODAL See the document company -->
 <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
   <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Customer Form</h5>
-        </div>
-        <div class="modal-body">
-          <embed src="" type="" height="400">
-        </div>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Customer Form</h5>
+      </div>
+      <div class="modal-body">
+        <embed src="" type="" height="400">
+      </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
       </div>
