@@ -10,9 +10,6 @@ application.register("doc-highlight", DocHighlightController)
 import DocumentController from "./document_controller.js"
 application.register("document", DocumentController)
 
-import CompletedStepsController from "./completed_steps_controller.js"
-application.register("completed-steps", CompletedStepsController)
-
 import DocHighlightController from "./doc_highlight_controller.js"
 application.register("doc-highlight", DocHighlightController)
 
