@@ -11,6 +11,9 @@
   }
 }
 
+.container-step {
+  position: relative;
+}
 
 .project-show__header {
   grid-column: 1 / span 2;
@@ -37,17 +40,33 @@
   border-radius: 4px;
   padding: 16px;
 }
+
+// documents-show
 .project-show__documents {
   grid-column: 2 / span 1;
   grid-row: 4 / span 1;
   margin-bottom: 10px;
   overflow: scroll;
+  padding: 0px 16px 16px 16px;
 }
 
-.container-step {
-  position: relative;
+.doc-list > .fa-eye {
+  padding: 4px 0px 0px 162px;
 }
 
+.doc-list > .fa-comment-medical{
+  padding: 4px 122px 0px 0px;
+}
+
+.doc-list > .fa-comment-medical:hover{
+color: #2E8A8C;
+}
+
+.quick-facts-docs {
+  color:grey;
+}
+
+// Project-cards
 .project-cards-steps {
   border: 1px solid;
   border-color: #e6e9ef;
