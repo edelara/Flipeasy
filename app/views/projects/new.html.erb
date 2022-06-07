@@ -11,17 +11,17 @@
         <div>
           <%= f.input :company_landing_page %>
         </div>
-        <div class="form-actions d-flex justify-content-between align-items-end">
+        <div>
+          <%= f.input :photo, :label => "Logo" %>
+        </div>
+        <div class="d-flex">
+          <%= f.input :start_at, as: :string, input_html: {data: { controller: 'flatpickr' }}, wrapper_html: { class: "flex-grow-1"} %>
+          <%= f.input :duration, collection: Project::DURATION, include_hidden: false, selected: @project.duration || 21, wrapper_html: { class: "flex-grow-1 ml-3"} %>
+        </div>
+        <div class="form-actions d-flex justify-content-between align-items-end ">
           <%= f.submit 'Next Step', class: 'btn-black '  %>
           <%= link_to 'Back to Projects', projects_path, class: 'simple-link' %>
         </div>
-        <div>
-          <%= f.input :start_at, as: :string, input_html: {data: { controller: 'flatpickr' }} %>
-        </div>
-      </div>
-      <div class="form-actions d-flex justify-content-between align-items-end">
-        <%= f.submit class: 'btn-black'  %>
-        <%= link_to 'Back to Projects', projects_path, class: 'simple-link' %>
       </div>
     <% end %>
   </div>

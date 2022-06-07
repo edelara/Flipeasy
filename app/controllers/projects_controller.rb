@@ -23,6 +23,7 @@ class ProjectsController < ApplicationController
     @project = Project.new(project_params)
     @project.user = current_user
     authorize @project
+    # raise
     if @project.save
       redirect_to project_steps_path(@project)
     else
@@ -57,7 +58,9 @@ class ProjectsController < ApplicationController
       :progress,
       :company_name,
       :company_email,
-      :duration
+      :duration,
+      :company_landing_page,
+      :photo
     )
   end
 end
