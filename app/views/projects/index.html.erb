@@ -69,62 +69,22 @@
           <p>Action Items</p>
         </div>
         <div class="messages">
-          <div class="message-box">
-            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80" alt="profile image">
+          <% Document.all.group(:project).where(status: "Submission Pending").count.each do |project, docs| %>
+            <div class="message-box">
+              <img src="https://res.cloudinary.com/dsc1uchot/image/upload/v1654593024/91640-middle_c3rsqd.png" alt="profile image">
             <div class="message-content">
               <div class="message-header">
-                <div class="name">FlipLydia</div>
+                <div class="name"><%= project.name %></div>
               </div>
               <p class="message-line">
-                The validation has been sent to the client.
+                <%= docs %> documents for <%= project.company_name %>'s flip are pending review.
               </p>
-              <p class="message-line time">
-                Dec, 12
+              <p class="message-line review">
+              <%= link_to "Review now", project_path(project)%>
               </p>
             </div>
           </div>
-          <div class="message-box">
-            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80" alt="profile image">
-            <div class="message-content">
-              <div class="message-header">
-                <div class="name">FlipContent</div>
-              </div>
-              <p class="message-line">
-                Stock restriction agreements waiting for review.
-              </p>
-              <p class="message-line time">
-                Dec, 12
-              </p>
-            </div>
-          </div>
-          <div class="message-box">
-            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80" alt="profile image">
-            <div class="message-content">
-              <div class="message-header">
-                <div class="name">FlipContent</div>
-              </div>
-              <p class="message-line">
-                Client completed questionnaire.
-              </p>
-              <p class="message-line time">
-                Dec, 12
-              </p>
-            </div>
-          </div>
-          <div class="message-box">
-            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80" alt="profile image">
-            <div class="message-content">
-              <div class="message-header">
-                <div class="name">FlipBack</div>
-              </div>
-              <p class="message-line">
-                Incorporation has been completed.
-              </p>
-              <p class="message-line time">
-                Dec, 12
-              </p>
-            </div>
-          </div>
+          <% end %>
         </div>
       </div>
     </div>
