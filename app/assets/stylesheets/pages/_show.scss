@@ -170,7 +170,7 @@ color: #2E8A8C;
   color: #7A7A7A;
 }
 
-.form-check-input.is-valid:checked, .form-check-input[type="checkbox"] {
+.tasks-form > .simple_form > .mb-3 > .form-check > .form-check-input.is-valid:checked, .tasks-form > .simple_form > .mb-3 > .form-check > .form-check-input[type="checkbox"] {
   background-color: #479597;
   border-color: #479597;
   border-radius: 100%;
@@ -178,7 +178,7 @@ color: #2E8A8C;
   margin-right: 20px;
 }
 
-.form-check-input[type="checkbox"] {
+.tasks-form > .simple_form > .mb-3 > .form-check > .form-check-input[type="checkbox"] {
   background-color: white;
 }
 
