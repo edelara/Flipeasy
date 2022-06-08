@@ -37,5 +37,8 @@ application.register("notification-box", NotificationBoxController)
 import NotificationSubscriptionController from "./notification_subscription_controller.js"
 application.register("notification-subscription", NotificationSubscriptionController)
 
+import ProjectNavTabsController from "./project_nav_tabs_controller.js"
+application.register("project-nav-tabs", ProjectNavTabsController)
+
 import ProjectsController from "./projects_controller.js"
 application.register("projects", ProjectsController)

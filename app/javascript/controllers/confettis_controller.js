@@ -6,17 +6,16 @@ export default class extends Controller {
   static targets = ["task"]
 
   connect() {
-    console.log("Des paillettes dans ma vie Kevin !")
+    // console.log("Des paillettes dans ma vie Kevin !")
   }
 
   displayConfettis() {
-    console.log("change");
 
     let checked_inputs_count = 0
     const tasks = this.taskTargets;
     tasks.forEach((input) => {
       if (input.checked === false) {
-        console.log('un input de checké')
+        // console.log('un input de checké')
         checked_inputs_count += 1
       }
     })
@@ -31,7 +30,6 @@ export default class extends Controller {
   }
 
   #launchConfettis() {
-    console.log("confetti")
 
     confetti({
       angle: this.#randomInRange(55, 125),

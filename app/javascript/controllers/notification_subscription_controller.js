@@ -15,11 +15,11 @@ export default class extends Controller {
         setTimeout(() => this.containerTarget.style.display = 'none', 5000)
       } }
     )
-    console.log(`Subscribed to the user with the id ${this.userIdValue}.`)
+    // console.log(`Subscribed to the user with the id ${this.userIdValue}.`)
   }
 
   disconnect() {
-    console.log("Unsubscribed from the chatroom")
+    // console.log("Unsubscribed from the chatroom")
     this.channel.unsubscribe()
   }
 }
