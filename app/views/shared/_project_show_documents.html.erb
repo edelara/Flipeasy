@@ -1,23 +1,18 @@
 <div class="project-show__documents">
-  <div class="d-flex justify-content-between">
-    <div class="name-project-show">Your Files Manager</div>
-    <%= link_to "Show all", "", data: {action: "click->doc-highlight#showAll"}, class: "simple-link"%>
-  </div>
+<!-- <div class="d-flex justify-content-between">
+      <%= link_to "Show all", "", data: {action: "click->doc-highlight#showAll"}, class: "simple-link"%>
+    </div> -->
 
-  <div class="quick-facts-docs d-flex justify-content-between">
-    <p></p>
-    <p>Comments</p>
-    <p>Status</p>
-    <p>File</p>
-  </div>
+    <div class="quick-facts-docs d-flex justify-content-between">
+    </div>
 
     <% @project.documents.each do |document| %>
-      <div class="doc-list d-flex justify-content-between" data-doc-highlight-target="doc" data-doc-name="<%= document.name %>">
-          <p class="flex-grow-1"> <%= document.name %></p>
-          <i class ="fa-solid fa-comment-medical"></i>
-          <div class="">
+      <div class="doc-list d-flex justify-content-between align-items-center mb-2" data-doc-highlight-target="doc" data-doc-name="<%= document.name %>">
+        <p class="flex-grow-1 header-documents m-0"> <%= document.name%></p>
+        <i class ="fa-solid fa-comment-medical"></i>
+        <div class="">
           <div class="dropdown" data-controller="document">
-            <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" data-document-target="status" aria-expanded="false">
+            <button class="btn btn-secondary-doc btn-sm dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" data-document-target="status" aria-expanded="false">
              <%= document.status %>
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
@@ -35,13 +30,12 @@
               </li>
             </ul>
           </div>
-
-          </div>
-
-        <i class="fa-solid fa-eye" data-bs-toggle="modal" data-bs-target="#docModalLong"></i>
+        </div>
+        <button type="button" class="btn btn-dark d-flex align-items-center justify-content-center" data-bs-toggle="modal" data-bs-target="#docModalLong">Open</button>
       </div>
     <% end %>
-
+  </div>
+</div>
 <!-- MODAL See each documents-->
 <div class="modal fade" id="docModalLong" tabindex="-1" role="dialog" aria-labelledby="docModalLongTitle" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -53,7 +47,7 @@
           <embed src="" type="" height="400">
         </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary-doc" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
