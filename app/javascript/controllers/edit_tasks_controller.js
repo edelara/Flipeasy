@@ -1,7 +1,7 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  static targets = ["form", "task"]
+  static targets = ["form", "task", "date"]
   static values = { step: String }
 
   connect() {
@@ -10,6 +10,12 @@ export default class extends Controller {
 
   update(event) {
     // event.preventDefault()
+    // console.log(this.dateTarget)
+    // this.dateTargets.forEach (element => {
+    //   console.log(element)
+    //   element.style.color.toggle = "white"
+    // })
+
     const url = event.currentTarget.action
     const input = event.currentTarget
     let checked_inputs_count = 0

@@ -1,5 +1,5 @@
 <div class="project-show__manage-tasks tab-content" id="nav-tabContent" data-controller="confettis">
-    <div class="name-project-show">Your Tasks Manager</div>
+    <h2 class="name-project-show">Your Tasks Manager</h2>
       <% @project.steps.order(:id).each_with_index do |step, index| %>
           <% if index == 0 %>
               <div class="tab-pane fade show active" id="nav-<%= step.name.split.last%>" role="tabpanel" aria-labelledby="nav-<%= step.name.split.last%>-tab">
@@ -8,13 +8,15 @@
           <% end %>
               <div data-controller="edit-tasks">
               <% step.tasks.each do |task| %>
-                <div class="d-flex">
+                <div class="d-flex tasks-form justify-content-between">
+                  <div class="d-flex tasks-form">
+                    <%= render 'shared/tasks_checkbox', task: task %>
 
-                  <%= render 'shared/tasks_checkbox', task: task %>
-
-                  <p class="<%= "disabled" if task.done? %>" data-action="click->doc-highlight#setActive" data-documents="<%= CreateStepsAndTasksForProject::STEPS_AND_TASKS[task.step.name][:documents].to_json %>">
-                    <%= task.name %>
-                  </p>
+                    <p class="<%= "disabled" if task.done? %>" data-action="click->doc-highlight#setActive" data-documents="<%= CreateStepsAndTasksForProject::STEPS_AND_TASKS[task.step.name][:documents].to_json %>">
+                      <%= task.name %>
+                    </p>
+                  </div>
+                  <p class="task-end-date" data-edit-tasks-target="date"><em><small><%= task.updated_at.strftime('%B %d, %y') %></small></em></p>
                 </div>
               <% end %>
               </div>
