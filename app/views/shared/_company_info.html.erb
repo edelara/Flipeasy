@@ -30,9 +30,6 @@
             </div>
         </div>
         <div class="box-info-bottom d-flex flex-wrap justify-content-start w-100 pt-2">
-          <% @project.tags.each_with_index do |tag, index| %>
-            <span class="badge mb-2 me-2 badge-<%= %w[beige purple gold lime-green pink][(index + 1)%5 - 1] %>"><%= tag.name %></span>
-          <% end %>
           <span class="badge mb-2 me-2 badge-purple">Equity partnership</span>
           <span class="badge mb-2 me-2 badge-gold">Travel tech</span>
           <span class="badge mb-2 me-2 badge-lime-green">French company</span>
