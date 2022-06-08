@@ -32,21 +32,31 @@
   margin-bottom: 10px;
   margin-right: 10px;
 }
-.project-show__company-info {
+.project-show__infos-docs {
   grid-column: 2 / span 1;
-  grid-row: 3 / span 1;
+  grid-row: 3 / span 2;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+}
+.project-show__company-info {
+  // grid-column: 2 / span 1;
+  // grid-row: 3 / span 1;
   margin-bottom: 10px;
   border-radius: 4px;
   // padding: 16px;
+  flex: 0 0 auto;
 }
 
 // documents-show
 .project-show__documents {
-  grid-column: 2 / span 1;
-  grid-row: 4 / span 1;
+  // grid-column: 2 / span 1;
+  // grid-row: 4 / span 1;
   margin-bottom: 10px;
   overflow: scroll;
   padding: 0px 16px 16px 16px;
+  flex: 1
 }
 
 .doc-list > .fa-eye {
@@ -54,7 +64,7 @@
 }
 
 .doc-list > .fa-comment-medical{
-  padding: 4px 122px 0px 0px;
+  padding: 4px 50px 0px 50px;
 }
 
 .doc-list > .fa-comment-medical:hover{
