@@ -4,14 +4,14 @@
 
 import { application } from "./application"
 
+import ConfettisController from "./confettis_controller.js"
+application.register("confettis", ConfettisController)
+
 import DocHighlightController from "./doc_highlight_controller.js"
 application.register("doc-highlight", DocHighlightController)
 
 import DocumentController from "./document_controller.js"
 application.register("document", DocumentController)
-
-// import DocHighlightController from "./doc_highlight_controller.js"
-// application.register("doc-highlight", DocHighlightController)
 
 import DragController from "./drag_controller.js"
 application.register("drag", DragController)
@@ -27,9 +27,6 @@ application.register("hello", HelloController)
 
 import NavbarController from "./navbar_controller.js"
 application.register("navbar", NavbarController)
-
-// import TasksOfStepsController from "./tasks_of_steps_controller.js"
-// application.register("tasks-of-steps", TasksOfStepsController)
 
 import NightController from "./night_controller.js"
 application.register("night", NightController)

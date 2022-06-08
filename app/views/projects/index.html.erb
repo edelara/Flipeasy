@@ -66,10 +66,10 @@
             <line x1="9" y1="9" x2="15" y2="15" /></svg>
         </button>
         <div class="projects-section-header">
-          <p>Action Items</p>
+          <p>My Work</p>
         </div>
         <div class="messages">
-          <% Document.all.group(:project).where(status: "Submission Pending").count.each do |project, docs| %>
+          <% Document.all.group(:project).where(status: "Review Pending").count.each do |project, docs| %>
             <div class="message-box">
               <img src="https://res.cloudinary.com/dsc1uchot/image/upload/v1654593024/91640-middle_c3rsqd.png" alt="profile image">
             <div class="message-content">

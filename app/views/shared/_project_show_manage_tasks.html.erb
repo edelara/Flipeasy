@@ -1,4 +1,4 @@
-<div class="project-show__manage-tasks tab-content" id="nav-tabContent">
+<div class="project-show__manage-tasks tab-content" id="nav-tabContent" data-controller="confettis">
     <div class="name-project-show">Your Tasks Manager</div>
       <% @project.steps.order(:id).each_with_index do |step, index| %>
           <% if index == 0 %>

@@ -33,6 +33,8 @@
         </div>
         <button type="button" class="btn btn-dark d-flex align-items-center justify-content-center" data-bs-toggle="modal" data-bs-target="#docModalLong">Open</button>
       </div>
+    <% @project.documents.order(:id).each do |document| %>
+      <%= render "shared/document_row", document: document %>
     <% end %>
   </div>
 </div>

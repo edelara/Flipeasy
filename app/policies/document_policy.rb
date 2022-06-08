@@ -6,7 +6,7 @@ class DocumentPolicy < ApplicationPolicy
     # end
   end
 
-  def done?
+  def change_status?
     true
   end
 end
