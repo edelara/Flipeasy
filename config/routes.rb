@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   resources :documents do
     member do
-      patch :done
+      patch :change_status
     end
   end
 

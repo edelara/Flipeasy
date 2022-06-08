@@ -1,7 +1,7 @@
 class Document < ApplicationRecord
   belongs_to :project
   has_one_attached :file
-  STATUS = ["Submission Pending", "Review Pending", "Validated"]
+  STATUS = ["Done", "Review Pending", "Drafting", "No Draft"]
 
 
   validates :name, presence: true
