@@ -31,19 +31,12 @@
         </div>
       </div>
 
-      <div class="box-info-bottom d-flex flex-wrap justify-content-start w-100 pt-3">
-        <% @project.tags.each_with_index do |tag, index| %>
-          <span class="badge mb-2 me-2 badge-<%= %w[beige purple gold lime-green pink][(index + 1)%5 - 1] %>"><%= tag.name %></span>
-        <% end %>
-        <span class="badge mb-2 me-2 badge-purple">equity partnership</span>
-        <span class="badge mb-2 me-2 badge-gold">travel tech</span>
-        <span class="badge mb-2 me-2 badge-lime-green">french company</span>
-        <span class="badge mb-2 me-2 badge-pink">Flipping to Delaware</span>
-      </div>
+
     </div>
 
   </div>
 </div>
+
 
 <!-- MODAL See the document company -->
 <div class="modal fade modal-doc" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
