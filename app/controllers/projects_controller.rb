@@ -21,6 +21,8 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new(project_params)
+    @project.tag_list.add("coucou", "hello", "test", "ahbon", "oui")
+    @project.tag_list.remove("coucou", "hello", "test", "ahbon", "oui")
     @project.user = current_user
     authorize @project
     # raise
@@ -37,7 +39,6 @@ class ProjectsController < ApplicationController
 
   def update
     @project.update(project_params)
-
     redirect_to project_path(@project)
   end
 
@@ -60,7 +61,8 @@ class ProjectsController < ApplicationController
       :company_email,
       :duration,
       :company_landing_page,
-      :photo
+      :photo,
+      :tag_list
     )
   end
 end
