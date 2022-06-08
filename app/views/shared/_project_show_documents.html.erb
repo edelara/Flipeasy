@@ -11,35 +11,8 @@
     <p>File</p>
   </div>
 
-    <% @project.documents.each do |document| %>
-      <div class="doc-list d-flex justify-content-between" data-doc-highlight-target="doc" data-doc-name="<%= document.name %>">
-          <p class="flex-grow-1"> <%= document.name %></p>
-          <i class ="fa-solid fa-comment-medical"></i>
-          <div class="">
-          <div class="dropdown" data-controller="document">
-            <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" data-document-target="status" aria-expanded="false">
-             <%= document.status %>
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-              <li>
-                <%= button_tag "Done", data: {action: "click->document#update_done", document_target:"btn"}, class: "btn-status dropdown-item" %>
-              </li>
-              <li>
-                <%= button_tag "Review pending", data: {action:"click->document#update_pending"}, class: "btn-status dropdown-item" %>
-              </li>
-              <li>
-                <%= button_tag "Drafting", data: {action:"click->document#update_drafting"}, class: "btn-status dropdown-item" %>
-              </li>
-              <li>
-                <%= button_tag "No Draft", data: {action:"click->document#update_no_draft"}, class: "btn-status dropdown-item" %>
-              </li>
-            </ul>
-          </div>
-
-          </div>
-
-        <i class="fa-solid fa-eye" data-bs-toggle="modal" data-bs-target="#docModalLong"></i>
-      </div>
+    <% @project.documents.order(:id).each do |document| %>
+      <%= render "shared/document_row", document: document %>
     <% end %>
 
 <!-- MODAL See each documents-->
