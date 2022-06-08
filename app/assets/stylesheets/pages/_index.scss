@@ -551,6 +551,11 @@ button, a {
 
     .box-content-header {
       order: 1;
+      max-width: 100px;
+    }
+
+    .box-header-company-infos {
+      order: 1;
       max-width: 120px;
     }
 

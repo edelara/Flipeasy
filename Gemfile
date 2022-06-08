@@ -30,6 +30,10 @@ gem "jbuilder"
 # Cloudinary
 gem "cloudinary"
 
+# Gems Tags
+gem 'acts-as-taggable-on', '~> 9.0'
+
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
@@ -58,7 +62,7 @@ gem "autoprefixer-rails"
 gem "font-awesome-sass", "~> 6.1"
 gem "simple_form", github: "heartcombo/simple_form"
 gem "simple_calendar", "~> 2.4"
-
+gem "redis"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

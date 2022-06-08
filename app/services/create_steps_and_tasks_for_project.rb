@@ -31,12 +31,12 @@ class CreateStepsAndTasksForProject
         "File Certificate of Incorporation"
       ],
       documents: [
-        "Certificate of Incorporation",
-        "Bylaws",
-        "Action of Incorporator",
-        "Initial Board Consent",
-        "Stockholders Consent",
-        "Indemnification Agreements"
+        "🇺🇸 Certificate of Incorporation",
+        "🇺🇸 Bylaws",
+        "🇺🇸 Action of Incorporator",
+        "🇺🇸 Initial Board Consent",
+        "🇺🇸 Stockholders Consent",
+        "🇺🇸 Indemnification Agreements"
       ]
     },
 
@@ -56,11 +56,13 @@ class CreateStepsAndTasksForProject
         "Draft Flip Documents"
       ],
       documents: [
-        "Board Consent",
-        "Contribution Agreement",
-        "Share Transfer Form",
-        "Shareholders Individual Account",
-        "Securities Exchange Agreement"
+        "🇺🇸 Board Consent",
+        "🇺🇸 Stock Restriction Agreements",
+        "🇺🇸 Securities Exchange Agreement",
+        "🇫🇷 Contribution Agreement",
+        "🇫🇷 Share Transfer Form",
+        "🇫🇷 Shareholders Individual Account",
+        "🇫🇷 Intellectual Property Agreements"
       ]
     },
 

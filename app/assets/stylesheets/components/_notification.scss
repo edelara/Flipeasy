@@ -1,0 +1,26 @@
+#notification {
+  background-color: white;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 70px;
+  right: 40px;
+  z-index: 1000;
+  border-radius: 8px;
+  padding: 4px 12px;
+  display: none;
+  max-width: 350px;
+}
+
+.notif-content {
+  position: relative;
+}
+
+.text > span {
+  font-size: 14px;
+}
+
+.close-window {
+  position: relative;
+  bottom: 8px;
+  left: 16px;
+}

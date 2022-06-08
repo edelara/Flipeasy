@@ -43,12 +43,27 @@
 
 .about-us {
   padding: 100px 100px;
-  background-color: white;
 }
 
 .about-us-text {
   margin: 0 auto;
   padding: 0px 100px;
+}
+
+.trusted-by {
+  padding: 100px 100px;
+  background-color: white;
+}
+
+.trusted-by-text {
+  margin: 0 auto;
+  padding: 0px 100px;
+}
+
+.trusted-by-logos img {
+  border-radius: 50%;
+  width: 60px;
+  margin-top: 20px;
 }
 
 .services-cards {

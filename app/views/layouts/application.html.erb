@@ -15,8 +15,9 @@
     </style>
   </head>
 
-  <body data-controller="night">
+  <body data-controller="night notification-subscription" data-notification-subscription-user-id-value="<%= current_user&.id %>">
     <%= render "shared/flashes" %>
+    <%= render "shared/notification_container" %>
 
     <%= yield %>
   </body>

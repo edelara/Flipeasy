@@ -74,6 +74,8 @@ GEM
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
       tzinfo (~> 2.0)
+    acts-as-taggable-on (9.0.1)
+      activerecord (>= 6.0, < 7.1)
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
     autoprefixer-rails (10.4.7.0)
@@ -217,6 +219,7 @@ GEM
       thor (~> 1.0)
       zeitwerk (~> 2.5)
     rake (13.0.6)
+    redis (4.6.0)
     regexp_parser (2.5.0)
     reline (0.3.1)
       io-console (~> 0.5)
@@ -292,6 +295,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  acts-as-taggable-on (~> 9.0)
   autoprefixer-rails
   bootsnap
   capybara
@@ -307,6 +311,7 @@ DEPENDENCIES
   puma (~> 5.0)
   pundit
   rails (~> 7.0.3)
+  redis
   sassc-rails
   selenium-webdriver
   simple_calendar (~> 2.4)
