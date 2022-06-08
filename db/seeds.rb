@@ -86,7 +86,7 @@ user_five.law_firm = law_firm
 user_five.save!
 
 # Company logo
-matera = URI.open("https://res.cloudinary.com/dsc1uchot/image/upload/v1654615593/matera_ye6tjn.png")
+matera = URI.open("https://res.cloudinary.com/dsc1uchot/image/upload/v1654682799/matera_ncqld6.jpg")
 skello = URI.open("https://res.cloudinary.com/dsc1uchot/image/upload/v1654615613/skello_pupdsp.png")
 grow_box = URI.open("https://res.cloudinary.com/dsc1uchot/image/upload/v1654615581/akagreen_yjott5.jpg")
 
@@ -129,8 +129,10 @@ project_three = Project.new(
   company_name: "Matera",
   company_email: "victor@matera.com",
   duration: 45,
-  company_landing_page: "https://matera.eu/fr",
+  company_landing_page: "https://matera.eu/fr"
 )
+
+project_three.photo.attach(io: matera, filename: "matera")
 
 project_three.user = user_three
 project_three.save!
@@ -145,6 +147,8 @@ project_four = Project.new(
   company_landing_page: "https://www.aka.green/",
   duration: 21
 )
+
+project_four.photo.attach(io: grow_box, filename: "growbox")
 
 project_four.user = user_three
 project_four.save!
