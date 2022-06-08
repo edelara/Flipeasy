@@ -2,7 +2,7 @@
   <div class="quick-facts-docs d-flex justify-content-between">
   </div>
   <% @project.documents.order(:id).each do |document| %>
-    <div id="doc-<%= document.id %>" class="box-doc doc-list d-flex justify-content-between align-items-center mb-2" data-doc-highlight-target="doc" data-doc-name="<%= document.name %>">
+    <div id="doc-<%= document.id %>" class="box-doc doc-list d-flex justify-content-around align-items-center mb-2 pt-2" data-doc-highlight-target="doc" data-doc-name="<%= document.name %>">
       <p class="flex-grow-1 header-documents m-0"> <%= document.name %></p>
       <i class ="fa-solid fa-comment-medical"></i>
       <div class="">
@@ -39,7 +39,6 @@
         </div>
         <div class="modal-body">
           <embed src="https://res.cloudinary.com/dsc1uchot/image/upload/v1654692308/production/exmpl-doc_fir4jt.png" type="" height="500" width="400">
-        </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary-doc" data-bs-dismiss="modal">Close</button>
       </div>

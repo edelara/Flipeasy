@@ -31,9 +31,6 @@
   grid-row: 3 / span 2;
   margin-bottom: 10px;
   margin-right: 10px;
-  padding: 45px;
-  height: 450px;
-  overflow: scroll;
 }
 .project-show__infos-docs {
   grid-column: 2 / span 1;
@@ -42,14 +39,13 @@
   border-radius: 4px;
   display: flex;
   flex-direction: column;
-  height: 450px;
-  overflow: scroll;
 }
 .project-show__company-info {
   // grid-column: 2 / span 1;
   // grid-row: 3 / span 1;
   margin-bottom: 10px;
   border-radius: 4px;
+  //border-bottom: 1px solid grey;
   // padding: 16px;
   flex: 0 0 auto;
 }
@@ -62,6 +58,10 @@
   overflow: scroll;
   padding: 0px 16px 16px 16px;
   flex: 1
+}
+
+.doc-list{
+  border-top: 1px solid #ABABAB;
 }
 
 .doc-list > .fa-eye {
@@ -140,9 +140,11 @@ color: #2E8A8C;
   }
 }
 .name-project-show {
-    // line-height: 24px;
-    // padding: 7px;
-    margin-bottom: 35px;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: bolder;
+    color: var(--main-color);
+    padding: 7px;
 }
 
 .fa-envelope:hover {
@@ -158,28 +160,13 @@ color: #2E8A8C;
 }
 
 .disabled {
-  // color: #aaacb1;
-  // font-weight: 100;
+  color: #aaacb1;
+  font-weight: 100;
 }
 
-.tasks-form > p {
-  margin-top: 1px;
-}
-
-.task-end-date {
-  color: #7A7A7A;
-}
-
-.form-check-input.is-valid:checked, .form-check-input[type="checkbox"] {
-  background-color: #479597;
-  border-color: #479597;
-  border-radius: 100%;
-  padding: 10px;
-  margin-right: 20px;
-}
-
-.form-check-input[type="checkbox"] {
-  background-color: white;
+.form-check-input.is-valid:checked {
+  background-color: var(--link-color-active-bg);
+  border-color: var(--link-color-active-bg);
 }
 
 .tasks-checkbox {
