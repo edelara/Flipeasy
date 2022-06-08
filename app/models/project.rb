@@ -19,7 +19,11 @@ class Project < ApplicationRecord
   after_create :create_steps_and_tasks
 
   def current_step_name
-    steps.find_by(completed_at: nil).name
+    if steps.where(completed_at: nil).count.zero?
+      "Completed"
+    else
+      steps.find_by(:completed_at.nil?).name
+    end
   end
 
   private
