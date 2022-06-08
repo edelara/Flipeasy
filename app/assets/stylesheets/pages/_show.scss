@@ -167,6 +167,24 @@ color: #2E8A8C;
 .form-check-input.is-valid:checked {
   background-color: var(--link-color-active-bg);
   border-color: var(--link-color-active-bg);
+.tasks-form > p {
+  margin-top: 1px;
+}
+
+.task-end-date {
+  color: #7A7A7A;
+}
+
+.tasks-form > .simple_form > .mb-3 > .form-check > .form-check-input.is-valid:checked, .tasks-form > .simple_form > .mb-3 > .form-check > .form-check-input[type="checkbox"] {
+  background-color: #479597;
+  border-color: #479597;
+  border-radius: 100%;
+  padding: 10px;
+  margin-right: 20px;
+}
+
+.tasks-form > .simple_form > .mb-3 > .form-check > .form-check-input[type="checkbox"] {
+  background-color: white;
 }
 
 .tasks-checkbox {
