@@ -16,12 +16,11 @@ class Project < ApplicationRecord
   after_create :create_steps_and_tasks
 
   def current_step_name
-    steps.find_by(completed_at: nil).name
-  end
-
-  def complete!
-    update(end_at: Date.today) if steps.where(:completed_at.nil?).count.zero?
-    puts "Project completed !"
+    if steps.where(completed_at: nil).count.zero?
+      "Completed"
+    else
+      steps.find_by(:completed_at.nil?).name
+    end
   end
 
   private

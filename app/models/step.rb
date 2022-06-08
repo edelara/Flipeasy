@@ -10,7 +10,6 @@ class Step < ApplicationRecord
 
   def complete!
     update(completed_at: Date.today)
-    project.complete!
   end
 
   def not_complete!
@@ -27,6 +26,7 @@ class Step < ApplicationRecord
     unless self.completed_at.nil?
       completed_step_counter = project.steps.where.not(completed_at: nil).count
       project.update(progress: completed_step_counter.fdiv(project.steps.count) * 100)
+      project.update(end_at: Date.today) if project.steps.where(completed_at: nil).count.zero?
     end
   end
 end

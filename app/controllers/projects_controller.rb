@@ -23,7 +23,6 @@ class ProjectsController < ApplicationController
     @project = Project.new(project_params)
     @project.user = current_user
     authorize @project
-    # raise
     if @project.save
       redirect_to project_steps_path(@project)
     else
@@ -36,8 +35,11 @@ class ProjectsController < ApplicationController
   end
 
   def update
-    @project.update(project_params)
-
+    @project = Project.find(params[:id])
+    authorize @project
+    @project.user_id = params[:user_id]
+    @project.save
+    render json: @project.to_json
     redirect_to project_path(@project)
   end
 

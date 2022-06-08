@@ -23,7 +23,6 @@ export default class extends Controller {
         input.nextElementSibling.classList.toggle('disabled');
         input.outerHTML = data
         const tasks = this.taskTargets;
-        // 1. checker si toutes les tasks sont completed
         tasks.forEach((input) => {
           if (input.checked === false) {
             console.log('un input de checké')
@@ -32,7 +31,6 @@ export default class extends Controller {
         })
 
         if (checked_inputs_count === 0) {
-          // 2.a si oui, trouver la step et ajouter la classe completed
           const nav_tab = document.getElementById(`nav-${this.taskTarget.getAttribute("data-edit-tasks-step-value")}-tab`);
           nav_tab.classList.add('completed')
         } else {
@@ -43,7 +41,3 @@ export default class extends Controller {
 
   }
 }
-
-
-
-        // const inputs = document.querySelectorAll('tasks-checkbox')
