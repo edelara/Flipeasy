@@ -3,9 +3,9 @@
   <div class="d-flex w-100 flex-wrap h-100"> <!-- div flex box  -->
     <div class="w-25 d-flex align-items-center">  <!-- div photos 1 -->
       <% if @project.photo.key.nil? %>
-        <%= image_tag "https://res.cloudinary.com/dsc1uchot/image/upload/v1654610616/547193-immeuble-logo-logo-icon-vector-gratuit-vectoriel_kdmumi_krs3hr.jpg", crop: :fill, class: 'w-100' %>
+        <%= image_tag "https://res.cloudinary.com/dsc1uchot/image/upload/v1654610616/547193-immeuble-logo-logo-icon-vector-gratuit-vectoriel_kdmumi_krs3hr.jpg", crop: :fill, class: 'w-100 logo-company' %>
       <% else %>
-        <%= cl_image_tag @project.photo.key, crop: :fill, class: 'w-100 image' %>
+        <%= cl_image_tag @project.photo.key, crop: :fill, class: 'w-100 image logo-company' %>
       <% end %>
     </div>
     <div class="w-75 d-flex flex-column ps-3"> <!-- div Project name &co 2 -->
