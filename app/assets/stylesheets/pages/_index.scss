@@ -602,6 +602,15 @@ button, a {
   }
 }
 
+.header-documents {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 27px;
+  width: 33%;
+}
+
 .project-box {
   border-radius: 4px;
   padding: 16px;
@@ -744,6 +753,7 @@ button, a {
 .participants {
   display: flex;
   align-items: center;
+  margin-top: 5px;
 
   img {
     width: 20px;

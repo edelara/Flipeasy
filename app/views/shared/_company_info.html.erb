@@ -1,9 +1,9 @@
 <!-- company info -->
-<div class="project-show__company-info px-3 pt-3">
+<div class="project-show__company-info px-3 pt-3 pb-3">
   <div class="d-flex w-100 flex-wrap h-100"> <!-- div flex box  -->
     <div class="w-25 d-flex align-items-center">  <!-- div photos 1 -->
       <% if @project.photo.key.nil? %>
-        <%= cl_image_tag "547193-immeuble-logo-logo-icon-vector-gratuit-vectoriel_kdmumi_nogkrs", crop: :fill, class: 'w-100' %>
+        <%= image_tag "https://res.cloudinary.com/dsc1uchot/image/upload/v1654610616/547193-immeuble-logo-logo-icon-vector-gratuit-vectoriel_kdmumi_krs3hr.jpg", crop: :fill, class: 'w-100' %>
       <% else %>
         <%= cl_image_tag @project.photo.key, crop: :fill, class: 'w-100 image' %>
       <% end %>
@@ -29,10 +29,7 @@
               <p class="box-content-subheader mb-0">Send an email</p>
             </div>
         </div>
-        <div class="box-info-bottom d-flex flex-wrap justify-content-start w-100 pt-2">
-          <% @project.tags.each_with_index do |tag, index| %>
-            <span class="badge mb-2 me-2 badge-<%= %w[beige purple gold lime-green pink][(index + 1)%5 - 1] %>"><%= tag.name %></span>
-          <% end %>
+        <div class="box-info-bottom d-flex flex-wrap justify-content-arround w-100 pt-2">
           <span class="badge mb-2 me-2 badge-purple">Equity partnership</span>
           <span class="badge mb-2 me-2 badge-gold">Travel tech</span>
           <span class="badge mb-2 me-2 badge-lime-green">French company</span>
@@ -70,15 +67,10 @@
         <h5 class="modal-title" id="noteModalLongTitle">Company description</h5>
       </div>
       <div class="modal-body">
-        Lorem ipsum dolor sit amet.
-        Sed dignissimos deserunt eos nostrum fugit ea modi ratione.
-        Ut ipsum exercitationem eum quia quidem eum excepturi iure et
-        temporibus veniam ab eveniet iusto et blanditiis provident cum odit repellendus.
-        Sit enim non tempora amet ea totam voluptas. Non quidem porro ea beatae quod
-        est voluptatibus similique quo odio mollitia eum facilis consequatur ex minus
-        placeat ut facilis obcaecati. Id dolores culpa eos praesentium voluptatum in ipsa
-        vero eum voluptatum molestiae rem quia similique qui dolore odio? Aut animi eveniet
-        hic fuga porro id numquam facere ut expedita commodi sed vitae libero.
+        Flipping refers to purchasing an asset with a short holding period with the intent of selling it for a quick profit rather than holding on for long-term appreciation <br>
+        Flipping is most often used to describe short-term real estate transactions as well as the activities of some investors in initial public offerings (IPO).<br><br>
+        Although these are the most common use cases in finance, flipping can be used to generally describe the purchase of an asset that is meant to be sold in the
+        near term for a profit, including cars, cryptocurrencies, concert tickets, and so on.
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

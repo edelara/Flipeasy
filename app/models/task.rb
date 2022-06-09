@@ -1,7 +1,7 @@
 class Task < ApplicationRecord
   belongs_to :step
   has_one :project, through: :step
-  has_many :notifications
+  has_many :notifications, dependent: :destroy
   belongs_to :user, optional: true
   STATUS = ["Not started", "In Progress", "Completed"]
 
