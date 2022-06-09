@@ -1,20 +1,51 @@
-<div class="project-show__steps">
-  <nav>
-    <div class = "container-step d-flex">
-      <div class="nav nav-tabs w-100 justify-content-center" id="nav-tab" role="tablist">
+<div class = "d-flex project-show__steps justify-content-start align-items-center">
+  <h2 class="box-header-company-infos">
+  <%= @project.name %>
+  </h2>
 
-        <% @project.steps.order(:id).each_with_index do |step, index| %>
-          <% if index == 0 %>
-            <div class="project-cards-steps nav-link <%= "completed" if step.completed? %> active " id="nav-<%= step.name.split.last%>-tab" data-bs-toggle="tab" data-bs-target="#nav-<%= step.name.split.last%>" role="tab" aria-controls="nav-<%= step.name.split.last%>" aria-selected="true">
-          <% else %>
-            <div class="project-cards-steps nav-link <%= "completed" if step.completed? %>" id="nav-<%= step.name.split.last%>-tab" data-bs-toggle="tab" data-bs-target="#nav-<%= step.name.split.last%>" role="tab" aria-controls="nav-<%= step.name.split.first%>" aria-selected="true">
-          <% end %>
+  <div class ="progress-flip">
+<% if false %>
+  <div class="d-none">
+      <ol class="steps nav nav-tabs" id="nav-tab" role="tablist">
+            <% @project.steps.order(:id).each_with_index do |step, index| %>
+              <% if index == 0 %>
+                <li class="step active nav-link <%= "is-complete" if step.completed? %>" id="nav-<%= step.name.split.last%>-tab" data-bs-toggle="tab" data-bs-target="#nav-<%= step.name.split.last%>" role="tab" aria-controls="nav-<%= step.name.split.last%>" aria-selected="true">
+              <% else %>
+                <li class="step nav-link <%= "is-complete" if step.completed? %>" id="nav-<%= step.name.split.last%>-tab" data-bs-toggle="tab" data-bs-target="#nav-<%= step.name.split.last%>" role="tab" aria-controls="nav-<%= step.name.split.first%>" aria-selected="true">
+              <% end %>
+              <p><%= step.name %></p>
+              </li>
+            <% end %>
+      </ol>
+  </div>
 
-        <i class="<%= CreateStepsAndTasksForProject::STEPS_AND_TASKS[step.name][:icon] %>"></i>
-        <p><%= step.name %></p>
-          </div>
-        <% end %>
-      </div>
-    </div>
-  </nav>
+
+  <ol class="steps d-none">
+    <% @project.steps.order(:id).each_with_index do |step, index| %>
+      <% if index == 0 %>
+        <li class="step <%= "is-complete" if step.completed? %> is-active" id="nav-<%= step.name.split.last%>-tab" data-bs-toggle="tab" data-bs-target="#nav-<%= step.name.split.last%>" role="tab" aria-controls="nav-<%= step.name.split.last%>" aria-selected="true">
+          <%= step.name %>
+        </li>
+      <% else %>
+        <li class="step <%= "is-complete" if step.completed? %>" id="nav-<%= step.name.split.last%>-tab" data-bs-toggle="tab" data-bs-target="#nav-<%= step.name.split.last%>" role="tab" aria-controls="nav-<%= step.name.split.last%>" aria-selected="true">
+          <%= step.name %>
+        </li>
+      <% end %>
+    <% end %>
+  </ol>
+<% end %>
+
+<ol class="steps">
+  <% @project.steps.order(:id).each_with_index do |step, index| %>
+    <li class="step <%= "is-complete" if step.completed? %> <%= 'is-active' if index.zero? %>" data-step="<%=index+1%>"
+        id="nav-<%= step.name.split.last%>"
+        data-action="click->project-nav-tabs#navigate"
+        data-project-nav-tabs-target="tabBtn">
+      <%= step.name %>
+    </li>
+  <% end %>
+</ol>
+
+  </div>
+
 </div>

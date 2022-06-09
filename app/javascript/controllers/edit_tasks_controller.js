@@ -33,13 +33,25 @@ export default class extends Controller {
           this.removeDate(input)
         }
       })
+// ======= master
+//       .then(response => response.text())
+//       .then((data) => {
+//         input.nextElementSibling.classList.toggle('disabled');
+//         input.outerHTML = data
+//         const tasks = this.taskTargets;
+//         tasks.forEach((input) => {
+//           if (input.checked === false) {
+//             checked_inputs_count += 1
+//           }
+//         })
+// >>>>>>> master
 
         if (checked_inputs_count === 0) {
-          const nav_tab = document.getElementById(`nav-${this.taskTarget.getAttribute("data-edit-tasks-step-value")}-tab`);
-          nav_tab.classList.add('completed')
+          const nav_tab = document.getElementById(`nav-${this.taskTarget.getAttribute("data-edit-tasks-step-value")}`);
+          nav_tab.classList.add('is-complete')
         } else {
-          const nav_tab = document.getElementById(`nav-${this.taskTarget.getAttribute("data-edit-tasks-step-value")}-tab`);
-          nav_tab.classList.remove('completed')
+          const nav_tab = document.getElementById(`nav-${this.taskTarget.getAttribute("data-edit-tasks-step-value")}`);
+          nav_tab.classList.remove('is-complete')
         }
       })
 

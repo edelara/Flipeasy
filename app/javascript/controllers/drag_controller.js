@@ -4,7 +4,6 @@ import Sortable from "sortablejs"
 export default class extends Controller {
   static targets = ["step", "people"]
   connect() {
-    console.log("Hello from our first Stimulus controller")
     this.stepTargets.forEach(step => {
       Sortable.create(step  , {
         group: {name: "hello", pull: false, put: true},
@@ -22,7 +21,6 @@ export default class extends Controller {
           })
             .then(response => response.json())
             .then((data) => {
-              console.log(data)
             })
         },
 
@@ -34,14 +32,12 @@ export default class extends Controller {
     })
 
     this.peopleTargets.forEach(person => {
-      console.log(person)
       Sortable.create(person  , {
         group: {name: "hello", pull: "clone", put: false}
       })
       // Sortable.create(person, {
       //   group: { name: "hello", pull: "clone", put: false, revertClone: true },
       //   onStart: function (event) {
-      //     console.log('Hello?')
       //   },
       // })
     })

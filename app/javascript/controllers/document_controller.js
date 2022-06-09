@@ -6,15 +6,10 @@ export default class extends Controller {
   static values = { docId: Number }
 
   connect() {
-    console.log("document controller");
-    console.log(this.docIdValue);
     this.csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute("content")
   }
 
   changeStatus(){
-    console.log("document update");
-    console.log(this.btnTarget);
-    console.log(event.currentTarget.dataset.newStatus)
 
     const newStatus = event.currentTarget.dataset.newStatus;
 
@@ -26,7 +21,6 @@ export default class extends Controller {
     })
       .then(response => response.json())
       .then((data) => {
-        console.log(data);
         document.getElementById(`doc-${this.docIdValue}`).outerHTML = data.document_row;
         // this.element.innerText = newStatus;
       })

@@ -1,9 +1,9 @@
 <!-- company info -->
-<div class="project-show__company-info px-3 pt-3">
+<div class="project-show__company-info px-3 pt-3 pb-3">
   <div class="d-flex w-100 flex-wrap h-100"> <!-- div flex box  -->
     <div class="w-25 d-flex align-items-center">  <!-- div photos 1 -->
       <% if @project.photo.key.nil? %>
-        <%= cl_image_tag "547193-immeuble-logo-logo-icon-vector-gratuit-vectoriel_kdmumi_nogkrs", crop: :fill, class: 'w-100' %>
+        <%= image_tag "https://res.cloudinary.com/dsc1uchot/image/upload/v1654610616/547193-immeuble-logo-logo-icon-vector-gratuit-vectoriel_kdmumi_krs3hr.jpg", crop: :fill, class: 'w-100' %>
       <% else %>
         <%= cl_image_tag @project.photo.key, crop: :fill, class: 'w-100 image' %>
       <% end %>
@@ -29,7 +29,7 @@
               <p class="box-content-subheader mb-0">Send an email</p>
             </div>
         </div>
-        <div class="box-info-bottom d-flex flex-wrap justify-content-start w-100 pt-2">
+        <div class="box-info-bottom d-flex flex-wrap justify-content-arround w-100 pt-2">
           <span class="badge mb-2 me-2 badge-purple">Equity partnership</span>
           <span class="badge mb-2 me-2 badge-gold">Travel tech</span>
           <span class="badge mb-2 me-2 badge-lime-green">French company</span>

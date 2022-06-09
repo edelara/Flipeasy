@@ -3,9 +3,7 @@ import { Controller } from "@hotwired/stimulus"
 // Connects to data-controller="doc-highlight"
 export default class extends Controller {
   static targets = ["doc"]
-  connect() {
-    console.log(this.docTargets);
-  }
+
   setActive(event) {
     const documents = JSON.parse(event.currentTarget.dataset.documents);
     this.docTargets.forEach(docTarget => docTarget.classList.add('d-none'));
