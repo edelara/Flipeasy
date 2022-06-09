@@ -8,6 +8,8 @@ export default class extends Controller {
   }
 
   close() {
-    this.notificationTarget.style.display = 'none';
+    // this.notificationTarget.style.display = 'none';
+    const projectPath = this.element.dataset.projectPath;
+    window.location = projectPath;
   }
 }

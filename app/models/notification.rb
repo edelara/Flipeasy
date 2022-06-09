@@ -6,11 +6,11 @@ class Notification < ApplicationRecord
 
   private
 
-
   def broadcast
     NotificationChannel.broadcast_to(
       self.user,
-      ApplicationController.new.render_to_string(partial: "notifications/show", locals: {notification: self})
+      project_path: Rails.application.routes.url_helpers.project_path(task.step.project),
+      notification_html: ApplicationController.new.render_to_string(partial: "notifications/show", locals: { notification: self }, formats: :html)
     )
   end
 end

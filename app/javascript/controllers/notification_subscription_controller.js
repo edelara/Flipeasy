@@ -10,7 +10,8 @@ export default class extends Controller {
       { channel: "NotificationChannel", id: this.userIdValue },
       { received: data => {
         console.log(data);
-        this.containerTarget.innerHTML = data;
+        this.containerTarget.innerHTML = data.notification_html;
+        this.containerTarget.dataset.projectPath = data.project_path;
         this.containerTarget.style.display = 'block';
         new Audio('https://res.cloudinary.com/dsc1uchot/video/upload/v1654692016/ZURQ2FE-notification_qr4zy7.mp3').play();
         setTimeout(() => this.containerTarget.style.display = 'none', 5000)
