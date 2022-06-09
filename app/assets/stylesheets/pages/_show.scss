@@ -19,6 +19,11 @@
   grid-column: 1 / span 4;
   grid-row: 1 / span 2;
   margin-bottom: 10px;
+  .dark & {
+    background-color:  #3F4A5D;
+    color: white;
+
+  }
 }
 
 .project-name {
@@ -33,6 +38,10 @@
   padding: 45px;
   height: 500px;
   overflow: scroll;
+  .dark & {
+    background-color:  #3F4A5D;
+    color: white;
+  }
 }
 .project-show__infos-docs {
   grid-column: 2 / span 1;
@@ -43,6 +52,10 @@
   flex-direction: column;
   height: 500px;
   overflow: scroll;
+  .dark & {
+    background-color:  #3F4A5D;
+    color: white;
+  }
 }
 .project-show__company-info {
   // grid-column: 2 / span 1;
@@ -94,6 +107,7 @@ color: #2E8A8C;
   width: 100%;
   color: darken($mute, 33%);
   height:4rem;
+  cursor: pointer;
 
   > .step {
     position: relative;
@@ -101,6 +115,10 @@ color: #2E8A8C;
     text-align: center;
     font-size: 0.875rem;
     color:#6D6875;
+
+    .dark & {
+      color: white;
+    }
 
     &:before {
       content: attr(data-step);
@@ -147,13 +165,17 @@ color: #2E8A8C;
       }
     }
     &.is-active {
-      font-size:1.5rem;
+      font-weight: bold;
+      color: #2F8A8C;
+      .dark & {
+        color:  white;
+      }
 
       &:before {
         color: #FFF;
         border:2px solid $complete;
         background: $active;
-        margin-bottom: -4.9rem;
+        // margin-bottom: -4.9rem;
       }
     }
   }
@@ -579,4 +601,34 @@ color: #2E8A8C;
 
 .tasks-checkbox {
 cursor: pointer;
+}
+
+.fa-envelope::before {
+  .dark & {
+    color: white;
+  }
+}
+
+.box-header-company-infos {
+  order: 1;
+  max-width: 120px;
+  .dark & {
+    color: white;
+  }
+}
+
+.box-header-company-infos > a {
+  .dark & {
+    color: white;
+  }
+}
+
+.box-content-header {
+  order: 1;
+  max-width: 100px;
+}
+
+.box-progress-wrapper {
+  order: 3;
+  flex: 1;
 }
