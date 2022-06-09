@@ -29,6 +29,9 @@
                 </div>
               <% end %>
               <div class="days-left">
+                <% if (project.end_at - Date.today).to_i < 7 %>
+                  <i class="fa-solid fa-clock me-1"></i>
+                <% end %>
                 <%= (project.end_at - Date.today).to_i %> days left
               </div>
             </div>

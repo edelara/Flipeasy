@@ -4,15 +4,16 @@
     <img src="https://res.cloudinary.com/dsc1uchot/image/upload/v1654263937/logo-violet_cavevn.png" alt="" class="avatar">
     <h1 class="app-name">Flipeasy</h1>
   <% end %>
-  <div>
+  <div class="d-flex search-wrapper">
     <% if current_page?(controller: 'projects', action: 'index') %>
       <%= form_tag projects_path, method: :get do %>
         <%= text_field_tag :query,
           params[:query],
           class: "search-wrapper",
-          placeholder: "  Search"
+          placeholder: "Search"
         %>
       <% end %>
+      <i class="fa-solid fa-magnifying-glass"></i>
     <% end %>
   </div>
 </div>

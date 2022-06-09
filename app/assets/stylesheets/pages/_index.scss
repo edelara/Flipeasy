@@ -147,24 +147,34 @@ button, a {
   align-items: center;
 }
 
+
 .search-wrapper {
-  border-radius: 20px;
-  background-color: var(--search-area-bg);
-  padding-right: 12px;
   height: 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  max-width: 480px;
+  max-width: 250px;
   color: var(--light-font);
-  box-shadow: 0 2px 6px 0 rgba(136,148,171,.2),0 24px 20px -24px rgba(71,82,107,.1);
   overflow: hidden;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: 1px solid rgb(160, 160, 160);
+  background: none;
 
   .dark & {
     background-color:  white;
     box-shadow: none;
   }
+}
+
+.search-wrapper > form > input {
+  border-bottom: none;
+}
+
+.fa-magnifying-glass {
+  color: rgb(90, 90, 90);
 }
 
 .search-input {
@@ -181,6 +191,11 @@ button, a {
     color: var(--main-color);
     opacity: .6;
   }
+}
+
+::placeholder {
+  font-weight: 100;
+  font-family: var(--bs-body-font-family);
 }
 
 .add-btn {
