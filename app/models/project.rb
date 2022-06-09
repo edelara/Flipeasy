@@ -6,7 +6,7 @@ class Project < ApplicationRecord
   has_many :notifications, through: :steps
   belongs_to :user
   has_one_attached :photo
-  # acts_as_taggable_on :tags
+  acts_as_taggable_on :tags
   DURATION = [21, 30, 45]
 
   validates :name, presence: true, uniqueness: true

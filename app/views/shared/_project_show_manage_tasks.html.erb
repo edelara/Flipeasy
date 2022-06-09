@@ -10,7 +10,7 @@
       <% end %>
             <div data-controller="edit-tasks">
               <% step.tasks.each do |task| %>
-                <div class="d-flex tasks-form justify-content-between">
+                <div class="d-flex tasks-form justify-content-between task-container">
                   <div class="d-flex tasks-form">
                     <%= render 'shared/tasks_checkbox', task: task %>
 
@@ -18,7 +18,9 @@
                       <%= task.name %>
                     </p>
                   </div>
-                  <p class="task-end-date" data-edit-tasks-target="date"><em><small><%= task.updated_at.strftime('%B %d, %y') %></small></em></p>
+                  <% if task.done? %>
+                    <p class="task-end-date"><em><small><%= task.updated_at.strftime('%B %d, %y') %></small></em></p>
+                  <% end %>
                 </div>
               <% end %>
             </div>

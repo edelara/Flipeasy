@@ -1,3 +1,7 @@
+<% content_for :meta_title, "#{@project.name} is on #{DEFAULT_META["meta_product_name"]}" %>
+<%# content_for :meta_description, @project.description %>
+<%# content_for :meta_image, cl_image_path(@offer.photo.path) %>
+
 <!-- navbar-->
   <%= render "shared/navbar_projects" %>
   <div class="app-content">
