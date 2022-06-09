@@ -1,4 +1,7 @@
 <div class="project-show__documents">
+  <div class="">
+   <%= link_to "Show all", "", data: {action: "click->doc-highlight#showAll"}, class: "simple-link"%>
+  </div>
   <div class="quick-facts-docs d-flex justify-content-between">
   </div>
   <% @project.documents.order(:id).each do |document| %>
@@ -30,15 +33,18 @@
     </div>
   <% end %>
 </div>
+
 <!-- MODAL See each documents-->
 <div class="modal fade modal-doc" id="docModalLong" tabindex="-1" role="dialog" aria-labelledby="docModalLongTitle" aria-hidden="true">
   <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="docModalLongTitle">PDF Doc</h5>
-        </div>
-        <div class="modal-body">
-          <embed src="https://res.cloudinary.com/dsc1uchot/image/upload/v1654692308/production/exmpl-doc_fir4jt.png" type="" height="500" width="400">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="docModalLongTitle">PDF Doc</h5>
+      </div>
+      <div class="modal-body">
+        <embed src="http://www.africau.edu/images/default/sample.pdf" type="" frameborder="0" width="460" height="800px">
+        <%# <embed src="https://res.cloudinary.com/dsc1uchot/image/upload/v1654692308/production/exmpl-doc_fir4jt.png" type="" height="500" width="400"> %>
+      </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary-doc" data-bs-dismiss="modal">Close</button>
       </div>
