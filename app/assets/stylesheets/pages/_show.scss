@@ -107,6 +107,7 @@ color: #2E8A8C;
   width: 100%;
   color: darken($mute, 33%);
   height:4rem;
+  cursor: pointer;
 
   > .step {
     position: relative;
@@ -164,13 +165,17 @@ color: #2E8A8C;
       }
     }
     &.is-active {
-      font-size:1.5rem;
+      font-weight: bold;
+      color: #2F8A8C;
+      .dark & {
+        color:  white;
+      }
 
       &:before {
         color: #FFF;
         border:2px solid $complete;
         background: $active;
-        margin-bottom: -4.9rem;
+        // margin-bottom: -4.9rem;
       }
     }
   }
