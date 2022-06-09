@@ -21,8 +21,6 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new(project_params)
-    #@project.tag_list.add("coucou", "hello", "test", "ahbon", "oui")
-    #@project.tag_list.remove("coucou", "hello", "test", "ahbon", "oui")
     @project.user = current_user
     authorize @project
     if @project.save
@@ -64,8 +62,7 @@ class ProjectsController < ApplicationController
       :company_email,
       :duration,
       :company_landing_page,
-      :photo,
-      #:tag_list
+      :photo
     )
   end
 end
