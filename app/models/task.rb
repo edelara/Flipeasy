@@ -17,7 +17,7 @@ class Task < ApplicationRecord
     return unless done?
 
     Notification.create(title: "Task completed",
-                        message: "#{self.name} has been completed for #{self.project.name}",
+                        message: "#{self.name} has been completed for #{self.project.name}.",
                         task: self,
                         user: project.user)
   end
