@@ -10,7 +10,6 @@ export default class extends Controller {
   }
 
   changeStatus(){
-
     const newStatus = event.currentTarget.dataset.newStatus;
 
     this.statusTarget.innerHTML = "Done"
@@ -21,8 +20,8 @@ export default class extends Controller {
     })
       .then(response => response.json())
       .then((data) => {
+        console.log(data.document_row)
         document.getElementById(`doc-${this.docIdValue}`).outerHTML = data.document_row;
-        // this.element.innerText = newStatus;
       })
   }
 }
