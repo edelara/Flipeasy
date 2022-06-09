@@ -164,7 +164,7 @@ button, a {
   background: none;
 
   .dark & {
-    background-color:  white;
+    background-color:  #101827;
     box-shadow: none;
   }
 }
@@ -564,16 +564,6 @@ button, a {
       top: 16px;
     }
 
-    .box-content-header {
-      order: 1;
-      max-width: 100px;
-    }
-
-    .box-header-company-infos {
-      order: 1;
-      max-width: 120px;
-    }
-
     .project-box-header {
       order: 2;
     }
@@ -608,11 +598,6 @@ button, a {
       bottom: 16px;
       left: 16px;
       font-size: 12px;
-    }
-
-    .box-progress-wrapper {
-      order: 3;
-      flex: 1;
     }
   }
 }
