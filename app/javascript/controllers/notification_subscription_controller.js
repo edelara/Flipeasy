@@ -9,6 +9,7 @@ export default class extends Controller {
     this.channel = createConsumer().subscriptions.create(
       { channel: "NotificationChannel", id: this.userIdValue },
       { received: data => {
+        console.log(data);
         this.containerTarget.innerHTML = data;
         this.containerTarget.style.display = 'block';
         new Audio('https://res.cloudinary.com/dsc1uchot/video/upload/v1654692016/ZURQ2FE-notification_qr4zy7.mp3').play();
