@@ -53,6 +53,10 @@
   margin-right: 10px;
   border-radius: 4px;
   padding: 30px;
+  .dark & {
+    background-color:  #3F4A5D;
+    color: white;
+  }
 }
 
 .project-show__team h2 {
