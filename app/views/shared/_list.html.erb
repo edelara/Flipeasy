@@ -11,11 +11,13 @@
               <p class="box-content-subheader"><%= project.current_step_name %></p>
             </div>
             <div class="box-progress-wrapper">
-              <p class="box-progress-header">Progress</p>
-              <div class="box-progress-bar">
-                <span class="box-progress" style="width: <%= project.progress %>%; background-color: #8288D9"></span>
+              <div class="d-flex justify-content-between">
+                <p class="box-progress-header">Progress</p>
+                <p class="box-progress-percentage"><%= project.progress %>%</p>
               </div>
-              <p class="box-progress-percentage"><%= project.progress %>%</p>
+              <div class="box-progress-bar">
+                <span class="box-progress <%= project.set_progress_bar_color %>" style="width: <%= project.progress %>%; "></span>
+              </div>
             </div>
             <div class="project-box-footer">
               <%= link_to(project_steps_path(project), class: "testing") do %>

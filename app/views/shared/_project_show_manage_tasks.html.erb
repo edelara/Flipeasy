@@ -9,7 +9,7 @@
                data-project-nav-tabs-target="tab">
       <% end %>
             <div data-controller="edit-tasks">
-              <% step.tasks.each do |task| %>
+              <% step.tasks.order(:created_at).each do |task| %>
                 <div class="d-flex tasks-form justify-content-between task-container">
                   <div class="d-flex tasks-form">
                     <%= render 'shared/tasks_checkbox', task: task %>
@@ -19,7 +19,7 @@
                     </p>
                   </div>
                   <% if task.done? %>
-                    <p class="task-end-date"><em><small><%= task.updated_at.strftime('%B %d, %y') %></small></em></p>
+                    <p class="task-end-date"><em><small><%= task.updated_at.strftime('%B %d, %Y') %></small></em></p>
                   <% end %>
                 </div>
               <% end %>
