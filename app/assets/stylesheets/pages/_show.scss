@@ -106,7 +106,8 @@
   margin-bottom: 10px;
   overflow: scroll;
   padding: 0px 16px 16px 16px;
-  flex: 1
+  flex: 1;
+  -webkit-mask-image: -webkit-gradient(linear,left 45%,left bottom,from(black),to(rgba(0,0,0,0)));
 }
 
 .doc-list{
