@@ -89,6 +89,8 @@ user_five.save!
 matera = URI.open("https://res.cloudinary.com/dsc1uchot/image/upload/v1654682799/matera_ncqld6.jpg")
 skello = URI.open("https://res.cloudinary.com/dsc1uchot/image/upload/v1654615613/skello_pupdsp.png")
 grow_box = URI.open("https://res.cloudinary.com/dsc1uchot/image/upload/v1654615581/akagreen_yjott5.jpg")
+comet = URI.open("https://res.cloudinary.com/dsc1uchot/image/upload/v1654783011/comete_ed3tgf.jpg")
+scuba_libre = URI.open("https://res.cloudinary.com/dsc1uchot/image/upload/v1654783116/logo-scuba-libre-icon_rpcd0x.png")
 
 
 # Projects
@@ -106,16 +108,17 @@ project_one = Project.new(
 project_one.photo.attach(io: skello, filename: "skello")
 
 project_one.user = user_three
+project_one.tag_list.add("scheduling", "french", "3founders", "LeWagon#338", "series B")
 project_one.save!
 
 project_two = Project.new(
   name: "FlipCohabs",
-  start_at: "Tues, 03 May 2022",
-  end_at: "Tues, 07 June 2022",
+  start_at: "Tues, 31 May 2022",
+  end_at: "",
   progress: 0,
   company_name: "Cohabs",
   company_email: "malik@cohabs.com",
-  duration: 30
+  duration: 45
 )
 
 project_two.user = user_three
@@ -135,18 +138,18 @@ project_three = Project.new(
 project_three.photo.attach(io: matera, filename: "matera")
 
 project_three.user = user_three
-project_three.tag_list.add("hello world", "test", "coucou", "lol", "oui")
+project_three.tag_list.add("proptech", "french", "3founders", "urgent", "series B")
 project_three.save!
 
 project_four = Project.new(
   name: "FlipGrowBox",
   start_at: "Fri, 20 May 2022",
-  end_at: "Fri, 1 July 2022",
+  end_at: "",
   progress: 0,
   company_name: "Grow Box",
   company_email: "jb@growbox.fr",
   company_landing_page: "https://www.aka.green/",
-  duration: 21
+  duration: 45
 )
 
 project_four.photo.attach(io: grow_box, filename: "growbox")
@@ -179,3 +182,48 @@ project_six = Project.new(
 
 project_six.user = user_four
 project_six.save!
+
+project_seven = Project.new(
+  name: "FlipScubaLibre",
+  start_at: "Wed, 13 June 2022",
+  end_at: "Fri, 13 July 2022",
+  progress: 0,
+  company_name: "Scuba Libre",
+  company_email: "gauthier@scubalibre.com",
+  company_landing_page: "http://www.scubalibre.io/",
+  duration: 45
+)
+
+project_seven.photo.attach(io: scuba_libre, filename: "logo-scuba-libre-icon")
+
+project_seven.user = user_four
+project_seven.tag_list.add("travel", "french", "4founders", "LeWagon#860", "pre-seed")
+project_seven.save!
+
+project_eight = Project.new(
+  name: "FlipMovieFinder",
+  start_at: "Mon, 20 June 2022",
+  end_at: "Thu, 21 July 2022",
+  progress: 0,
+  company_name: "MovieFinder",
+  company_email: "jeanne@moviefinder.com",
+  duration: 45
+)
+
+project_eight.user = user_four
+project_eight.save!
+
+project_nine = Project.new(
+  name: "FlipComets",
+  start_at: "Tue, 14 June 2022",
+  end_at: "Fri, 15 July 2022",
+  progress: 0,
+  company_name: "CometsLab",
+  company_email: "hello@comets.com",
+  duration: 45
+)
+
+project_nine.photo.attach(io: comet, filename: "comete")
+
+project_nine.user = user_four
+project_nine.save!
