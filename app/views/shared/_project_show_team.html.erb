@@ -1,0 +1,20 @@
+<div class="project-show__team d-flex justify-content-between">
+  <div>
+    <h2 class="name-project-show">Your Team Members</h2>
+    <div class="d-flex justify-content-start">
+      <% @project.users.each do |user| %>
+        <div class="project-team-member"  >
+          <%= cl_image_tag(user.photo.key, class: "avatar bigpic me-4", height: 100, width: 100,  :crop=>"fill", draggable: false) %>
+          <p class="me-4"><%= user.first_name %></p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div>
+    <%= link_to(project_steps_path(@project), class: "testing") do %>
+      <i class="fa-solid fa-plus add-user add-user-on-show"></i>
+    <% end %>
+  </div>
+
+</div>
