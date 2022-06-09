@@ -16,10 +16,10 @@
 
         <!-- company info -->
           <div class="project-show__infos-docs">
-            <%= render "shared/company_info" %>
-          <!-- documents manager -->
-            <%= render "shared/project_show_documents" %>
-          </div>
+              <%= render "shared/company_info" %>
+            <!-- documents manager -->
+              <%= render "shared/project_show_documents", project: @project %>
+            </div>
       </div>
        <!-- your team members -->
 

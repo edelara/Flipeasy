@@ -4,7 +4,7 @@
   </div>
   <div class="quick-facts-docs d-flex justify-content-between">
   </div>
-  <% @project.documents.order(:id).each do |document| %>
+  <% project.documents.order(:id).each do |document| %>
     <div id="doc-<%= document.id %>" class="box-doc doc-list d-flex justify-content-around align-items-center mb-2 pt-2" data-doc-highlight-target="doc" data-doc-name="<%= document.name %>">
       <p class="flex-grow-1 header-documents m-1"> <%= document.name %></p>
       <i class ="fa-solid fa-comment-medical"></i>
