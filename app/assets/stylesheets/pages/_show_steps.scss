@@ -68,18 +68,17 @@
   font-style: italic;
 }
 
-.ghost {
+.list-ghost {
   opacity: .5;
   background: #F4F6FD;
-}
-
-.drag {
-  color: red;
-  background-color: aqua;
 }
 
 .btn-team {
   left: 50%;
   position: absolute;
   margin-top: 15px;
+}
+
+.sortable-fallback img{
+  border-radius: 50%;
 }
