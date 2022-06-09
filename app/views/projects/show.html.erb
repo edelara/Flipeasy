@@ -17,7 +17,10 @@
         <!-- company info -->
           <div class="project-show__infos-docs">
             <%= render "shared/company_info" %>
-          <!-- documents manager -->
+            <!-- documents manager -->
+            <div class="d-flex justify-content-end">
+              <%= link_to "Show all", "", data: {action: "click->doc-highlight#showAll"}, class: "simple-link"%>
+            </div>
             <%= render "shared/project_show_documents" %>
           </div>
       </div>
