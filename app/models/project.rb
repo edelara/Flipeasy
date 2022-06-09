@@ -26,6 +26,17 @@ class Project < ApplicationRecord
     end
   end
 
+  def set_progress_bar_color
+    case progress
+    when 0..30
+      "box-progress-red"
+    when 31..80
+      "box-progress-yellow"
+    when 81..100
+      "box-progress-green"
+    end
+  end
+
   private
 
   def set_end_at
