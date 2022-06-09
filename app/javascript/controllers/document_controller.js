@@ -10,7 +10,6 @@ export default class extends Controller {
   }
 
   changeStatus(){
-
     const newStatus = event.currentTarget.dataset.newStatus;
 
     this.statusTarget.innerHTML = "Done"
