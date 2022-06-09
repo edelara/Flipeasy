@@ -1,6 +1,6 @@
-<div class="project-show__team">
-  <h2 class="name-project-show">Your Team Members</h2>
-
+<div class="project-show__team d-flex justify-content-between">
+  <div>
+    <h2 class="name-project-show">Your Team Members</h2>
     <div class="d-flex justify-content-around">
       <% @project.users.each do |user| %>
         <div class="project-team-member"  >
@@ -9,5 +9,12 @@
         </div>
       <% end %>
     </div>
+  </div>
+
+  <div>
+    <%= link_to(project_steps_path(@project), class: "testing") do %>
+      <i class="fa-solid fa-plus add-user add-user-on-show"></i>
+    <% end %>
+  </div>
 
 </div>

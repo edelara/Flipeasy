@@ -27,7 +27,8 @@
 }
 
 .project-name {
-  padding-left: 50px
+  padding-left: 50px;
+  color: #479597;
 }
 
 .project-show__manage-tasks {
@@ -645,7 +646,8 @@ cursor: pointer;
 
 .box-header-company-infos {
   order: 1;
-  max-width: 120px;
+  max-width: 200px;
+  margin-left: 8px;
   .dark & {
     color: white;
   }
@@ -665,4 +667,8 @@ cursor: pointer;
 .box-progress-wrapper {
   order: 3;
   flex: 1;
+}
+
+.add-user-on-show {
+  padding-top: 10px;
 }
