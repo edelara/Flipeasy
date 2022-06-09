@@ -28,7 +28,8 @@
 
 .logo-company {
   border-radius: 50%;
-  width: 216px;
-  height: 216px;
+  //width: 216px;
+  //height: 216px;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
 }
