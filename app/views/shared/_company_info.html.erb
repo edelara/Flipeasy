@@ -29,7 +29,7 @@
               <p class="box-content-subheader mb-0">Send an email</p>
             </div>
         </div>
-        <div class="box-info-bottom d-flex flex-wrap justify-content-arround w-100 pt-3">
+        <div class="box-info-bottom d-flex flex-wrap justify-content-arround w-100">
          <% @project.tag_list.each_with_index do |tag_name, index| %>
           <span class="badge mb-2 me-2 badge-<%= %w[beige purple gold lime-green pink][(index + 1)%5 - 1] %>"><%= tag_name %></span>
           <% end %>
