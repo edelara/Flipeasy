@@ -13,7 +13,7 @@
           <h2 class="box-header-company-infos pb-3">
             <%= link_to @project.company_name, @project.company_landing_page, target: "_blank"%>
           </h2>
-          <div class="d-flex align-items-center justify-content-start pb-2">
+          <div class="d-flex align-items-center justify-content-lg-start pb-2">
             <div class="d-flex align-items-center justify-content-center pe-4">
               <i class="fa-solid fa-pen px-2" data-bs-toggle="modal" data-bs-target="#noteModalLong"></i>
               <p class="box-content-subheader mb-0">Notes</p>
@@ -29,12 +29,10 @@
               <p class="box-content-subheader mb-0">Send an email</p>
             </div>
         </div>
-        <div class="box-info-bottom d-flex flex-wrap justify-content-arround w-100 pt-2">
-          <span class="badge mb-2 me-2 badge-purple">Equity partnership</span>
-          <span class="badge mb-2 me-2 badge-gold">Travel tech</span>
-          <span class="badge mb-2 me-2 badge-lime-green">French company</span>
-          <span class="badge mb-2 me-2 badge-pink">Flipping to Delaware</span>
-          <span class="badge mb-2 me-2 badge-lime-green">Two founders</span>
+        <div class="box-info-bottom d-flex flex-wrap justify-content-arround w-100 pt-3">
+         <% @project.tag_list.each_with_index do |tag_name, index| %>
+          <span class="badge mb-2 me-2 badge-<%= %w[beige purple gold lime-green pink][(index + 1)%5 - 1] %>"><%= tag_name %></span>
+          <% end %>
         </div>
       </div>
     </div>

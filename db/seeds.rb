@@ -135,6 +135,7 @@ project_three = Project.new(
 project_three.photo.attach(io: matera, filename: "matera")
 
 project_three.user = user_three
+project_three.tag_list.add("hello world", "test", "coucou", "lol", "oui")
 project_three.save!
 
 project_four = Project.new(
