@@ -20,8 +20,8 @@ export default class extends Controller {
     })
       .then(response => response.json())
       .then((data) => {
-        console.log(data.document_row)
-        document.getElementById(`doc-${this.docIdValue}`).outerHTML = data.document_row;
+        document.querySelector(`.project-show__documents`).outerHTML = data.document_row;
+        // this.element.innerText = newStatus;
       })
   }
 }
