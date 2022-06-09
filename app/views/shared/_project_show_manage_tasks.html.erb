@@ -1,12 +1,14 @@
 <div class="project-show__manage-tasks tab-content" id="nav-tabContent" data-controller="confettis">
     <h2 class="name-project-show">Your Tasks Manager</h2>
-      <% @project.steps.order(:id).each_with_index do |step, index| %>
-          <% if index == 0 %>
-              <div class="tab-pane fade show active" id="nav-<%= step.name.split.last%>" role="tabpanel" aria-labelledby="nav-<%= step.name.split.last%>-tab">
-          <% else %>
-              <div class="tab-pane fade" id="nav-<%= step.name.split.last%>" role="tabpanel" aria-labelledby="nav-<%= step.name.split.last%>-tab">
-          <% end %>
-              <div data-controller="edit-tasks">
+    <% @project.steps.order(:id).each_with_index do |step, index| %>
+      <% if index == 0 %>
+          <div class="tab-pane fade show active" id="nav-<%= step.name.split.last%>" role="tabpanel" aria-labelledby="nav-<%= step.name.split.last%>-tab"
+               data-project-nav-tabs-target="tab">
+      <% else %>
+          <div class="tab-pane fade" id="nav-<%= step.name.split.last%>" role="tabpanel" aria-labelledby="nav-<%= step.name.split.last%>-tab"
+               data-project-nav-tabs-target="tab">
+      <% end %>
+            <div data-controller="edit-tasks">
               <% step.tasks.each do |task| %>
                 <div class="d-flex tasks-form justify-content-between">
                   <div class="d-flex tasks-form">
@@ -19,7 +21,7 @@
                   <p class="task-end-date" data-edit-tasks-target="date"><em><small><%= task.updated_at.strftime('%B %d, %y') %></small></em></p>
                 </div>
               <% end %>
-              </div>
             </div>
-        <% end %>
+          </div>
+    <% end %>
 </div>

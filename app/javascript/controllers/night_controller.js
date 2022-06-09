@@ -4,13 +4,10 @@ export default class extends Controller {
   static targets = ["switch"]
 
   connect() {
-    console.log("hehe")
   }
 
   activate() {
-    console.log(event)
     document.documentElement.classList.toggle('dark');
-    event.preventDefault()
   }
 }
 

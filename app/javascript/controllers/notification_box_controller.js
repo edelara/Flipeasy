@@ -5,7 +5,6 @@ export default class extends Controller {
   static targets = ["notification"]
 
   connect() {
-    console.log("hola")
   }
 
   close() {
