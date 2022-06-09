@@ -3,10 +3,10 @@
     <%= link_to project_path(project) do %>
         <div class="project-box-wrapper">
           <div class="project-box">
-            <div class="project-box-header">
-              <span><%= project.start_at.strftime('%B %d, %Y') %></span>
-            </div>
             <div class="project-box-content-header">
+              <div class="d-flex justify-content-end">
+                <span><%= project.start_at.strftime('%B %d, %Y') %></span>
+              </div>
               <p class="box-content-header"><%= project.name %></p>
               <p class="box-content-subheader"><%= project.current_step_name %></p>
             </div>
