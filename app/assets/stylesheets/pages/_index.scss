@@ -449,12 +449,12 @@ button, a {
   justify-content: space-between;
   width: 100%;
 
-   .name {
+  .name {
     font-size: 16px;
     line-height: 24px;
     font-weight: 700;
     color: var(--main-color);
-     margin: 0;
+    margin: 0;
   }
 }
 
@@ -617,7 +617,6 @@ button, a {
   border-radius: 4px;
   padding: 16px;
   color: var(--main-color);
-  // background-color: #b2d7d8;
   box-shadow: 0px 4px 16px rgba(0,0,0,.1);
 
   .dark & {
@@ -687,6 +686,7 @@ button, a {
   line-height: 24px;
   opacity: .7;
   color: rgb(41, 41, 41);
+  padding-bottom: 17px;
   .dark & {
     color:  white;
   }
@@ -694,7 +694,7 @@ button, a {
 
 .box-progress {
   display: block;
-  height: 4px;
+  height: 100%;
   border-radius: 6px;
 
   &-bar {
@@ -731,6 +731,34 @@ button, a {
   }
 }
 
+.box-progress-header {
+  font-size: 14px;
+  font-weight: 100;
+}
+
+.box-progress-bar {
+  height: 13px;
+  border: none;
+  box-shadow: inset -2px 2px 7px rgb(220, 220, 220);
+}
+
+.box-progress-red {
+  background-color: #FF7456;
+}
+
+.box-progress-yellow {
+  background-color: #FFC900;
+}
+
+.box-progress-green {
+  background-color: #00E3C5;
+}
+
+.box-progress-percentage {
+  font-size: 14px;
+  font-weight: 100;
+}
+
 .project-box-footer {
   display: flex;
   justify-content: start;
@@ -758,11 +786,12 @@ button, a {
   margin-top: 5px;
 
   img {
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     overflow: hidden;
     object-fit: cover;
+    border: 1px solid black;
 
     &:not(:first-child) {
       margin-left: -8px;
@@ -789,8 +818,9 @@ button, a {
   border-radius: 20px;
   flex-shrink: 0;
   padding: 6px 16px;
-  font-weight: 700;
+  font-weight: 400;
   color: white;
+  height: 32px;
 }
 
 .mode-switch.active .moon {
@@ -929,27 +959,8 @@ button, a {
     line-height: 16px;
   }
 
-  .box-content-subheader {
-    font-size: 12px;
-    line-height: 16px;
-  }
-
   .project-boxes.jsListView .project-box-header > span {
     font-size: 10px;
-  }
-
-  .box-progress-header {
-    font-size: 12px;
-  }
-
-  .box-progress-percentage {
-    font-size: 10px;
-  }
-
-  .days-left {
-    font-size: 8px;
-    padding: 6px 6px;
-    text-align: center;
   }
 
   .project-boxes.jsListView .project-box > * {
