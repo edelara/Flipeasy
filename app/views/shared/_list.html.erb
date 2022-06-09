@@ -1,5 +1,5 @@
 <div class="project-boxes jsGridView" data-projects-target="index">
-  <% @projects.each do |project| %>
+  <% @projects.sort_by {|project| project.end_at }.each do |project| %>
     <%= link_to project_path(project) do %>
         <div class="project-box-wrapper">
           <div class="project-box">
