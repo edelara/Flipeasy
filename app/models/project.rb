@@ -22,7 +22,7 @@ class Project < ApplicationRecord
     if steps.where(completed_at: nil).count.zero?
       "Completed"
     else
-      steps.find_by(:completed_at.nil?).name
+      steps.where(completed_at: nil).first.name
     end
   end
 
