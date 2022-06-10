@@ -15,6 +15,7 @@ class Task < ApplicationRecord
 
   def notify_task_completion
     return unless done?
+    return if user == project.user
 
     Notification.create(title: "Task completed",
                         message: "#{self.name} has been completed for #{self.project.name}.",

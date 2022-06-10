@@ -6,6 +6,7 @@ class TasksController < ApplicationController
     # @task.save
     # render json: @task.to_json
     @task = Task.find(params[:id])
+    @task.user = current_user
     @project = @task.step.project
     @task.update(task_params)
     authorize @task
