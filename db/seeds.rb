@@ -212,7 +212,7 @@ project_eight = Project.new(
   duration: 21
 )
 
-project_eight.user = user_four
+project_eight.user = user_five
 project_eight.save!
 
 project_nine = Project.new(
