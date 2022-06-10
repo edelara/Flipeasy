@@ -91,23 +91,24 @@ skello = URI.open("https://res.cloudinary.com/dsc1uchot/image/upload/v1654615613
 grow_box = URI.open("https://res.cloudinary.com/dsc1uchot/image/upload/v1654615581/akagreen_yjott5.jpg")
 comet = URI.open("https://res.cloudinary.com/dsc1uchot/image/upload/v1654783011/comete_ed3tgf.jpg")
 scuba_libre = URI.open("https://res.cloudinary.com/dsc1uchot/image/upload/v1654783116/logo-scuba-libre-icon_rpcd0x.png")
+vitalabs = URI.open("https://res.cloudinary.com/dsc1uchot/image/upload/v1654850562/vitalabs_xre1zc.jpg")
 
 
 # Projects
 project_one = Project.new(
   name: "FlipSkello",
-  start_at: "Tue, 21 June 2022",
-  end_at: "Tue, 26 July 2022",
+  start_at: "Fri, 20 May 2022",
+  end_at: "",
   progress: 0,
   company_name: "Skello",
   company_email: "cyril@skello.com",
   company_landing_page: "https://www.skello.io/?utm_medium=cpc&utm_source=g&utm_campaign=1652578690&gclid=CjwKCAjw7vuUBhBUEiwAEdu2pCSTiqY2ml2BUTMlk7hZGZqdOHpHx8Tx4neqggVKXzaNv1TY40B7CRoCnZcQAvD_BwE",
-  duration: 21
+  duration: 30
 )
 
 project_one.photo.attach(io: skello, filename: "skello")
 
-project_one.user = user_three
+project_one.user = user_four
 project_one.tag_list.add("scheduling", "french", "3founders", "LeWagon#338", "series B")
 project_one.save!
 
@@ -127,18 +128,18 @@ project_two.save!
 project_three = Project.new(
   name: "FlipMatera",
   start_at: "Tue, 14 June 2022",
-  end_at: "Tue, 19 July 2022",
+  end_at: "",
   progress: 0,
   company_name: "Matera",
   company_email: "victor@matera.com",
-  duration: 45,
+  duration: 30,
   company_landing_page: "https://matera.eu/fr"
 )
 
 project_three.photo.attach(io: matera, filename: "matera")
 
 project_three.user = user_three
-project_three.tag_list.add("proptech", "french", "3founders", "urgent", "series B")
+project_three.tag_list.add("#proptech", "#french", "#3founders", "#urgent", "#series B")
 project_three.save!
 
 project_four = Project.new(
@@ -155,12 +156,13 @@ project_four = Project.new(
 project_four.photo.attach(io: grow_box, filename: "growbox")
 
 project_four.user = user_three
+project_four.tag_list.add("#greentech", "#brasilian", "#4founders", "#leWagon#860", "#pre-seed")
 project_four.save!
 
 project_five = Project.new(
   name: "FlipTribu",
   start_at: "Fri, 27 May 2022",
-  end_at: "Fri, 1 July 2022",
+  end_at: "",
   progress: 0,
   company_name: "Tribu",
   company_email: "mylene@tribu.com",
@@ -173,7 +175,7 @@ project_five.save!
 project_six = Project.new(
   name: "FlipSmarty",
   start_at: "Wed, 18 May 2022",
-  end_at: "Fri, 17 June 2022",
+  end_at: "",
   progress: 0,
   company_name: "Smarty",
   company_email: "patrick@smarty.com",
@@ -196,34 +198,36 @@ project_seven = Project.new(
 
 project_seven.photo.attach(io: scuba_libre, filename: "logo-scuba-libre-icon")
 
-project_seven.user = user_four
-project_seven.tag_list.add("travel", "french", "4founders", "LeWagon#860", "pre-seed")
+project_seven.user = user_three
+project_seven.tag_list.add("#travel", "#french", "#4founders", "#LeWagon#860", "#pre-seed")
 project_seven.save!
 
 project_eight = Project.new(
   name: "FlipMovieFinder",
   start_at: "Mon, 20 June 2022",
-  end_at: "Thu, 21 July 2022",
+  end_at: "",
   progress: 0,
   company_name: "MovieFinder",
   company_email: "jeanne@moviefinder.com",
-  duration: 45
+  duration: 21
 )
 
 project_eight.user = user_four
 project_eight.save!
 
 project_nine = Project.new(
-  name: "FlipComets",
-  start_at: "Tue, 14 June 2022",
-  end_at: "Fri, 15 July 2022",
+  name: "FlipVitalabs",
+  start_at: "Wed, 27 April 2022",
+  end_at: "",
   progress: 0,
-  company_name: "CometsLab",
-  company_email: "hello@comets.com",
+  company_name: "VitaLabs",
+  company_email: "johandrylewicz@gmail.com",
+  company_landing_page: "https://vitalabs.io/",
   duration: 45
 )
 
-project_nine.photo.attach(io: comet, filename: "comete")
+project_nine.photo.attach(io: vitalabs, filename: "vitalabs")
 
 project_nine.user = user_four
 project_nine.save!
+
