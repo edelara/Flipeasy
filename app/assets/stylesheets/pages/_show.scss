@@ -263,6 +263,10 @@ color: #2E8A8C;
 
 .task-end-date {
   color: #7A7A7A;
+  .dark & {
+    color: white;
+    opacity: 0.5;
+  }
 }
 
 .tasks-form > .simple_form > .mb-3 > .form-check > .form-check-input.is-valid:checked, .tasks-form > .simple_form > .mb-3 > .form-check > .form-check-input[type="checkbox"] {
