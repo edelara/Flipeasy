@@ -187,18 +187,18 @@ project_six.save!
 
 project_seven = Project.new(
   name: "FlipScubaLibre",
-  start_at: "Wed, 13 June 2022",
-  end_at: "Fri, 13 July 2022",
+  start_at: "Mon, 30 May 2022",
+  end_at: "",
   progress: 0,
   company_name: "Scuba Libre",
   company_email: "gauthier@scubalibre.com",
   company_landing_page: "http://www.scubalibre.io/",
-  duration: 45
+  duration: 21
 )
 
 project_seven.photo.attach(io: scuba_libre, filename: "logo-scuba-libre-icon")
 
-project_seven.user = user_three
+project_seven.user = user_four
 project_seven.tag_list.add("#travel", "#french", "#4founders", "#LeWagon#860", "#pre-seed")
 project_seven.save!
 
@@ -230,4 +230,3 @@ project_nine.photo.attach(io: vitalabs, filename: "vitalabs")
 
 project_nine.user = user_four
 project_nine.save!
-
