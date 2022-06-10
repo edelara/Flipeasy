@@ -1013,6 +1013,15 @@ button, a {
   }
 }
 
+.dropdown-item {
+  .dark & {
+    color:  white;
+    &:hover {
+      color:black;
+    }
+  }
+}
+
 .reset-link {
   display: block;
   color: #8288D9;
