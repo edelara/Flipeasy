@@ -33,14 +33,16 @@
 
 <!-- MODAL See each documents-->
 <div class="modal fade modal-doc" id="docModalLong" tabindex="-1" role="dialog" aria-labelledby="docModalLongTitle" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content-doc">
+  <div class="modal-dialog modal-lg modal-dialog-doc" role="document">
+    <div class="modal-content modal-content-doc">
       <div class="modal-header">
         <h5 class="modal-title" id="docModalLongTitle">PDF Doc</h5>
       </div>
-      <div class="modal-body">
-        <embed src="https://docs.google.com/document/d/1x1B1l3WCGbK82lmZmLJekpr8XthWAwbI/edit#heading=h.3znysh7" type="" frameborder="0" width="850" height="800px">
-        <%# <embed src="https://res.cloudinary.com/dsc1uchot/image/upload/v1654692308/production/exmpl-doc_fir4jt.png" type="" height="500" width="400"> %>
+      <div class="modal-body modal-body-doc">
+        <div class="image-container">
+          <%= image_tag "https://res.cloudinary.com/dsc1uchot/image/upload/v1654851830/skello-heroku_tahspd.png" %>
+        </div>
+        <%# <embed src="https://res.cloudinary.com/dsc1uchot/image/upload/v1654851830/skello-heroku_tahspd.png" type="" height="800" width="600"> %>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary-doc" data-bs-dismiss="modal">Close</button>

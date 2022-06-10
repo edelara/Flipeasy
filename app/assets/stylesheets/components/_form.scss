@@ -12,7 +12,28 @@
 .modal-doc {
   background-color: rgba(0,0,0,.4)!important;
 }
+
 .modal-content-doc {
-  width: 900px;
-  background-color: rgba(0,0,0,.4)!important;
+  // width: 50vw;
+}
+
+.modal-content-doc {
+  .image-container {
+    height: 70vh;
+    overflow: scroll;
+  }
+  img {
+    width: 100%;
+  }
+  //max-width: 100%;
+  // width: 109vh;
+  // margin-left: 0%;
+}
+
+// .modal-embed {
+//   max-width: 100%;
+// }
+
+.modal-dialog-doc {
+  // max-width: 50vw;
 }
