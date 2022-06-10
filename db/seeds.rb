@@ -93,7 +93,6 @@ comet = URI.open("https://res.cloudinary.com/dsc1uchot/image/upload/v1654783011/
 scuba_libre = URI.open("https://res.cloudinary.com/dsc1uchot/image/upload/v1654783116/logo-scuba-libre-icon_rpcd0x.png")
 vitalabs = URI.open("https://res.cloudinary.com/dsc1uchot/image/upload/v1654850562/vitalabs_xre1zc.jpg")
 
-
 # Projects
 project_one = Project.new(
   name: "FlipSkello",
@@ -212,7 +211,8 @@ project_eight = Project.new(
   duration: 21
 )
 
-project_eight.user = user_four
+
+project_eight.user = user_five
 project_eight.save!
 
 project_nine = Project.new(
