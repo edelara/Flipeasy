@@ -14,11 +14,14 @@ class Task < ApplicationRecord
   end
 
   def notify_task_completion
-    return unless done?
-
-    Notification.create(title: "Task completed",
-                        message: "#{self.name} has been completed for #{self.project.name}.",
-                        task: self,
-                        user: project.user)
+    # puts user
+    # puts done?
+    # puts user != project.user
+    if done? && task&.user != project.user
+      Notification.create(title: "Task completed",
+                          message: "#{self.name} has been completed for #{self.project.name}.",
+                          task: self,
+                          user: project.user)
+    end
   end
 end
