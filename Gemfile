@@ -88,3 +88,5 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+ruby File.read('.ruby-version').strip
